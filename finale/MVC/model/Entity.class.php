@@ -1,0 +1,310 @@
+<?php
+//classe que vai manipular o banco de dados
+//classe genérica que serve pra manipular tudo; extends:herança
+
+require_once("Conexao.class.php");
+
+class Entity extends Conexao
+{
+
+    //Listar
+    public function list($table)
+    {
+        $pdo = parent::getInstance();
+        $sql = "SELECT * FROM $table;";
+
+        $statement = $pdo->query($sql);
+        $statement->execute(); //-> : acessar um método ou uma propriedade
+
+        return $statement->fetchAll(); //transforma a tabela do banco em um vetor 
+    }
+    public function list_emprestimo()
+    {
+        $pdo = parent::getInstance();
+        $sql = "SELECT id_emprestimo, l.id_livro, u.id_usuario, dataEmprestimo, dataDevolucao, usuario, titulo, autor, editora FROM emprestimo e inner join livro l inner join login u on e.id_livro = l.id_livro and e.id_usuario = u.id_usuario;";
+
+        $statement = $pdo->query($sql);
+        $statement->execute(); //-> : acessar um método ou uma propriedade
+
+        return $statement->fetchAll(); //transforma a tabela do banco em um vetor 
+    }
+
+    public function list_emprestimo_por_id($idname, $idUsuario)
+    {
+        $pdo = parent::getInstance();
+        $sql = "SELECT id_emprestimo, l.id_livro, u.id_usuario, dataEmprestimo, dataDevolucao, usuario, titulo, autor, editora FROM emprestimo e inner join livro l inner join login u on e.id_livro = l.id_livro and e.id_usuario = u.id_usuario WHERE e.$idname = $idUsuario;";
+
+        $statement = $pdo->query($sql);
+        $statement->execute(); //-> : acessar um método ou uma propriedade
+
+        return $statement->fetchAll(); //transforma a tabela do banco em um vetor 
+    }
+
+    public function formatData($dataDiretoDoBanco)
+    {
+        $dataIncrivel = $dataDiretoDoBanco;
+
+        $ano = strpos($dataIncrivel, "-");
+        $ano2 = strrpos($dataIncrivel, "-");
+        $anoEpico = substr($dataIncrivel, 0, $ano);
+        $mesEpico = substr($dataIncrivel, $ano + 1, $ano2 - 5);
+        $diaEpico = substr($dataIncrivel, $ano2 + 1, strlen($dataIncrivel));
+
+        $result = $diaEpico."/".$mesEpico."/".$anoEpico;
+
+        return $result;
+    }
+
+
+    //Listar
+    public function listEmprestadoLivro($id)
+    {
+        $pdo = parent::getInstance();
+        $sql = "SELECT quantidade FROM livro where id_livro='$id'";
+
+        $statement = $pdo->query($sql);
+        $statement->execute(); //-> : acessar um método ou uma propriedade
+
+        return $statement->fetchAll(); //transforma a tabela do banco em um vetor 
+    }
+
+
+    //INSERT
+    public function insert($table, $data)
+    {
+
+        $pdo = parent::getInstance();
+        $fields = implode(", ", array_keys($data));
+        $values = ":" . implode(", :", array_keys($data));
+
+        $sql = "INSERT INTO $table($fields) VALUES ($values)";
+        $statement = $pdo->prepare($sql);
+
+        foreach ($data as $key => $value) {
+            $statement->bindValue(":$key", $value, PDO::PARAM_STR);
+        }
+
+        $statement->execute();
+
+        if ($table == "emprestimo") {
+            $this->diminuirEmprestimos($data["id_livro"]);
+        }
+    }
+    private function diminuirEmprestimos($id)
+    {
+        $pdo = parent::getInstance();
+
+
+        $sql = "UPDATE livro SET quantidade = quantidade - 1 where id_livro = '$id';";
+        $statement = $pdo->prepare($sql);
+
+        $statement->execute();
+
+
+    }
+    public function aumentarEmprestimos($id)
+    {
+        $pdo = parent::getInstance();
+
+
+        $sql = "UPDATE livro SET quantidade = (quantidade + 1) where id_livro = '$id';";
+        $statement = $pdo->prepare($sql);
+
+        $statement->execute();
+        //aq ta certo
+
+
+    }
+    public function deleteEmprestimo($id, $idval)
+    {
+        $idBook = $this->searchIdLivro($idval);
+
+        $pdo = parent::getInstance();
+        $sql = "DELETE FROM emprestimo WHERE $id = :id";
+        $statement = $pdo->prepare($sql);
+        $statement->bindValue(":id", $idval);
+        $statement->execute();
+
+
+        $this->aumentarEmprestimos($idBook);
+
+    }
+    public function searchIdLivro($id)
+    {
+
+        $pdo = parent::getInstance();
+        $sql = "SELECT * FROM emprestimo WHERE id_emprestimo = '$id'";
+        $statement = $pdo->prepare($sql);
+
+        $statement->execute();
+
+
+        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+            $return_arr[] = $row['id_livro'];
+        }
+
+
+        $id_livro = $return_arr[0];
+        print_r($return_arr);
+
+        return $id_livro;
+    }
+
+
+
+
+    public function delete($table, $id, $idLivro) // tabela, "id_livro", id
+    {
+        $pdo = parent::getInstance();
+        $sql = "DELETE FROM $table WHERE $id = :id";
+        $statement = $pdo->prepare($sql);
+        $statement->bindValue(":id", $idLivro);
+        $statement->execute();
+    }
+
+    public function getInfo($table, $id, $idname)
+    {
+        $pdo = parent::getInstance();
+        $sql = "SELECT * FROM $table WHERE $idname = :id";
+        $statement = $pdo->prepare($sql);
+        $statement->bindValue(":id", $id);
+        $statement->execute();
+
+        return $statement->fetchAll();
+    }
+
+    public function getIdByUsername($tabela, $nomeColuna, $username)
+    {
+        $pdo = parent::getInstance();
+        $sql = "SELECT * FROM $tabela WHERE $nomeColuna = '$username'";
+        $statement = $pdo->prepare($sql);
+        $statement->execute();
+
+        while ($row = $statement->fetch()) {
+            $return_arr[] = $row['id_usuario'];
+        }
+
+        return $return_arr;
+    }
+
+    
+    public function update($table, $data, $id, $idname)
+    {
+        $pdo = parent::getInstance();
+        $new_values = "";
+        foreach ($data as $key => $value) {
+            $new_values .= "$key=:$key, ";
+        }
+        $new_values = substr($new_values, 0, -2);
+        $sql = "UPDATE $table SET $new_values WHERE $idname = :id";
+        $statement = $pdo->prepare($sql);
+        foreach ($data as $key => $value) {
+            $statement->bindValue(":$key", $value, PDO::PARAM_STR);
+        }
+        $statement->bindValue(":id", $id);
+        $statement->execute();
+    }
+
+    public function promocao($userAlvo, $userLogado, $cargo)
+    {
+        $pdo = parent::getInstance();
+
+        if ($cargo == 1) { // se o rebaixado for um adm, ele é imediatamente cagado :D
+
+            // COMEÇO DO PROCESSO DE REBAIXAMENTO
+
+            if ($userLogado !== $userAlvo) { // um adm não pode se rebaixar
+
+                $sql = "UPDATE login SET medidorEspecial = 0 WHERE usuario = '$userAlvo'";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute();
+
+                return 1;
+
+            } else {
+
+                return 2;
+
+            }
+
+            // FIM DO PROCESSO DE REBAIXAMENTO
+
+        }
+
+        if ($cargo == 0) {
+
+            $sql = "UPDATE login SET medidorEspecial = 1 WHERE usuario = '$userAlvo'";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+
+            return 0;
+
+        }
+
+
+
+    }
+
+    public function updateEmprestimo($id_emprestimo, $id_usuario, $data_emprestimo, $data_devolucao)
+    {
+        $pdo = parent::getInstance();
+
+        $sql = "UPDATE emprestimo SET id_usuario =  '$id_usuario', dataEmprestimo = '$data_emprestimo', dataDevolucao = '$data_devolucao' WHERE id_emprestimo = '$id_emprestimo'";
+        $statement = $pdo->prepare($sql);
+
+        $statement->execute();
+    }
+
+
+
+
+    public function login($table, $usuario, $senha)
+    {
+        $pdo = parent::getInstance();
+        $sql = "SELECT * FROM $table WHERE usuario ='$usuario' and senha = '$senha';";
+
+        $statement = $pdo->query($sql);
+        $statement->execute();
+
+        while ($row = $statement->fetch()) {
+            $return_arr[] = $row['usuario'];
+        }
+
+        return $return_arr;
+    }
+
+    public function checkAdm($usuario)
+    {
+        $pdo = parent::getInstance();
+        $sql = "SELECT medidorEspecial FROM login WHERE usuario = '$usuario' and medidorEspecial=1";
+
+        $statement = $pdo->query($sql);
+        $statement->execute();
+
+
+        if ($statement->rowCount() >= 1) {
+            return true;//1
+        }
+        return false;//nada
+
+
+
+    }
+    public function checkAdmID($id)
+    {
+        $pdo = parent::getInstance();
+        $sql = "SELECT medidorEspecial FROM login WHERE id_usuario = '$id' and medidorEspecial=1";
+
+        $statement = $pdo->query($sql);
+        $statement->execute();
+
+
+        if ($statement->rowCount() >= 1) {
+            return true;//1
+        }
+        return false;//nada
+
+
+
+    }
+}

@@ -1,0 +1,40 @@
+create database finale;
+use finale;
+
+create table entusiasta (
+
+    id_entusiasta int(10) not null primary key AUTO_INCREMENT,
+    nome_usuario varchar(50) unique,
+    senha varchar(50),
+    chave_1cap boolean,
+    chave_2cap boolean,
+    chave_3cap boolean
+
+);
+
+create table arma (
+
+	id_arma int(10) not null primary key AUTO_INCREMENT,
+    porte varchar(50),
+    raridade varchar(50),
+    potencial varchar(50), -- branca, de fogo
+    quantidade int,
+    condicao varchar(50)
+
+);
+
+create table associativa (
+
+	id_associativa int(10) not null AUTO_INCREMENT,
+    id_entusiasta int(10) not null,
+    id_arma int(10) not null,
+    data_conquista date,
+    maestria varchar(50),
+    inventario int, -- numero de armas de um tipo especifico que um Entusiasta carrega
+    
+    primary key(id_associativa, id_entusiasta, id_arma),
+    
+    foreign key (id_entusiasta) references entusiasta(id_entusiasta),
+    foreign key (id_arma) references arma(id_arma)
+
+);

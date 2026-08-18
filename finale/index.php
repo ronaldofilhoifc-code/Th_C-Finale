@@ -1,3 +1,3 @@
 <?php 
-header("Location: MVC/view/controleEntusiasta.php");
+header("Location: MVC/view/loginInicial.php");
 ?>

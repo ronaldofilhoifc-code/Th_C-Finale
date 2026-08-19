@@ -18,7 +18,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     /* background-color: darkgreen; */
+}
+.teste {
+    width: 500px;
+    height: 500px;
+    display: none;
 }
 
 .chapter-container {
@@ -36,14 +42,65 @@ body {
     height: 15%;
     width: 100%;
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.texto {
+    flex-direction: column;
+}
+.formulario {
+    height: 400px;
+}
+.label-holder, .input-holder {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.label-holder {
+    height: 25px;
+}
+.input-holder {
+    height: 50px;
+    display: flex;
     justify-content: center;
+    align-items: center;
+}
+.inputBasico {
+    height: 40px;
+    width: 100%;
+}
+.inputBasicoCheck {
+    height: 25px;
+    width: 25px;
+}
+.checkbox-holder {
+    width: 16%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.remember-holder {
+    width: 86%;
+    height: 100%;
+    display: flex;
     align-items: center;
 }
 
 .chapter-conteudo {
     height: 70%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 p {
     margin: 0;
+}
+.form-boot {
+    height: 517px;
 }

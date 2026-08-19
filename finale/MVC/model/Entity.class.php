@@ -173,19 +173,7 @@ class Entity extends Conexao
         return $statement->fetchAll();
     }
 
-    public function getIdByUsername($tabela, $nomeColuna, $username)
-    {
-        $pdo = parent::getInstance();
-        $sql = "SELECT * FROM $tabela WHERE $nomeColuna = '$username'";
-        $statement = $pdo->prepare($sql);
-        $statement->execute();
-
-        while ($row = $statement->fetch()) {
-            $return_arr[] = $row['id_usuario'];
-        }
-
-        return $return_arr;
-    }
+    
 
     
     public function update($table, $data, $id, $idname)
@@ -261,13 +249,26 @@ class Entity extends Conexao
     public function login($table, $usuario, $senha)
     {
         $pdo = parent::getInstance();
-        $sql = "SELECT * FROM $table WHERE usuario ='$usuario' and senha = '$senha';";
+        $sql = "SELECT * FROM $table WHERE nome_usuario ='$usuario' and senha = '$senha';";
 
         $statement = $pdo->query($sql);
         $statement->execute();
 
         while ($row = $statement->fetch()) {
-            $return_arr[] = $row['usuario'];
+            $return_arr[] = $row['id_entusiasta'];
+        }
+
+        return $return_arr;
+    }
+    public function getIdByUsername($tabela, $nomeColuna, $username)
+    {
+        $pdo = parent::getInstance();
+        $sql = "SELECT * FROM $tabela WHERE $nomeColuna = '$username'";
+        $statement = $pdo->prepare($sql);
+        $statement->execute();
+
+        while ($row = $statement->fetch()) {
+            $return_arr[] = $row['id_entusiasta'];
         }
 
         return $return_arr;

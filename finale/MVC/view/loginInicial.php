@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-Br">
+
 <head>
   <title>Login do Entusiasta</title>
   <meta charset="utf-8">
@@ -11,8 +12,67 @@
   <!-- Fim insercão Bootstrap Versão 4-->
   <!-- css do site-->
   <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/bolaPerfil.css">
 </head>
+
 <body>
 
+  <?php
+  include_once("incluiveis/header.php");
+  ?>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-md-12 chapter-boot form-boot">
+        <div class="chapter-container formulario">
+
+          <form action="../controller/login.php" method="post" class="wrapper">
+            <div class="chapter-extremidade texto">
+              <p class="titulo">Olá Entusiasta!</p>
+              <p class="linhafina">Entre em sua conta para ver o Finale.</p>
+            </div>
+            <div class="chapter-conteudo">
+
+              <div class="label-holder">
+                <p class="label">Usuário / Nome do Entusiasta: </p>
+              </div>
+              <div class="input-holder">
+                <input type="text" class="inputBasico" name="nome-usuario">
+              </div>
+              <div class="label-holder">
+                <p class="label">Senha: </p>
+              </div>
+              <div class="input-holder">
+                <input type="text" class="inputBasico" name="senha">
+              </div>
+              <div class="input-holder">
+                <div class="checkbox-holder">
+                  <input type="checkbox" class="inputBasicoCheck" name="cookie">
+                </div>
+                <div class="remember-holder">
+                  Manter-se conectado
+                </div>
+              </div>
+
+
+            </div>
+            <div class="chapter-extremidade">
+              <button>Registrar-se</button> <button type="submit">Entrar</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <?php
+  include_once("incluiveis/footer.php");
+  ?>
+
 </body>
+
 </html>

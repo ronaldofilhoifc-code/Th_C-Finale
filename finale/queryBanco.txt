@@ -38,3 +38,5 @@ create table associativa (
     foreign key (id_arma) references arma(id_arma)
 
 );
+
+insert into entusiasta(nome_usuario, senha, chave_1cap, chave_2cap, chave_3cap) values ("admin", "admin", true, true, true);

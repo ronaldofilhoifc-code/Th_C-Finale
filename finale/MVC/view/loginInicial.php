@@ -2,7 +2,7 @@
 
 session_start();
 
-echo $_SESSION["log"];
+
 
 ?>
 
@@ -31,8 +31,8 @@ echo $_SESSION["log"];
       <div class="col-md-12 est-10">
         <input id="errado" type="hidden" value="<?php
         // 
-
-        if (isset($_SESSION["checkCorreto"])){
+        
+        if (isset($_SESSION["checkCorreto"])) {
           echo $_SESSION["checkCorreto"];
         } else {
           echo 1;
@@ -68,7 +68,7 @@ echo $_SESSION["log"];
                   <input type="password" class="inputBasico inputSenha" name="senha" id="inputSenha">
                   <div class="see-holder" id="botaoVer">
 
-                  <img src="../../assets/imagens/ver-icon.png" class="ver-icon" id="ver-imagem">
+                    <img src="../../assets/imagens/ver-icon.png" class="ver-icon" id="ver-imagem">
 
                   </div>
                 </div>
@@ -84,7 +84,8 @@ echo $_SESSION["log"];
 
               </div>
               <div class="chapter-extremidade">
-                <button class="btn-form" type="button" onclick="window.location.href = 'registrarInicial.php'">Registrar-se</button> 
+                <button class="btn-form" type="button"
+                  onclick="window.location.href = 'registrarInicial.php'">Registrar-se</button>
                 <button class="btn-form" type="submit">Entrar</button>
               </div>
 
@@ -92,8 +93,12 @@ echo $_SESSION["log"];
           </div>
         </div>
         <div class="container-erro" id="footer-holder">
-          <?php 
+          <?php
+
+
+          if (isset($_SESSION["mensagem"])) {
             echo $_SESSION["mensagem"];
+          }
           ?>
         </div>
 

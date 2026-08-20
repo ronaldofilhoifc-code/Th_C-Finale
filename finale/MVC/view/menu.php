@@ -74,9 +74,19 @@ if (isset($_COOKIE["id"])) {
 
                                     <button type="submit">Atualizar suas credenciais</button>
                                 </form>
+                                <form action="../controller/deleteEntusiasta.php" method="post">
+                                    <input type="hidden" value="<?php echo $_SESSION['nomeUsuario'] ?>" name="nome">
+                                    <input type="hidden" value="<?php if (isset($_COOKIE["id"])) {
+                                        echo $_COOKIE["id"];
+                                        
+                                    } else if (isset($_SESSION["id"])) {
+                                        echo $_SESSION["id"];
+                                    } ?>" name="id">
+                                    <button type="submit">Deletar sua conta</button>
+                                </form>
                                 <form action="../controller/logoff.php" class="wrapper" method="post">
 
-                                    <input type="text" value="<?php echo $_SESSION['nomeUsuario'] ?>" name="nome">
+                                    <input type="hidden" value="<?php echo $_SESSION['nomeUsuario'] ?>" name="nome">
                                     <button type="submit">Logoff</button>
                                 </form>
                             </div>
@@ -136,7 +146,8 @@ if (isset($_COOKIE["id"])) {
                 <textarea class="teste" id="log"><?php echo $_SESSION["log"] ?></textarea>
                 <button id="emissao">Emitir Relatório</button>
                 <form action="../controller/resetarLog.php" method="post">
-                    <button title="Resetar relatório" id="atualizacao" type="submit"><img src="../../assets/imagens/reset.png" class="reset-icon"></button>
+                    <button title="Resetar relatório" id="atualizacao" type="submit"><img
+                            src="../../assets/imagens/reset.png" class="reset-icon"></button>
                 </form>
 
             </div>

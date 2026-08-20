@@ -12,9 +12,21 @@ $novoUser["chave_2cap"] = false;
 $novoUser["chave_3cap"] = false;
 
 if (strlen($novoUser["nome_usuario"]) >= 2) {
-    $_SESSION["log"] = $_SESSION["log"] . "\n- Criou um Entusiasta com nome = " . $novoUser["nome_usuario"];
-    $Entity->insert("entusiasta", $novoUser);
-    header("Location: ../view/registrarInicial.php");
+
+    try {
+        $_SESSION["log"] = $_SESSION["log"] . "\n- Criou um Entusiasta com nome = " . $novoUser["nome_usuario"];
+        $Entity->insert("entusiasta", $novoUser);
+        header("Location: ../view/registrarInicial.php");
+    } catch (Exception $e) {
+        if ($e->getCode() == '23000') {
+        $_SESSION["errouLog"] = 0;
+        $_SESSION["mensagem"] = "Já existe um usuário com esse nome!";
+        $_SESSION["log"] = $_SESSION["log"] . "\n- Tentou criar um Entusiasta com um nome que já existe, " . $novoUser["nome_usuario"];
+        header("Location: ../view/registrarInicial.php");   
+        }
+    }
+
+
 } else {
     $_SESSION["errouLog"] = 0;
     $_SESSION["mensagem"] = "Crie um nome com 2 caracteres ou mais!";

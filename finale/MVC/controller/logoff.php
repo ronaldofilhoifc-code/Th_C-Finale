@@ -2,10 +2,12 @@
 
 session_start();
 
-$logSave = $_SESSION["log"]."\n-Fez o logoff da conta ".$_POST["nome"];
+$logSave = $_SESSION["log"]."\n- Fez o logoff da conta ".$_POST["nome"];
 
 unset($_SESSION["id"]);
 unset($_SESSION["nomeUsuario"]);
+unset($_SESSION["mensagem"]);
+unset($_SESSION["errouLog"]);
 
 setcookie("id", "", time() - 2628000, "/");
 

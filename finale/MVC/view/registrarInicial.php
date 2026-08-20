@@ -85,7 +85,9 @@ session_start();
                 </div>
                 <div class="container-erro" id="footer-holder">
                     <?php
-                    echo $_SESSION["mensagem"];
+                    if (isset($_SESSION["mensagem"])) {
+                        echo $_SESSION["mensagem"];
+                    }
                     ?>
                 </div>
 

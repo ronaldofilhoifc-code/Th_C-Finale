@@ -4,8 +4,6 @@ session_start();
 
 $fallback = $_POST;
 
-print_r($fallback);
-
 ?>
 
 <!DOCTYPE html>

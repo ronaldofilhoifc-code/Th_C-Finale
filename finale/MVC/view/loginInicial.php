@@ -1,3 +1,9 @@
+<?php 
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-Br">
 
@@ -12,7 +18,6 @@
   <!-- Fim insercão Bootstrap Versão 4-->
   <!-- css do site-->
   <link rel="stylesheet" href="../../assets/css/style.css">
-  <link rel="stylesheet" href="../../assets/css/bolaPerfil.css">
   <link rel="stylesheet" href="../../assets/css/header.css">
 </head>
 
@@ -23,6 +28,10 @@
             <div class="col-md-12 a-boot">
                 <div class="talvez-logo" id="alvo">
 
+                <input id="errado" type="hidden" value="<?php  
+                echo $_SESSION["checkCorreto"];
+                ?>">
+
                 </div>
             </div>
         </div>
@@ -31,7 +40,7 @@
   <div class="container-fluid">
     <div class="row">
 
-      <div class="col-md-12 chapter-boot form-boot">
+      <div class="col-md-12 chapter-boot form-boot" id="oNormal">
         <div class="chapter-container formulario">
 
           <form action="../controller/login.php" method="post" class="wrapper">
@@ -79,6 +88,8 @@
   <?php
   include_once("incluiveis/footer.php");
   ?>
+
+  <script src="../../assets/js/errosInsanos.js"></script>
 
 </body>
 

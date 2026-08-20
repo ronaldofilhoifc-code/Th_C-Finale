@@ -101,7 +101,22 @@ body {
 p {
     margin: 0;
 }
-.form-boot {
-    height: 650px;
-    /* background-color: darkred; */
+
+.organiza-info {
+    display: flex;
+    flex-direction: column;
+}
+.container-formulario {
+    height: 100%;
+    /* background-color: chartreuse; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-erro {
+    display: none;
+    height: 20%;
+    justify-content: center;
+    align-items: center;
+    /* background-color: chocolate; */
 }

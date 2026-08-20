@@ -1,0 +1,15 @@
+body, html {
+    height: fit-content;
+    margin: 0%;
+    padding: 0%;
+}
+.est-10 {
+    height: 10vh;
+    background-color: aqua;
+}
+.est-20 {
+    height: 20vh;
+}
+.est-80 {
+    height: 80vh;
+}

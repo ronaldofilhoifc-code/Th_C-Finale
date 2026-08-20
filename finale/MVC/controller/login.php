@@ -11,6 +11,7 @@ $resultado2 = $Entity->login("entusiasta", $_POST["nome-usuario"], $_POST["senha
 if (empty($resultado2)) {
 
     $_SESSION["mensagem"] = "Esse usuário não existe!";
+    $_SESSION["checkCorreto"] = "0";
     header("Location: ../view/loginInicial.php");
 
 } else {

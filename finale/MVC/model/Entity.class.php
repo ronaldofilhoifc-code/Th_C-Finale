@@ -107,50 +107,9 @@ class Entity extends Conexao
         }
 
         $statement->execute();
-
-        if ($table == "emprestimo") {
-            $this->diminuirEmprestimos($data["id_livro"]);
-        }
     }
-    private function diminuirEmprestimos($id)
-    {
-        $pdo = parent::getInstance();
-
-
-        $sql = "UPDATE livro SET quantidade = quantidade - 1 where id_livro = '$id';";
-        $statement = $pdo->prepare($sql);
-
-        $statement->execute();
-
-
-    }
-    public function aumentarEmprestimos($id)
-    {
-        $pdo = parent::getInstance();
-
-
-        $sql = "UPDATE livro SET quantidade = (quantidade + 1) where id_livro = '$id';";
-        $statement = $pdo->prepare($sql);
-
-        $statement->execute();
-        //aq ta certo
-
-
-    }
-    public function deleteEmprestimo($id, $idval)
-    {
-        $idBook = $this->searchIdLivro($idval);
-
-        $pdo = parent::getInstance();
-        $sql = "DELETE FROM emprestimo WHERE $id = :id";
-        $statement = $pdo->prepare($sql);
-        $statement->bindValue(":id", $idval);
-        $statement->execute();
-
-
-        $this->aumentarEmprestimos($idBook);
-
-    }
+    
+    
     public function searchIdLivro($id)
     {
 

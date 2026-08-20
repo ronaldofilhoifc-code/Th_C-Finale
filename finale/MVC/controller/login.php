@@ -18,13 +18,13 @@ if (empty($resultado2)) {
 
     if (isset($resultado["cookie"])) {
         
-        $_SESSION["log"] = $_SESSION["log"]."\n  - Cadastrou-se com cookies";
+        $_SESSION["log"] = $_SESSION["log"]."\n- Cadastrou-se com cookies";
 
         setcookie("id", $resultado2[0], time() + 2628000, "/");
         echo $_COOKIE["id"];
     } else {
        
-        $_SESSION["log"] = $_SESSION["log"]."\n  - Cadastrou-se com sessão";
+        $_SESSION["log"] = $_SESSION["log"]."\n- Cadastrou-se com sessão";
 
         $_SESSION["id"] = $resultado2[0];
     }

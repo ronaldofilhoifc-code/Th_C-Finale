@@ -47,8 +47,8 @@ if (isset($_COOKIE["id"])) {
                         data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><?php
 
                         echo $Entity->iniciaisBolaPerfil($_SESSION["nomeUsuario"]);
-                        
-                        
+
+
 
                         ?></div>
 
@@ -61,8 +61,8 @@ if (isset($_COOKIE["id"])) {
                         </div>
                         <div class="offcanvas-body">
                             <div class="update-holder">
-                                <form action="../controller/updateEntusiasta.php" class="wrapper" method="post">
-                                    <input name="id_entusiasta" type="text" value="<?php
+                                <form action="../view/atualizarInicial.php" class="wrapper" method="post">
+                                    <input name="id_entusiasta" type="hidden" value="<?php
 
                                     if (isset($_SESSION["id"])) {
                                         echo "" . $_SESSION["id"];
@@ -71,13 +71,12 @@ if (isset($_COOKIE["id"])) {
                                     }
 
                                     ?>">
-                                    <input name="nome_usuario" value="jorge" type="text">
 
                                     <button type="submit">Atualizar suas credenciais</button>
                                 </form>
                                 <form action="../controller/logoff.php" class="wrapper" method="post">
 
-
+                                    <input type="text" value="<?php echo $_SESSION['nomeUsuario'] ?>" name="nome">
                                     <button type="submit">Logoff</button>
                                 </form>
                             </div>
@@ -136,6 +135,10 @@ if (isset($_COOKIE["id"])) {
 
                 <textarea class="teste" id="log"><?php echo $_SESSION["log"] ?></textarea>
                 <button id="emissao">Emitir Relatório</button>
+                <form action="../controller/resetarLog.php" method="post">
+                    <button title="Resetar relatório" id="atualizacao" type="submit"><img src="../../assets/imagens/reset.png" class="reset-icon"></button>
+                </form>
+
             </div>
         </div>
     </div>

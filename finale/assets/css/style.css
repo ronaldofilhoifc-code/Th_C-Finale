@@ -18,7 +18,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     /* background-color: darkgreen; */
 }
 .teste {
@@ -70,6 +69,7 @@ body {
 .inputBasico {
     height: 40px;
     width: 100%;
+    border: 1px solid black;
 }
 .inputBasicoCheck {
     height: 25px;
@@ -119,4 +119,42 @@ p {
     justify-content: center;
     align-items: center;
     /* background-color: chocolate; */
+}
+.inputSenha {
+    width: 85%;
+    border-right: 0px;
+}
+.see-holder {
+    height: 40px;
+    width: 15%;
+    /* background-color: chartreuse; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-left: 0px;
+}
+.ver-icon {
+    width: 25px;
+    height: 25px;
+}
+.btn-form {
+    width: 125px;
+}
+
+#emissao {
+    margin-right: 10px;
+    height: 30px;
+}
+
+#atualizacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+
+.reset-icon {
+    width: 20px;
+    height: 20px;
 }

@@ -2,6 +2,8 @@
 
 session_start();
 
+echo $_SESSION["log"];
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +30,13 @@ session_start();
     <div class="row">
       <div class="col-md-12 est-10">
         <input id="errado" type="hidden" value="<?php
-        echo $_SESSION["checkCorreto"];
+        // 
+
+        if (isset($_SESSION["checkCorreto"])){
+          echo $_SESSION["checkCorreto"];
+        } else {
+          echo 1;
+        }
         ?>">
       </div>
     </div>
@@ -56,8 +64,13 @@ session_start();
                 <div class="label-holder">
                   <p class="label">Senha: </p>
                 </div>
-                <div class="input-holder">
-                  <input type="text" class="inputBasico" name="senha">
+                <div class="input-holder inputSenha-holder">
+                  <input type="password" class="inputBasico inputSenha" name="senha" id="inputSenha">
+                  <div class="see-holder" id="botaoVer">
+
+                  <img src="../../assets/imagens/ver-icon.png" class="ver-icon" id="ver-imagem">
+
+                  </div>
                 </div>
                 <div class="input-holder">
                   <div class="checkbox-holder">
@@ -71,7 +84,8 @@ session_start();
 
               </div>
               <div class="chapter-extremidade">
-                <button>Registrar-se</button> <button type="submit">Entrar</button>
+                <button class="btn-form" type="button" onclick="window.location.href = 'registrarInicial.php'">Registrar-se</button> 
+                <button class="btn-form" type="submit">Entrar</button>
               </div>
 
             </form>
@@ -95,6 +109,7 @@ session_start();
   </div>
 
   <script src="../../assets/js/errosInsanos.js"></script>
+  <script src="../../assets/js/botaoVer.js"></script>
 
 </body>
 

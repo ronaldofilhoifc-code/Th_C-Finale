@@ -7,7 +7,42 @@ require_once("Conexao.class.php");
 class Entity extends Conexao
 {
 
-    //Listar
+    public function formatData($dataDiretoDoBanco)
+    {
+        $dataIncrivel = $dataDiretoDoBanco;
+
+        $ano = strpos($dataIncrivel, "-");
+        $ano2 = strrpos($dataIncrivel, "-");
+        $anoEpico = substr($dataIncrivel, 0, $ano);
+        $mesEpico = substr($dataIncrivel, $ano + 1, $ano2 - 5);
+        $diaEpico = substr($dataIncrivel, $ano2 + 1, strlen($dataIncrivel));
+
+        $result = $diaEpico."/".$mesEpico."/".$anoEpico;
+
+        return $result;
+    }
+
+    public function iniciaisBolaPerfil($nomeUsuario) {
+
+    $nomeUsuario = strtoupper($nomeUsuario);
+
+    $a = trim($nomeUsuario);
+    $result = "";
+
+    for ($i = 0; $i < strlen($a); $i++) {
+        if ($a[$i] == " ") {
+            $result = $a[0].$a[$i+1];
+            break;
+        } else {
+            $result = $a[0].$a[1];
+        }
+    }
+
+    return $result;
+
+    }
+
+    
     public function list($table)
     {
         $pdo = parent::getInstance();
@@ -40,20 +75,7 @@ class Entity extends Conexao
         return $statement->fetchAll(); //transforma a tabela do banco em um vetor 
     }
 
-    public function formatData($dataDiretoDoBanco)
-    {
-        $dataIncrivel = $dataDiretoDoBanco;
-
-        $ano = strpos($dataIncrivel, "-");
-        $ano2 = strrpos($dataIncrivel, "-");
-        $anoEpico = substr($dataIncrivel, 0, $ano);
-        $mesEpico = substr($dataIncrivel, $ano + 1, $ano2 - 5);
-        $diaEpico = substr($dataIncrivel, $ano2 + 1, strlen($dataIncrivel));
-
-        $result = $diaEpico."/".$mesEpico."/".$anoEpico;
-
-        return $result;
-    }
+    
 
 
     //Listar
@@ -273,6 +295,19 @@ class Entity extends Conexao
 
         return $return_arr;
     }
+    public function getUsernameById($id)
+    {
+        $pdo = parent::getInstance();
+        $sql = "SELECT * FROM entusiasta WHERE id_entusiasta = '$id'";
+        $statement = $pdo->prepare($sql);
+        $statement->execute();
+
+        while ($row = $statement->fetch()) {
+            $return_arr[] = $row['nome_usuario'];
+        }
+
+        return $return_arr;
+    }
 
     public function checkAdm($usuario)
     {
@@ -304,8 +339,6 @@ class Entity extends Conexao
             return true;//1
         }
         return false;//nada
-
-
 
     }
 }

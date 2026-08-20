@@ -13,13 +13,20 @@
   <!-- css do site-->
   <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="stylesheet" href="../../assets/css/bolaPerfil.css">
+  <link rel="stylesheet" href="../../assets/css/header.css">
 </head>
 
 <body>
 
-  <?php
-  include_once("incluiveis/header.php");
-  ?>
+  <div class="container-fluid header-sticky">
+        <div class="row">
+            <div class="col-md-12 a-boot">
+                <div class="talvez-logo" id="alvo">
+
+                </div>
+            </div>
+        </div>
+    </div>
 
   <div class="container-fluid">
     <div class="row">

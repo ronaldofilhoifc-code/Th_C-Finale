@@ -8,6 +8,8 @@ unset($_SESSION["id"]);
 unset($_SESSION["nomeUsuario"]);
 unset($_SESSION["mensagem"]);
 unset($_SESSION["errouLog"]);
+unset($_SESSION["id_entusiasta"]);
+unset($_SESSION["devolveID"]);
 
 setcookie("id", "", time() - 2628000, "/");
 

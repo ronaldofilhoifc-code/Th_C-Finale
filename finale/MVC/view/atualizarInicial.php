@@ -1,8 +1,17 @@
 <?php
-
 session_start();
+require_once("../model/Entity.class.php");
+$Entity = new Entity();
 
-$fallback = $_POST;
+
+if (!isset($_SESSION["devolveID"])) {
+    $fallback = $_POST["id_entusiasta"];
+    $coisas = $Entity->getInfo("entusiasta", $fallback, "id_entusiasta");
+} else {
+    $coisas = $Entity->getInfo("entusiasta", $_SESSION["devolveID"], "id_entusiasta");
+}
+
+
 
 ?>
 
@@ -59,16 +68,31 @@ $fallback = $_POST;
                                     <p class="label">Usuário / Nome do Entusiasta: </p>
                                 </div>
                                 <div class="input-holder">
-                                    <input type="text" class="inputBasico" name="nome_usuario">
-                                    <input type="hidden" class="inputBasico" name="id_entusiasta" value="<?php 
-                                        echo $fallback["id_entusiasta"];
+                                    <input type="text" class="inputBasico" name="nome_usuario" value="<?php
+
+                                    echo $coisas[0]["nome_usuario"];
+
+                                    ?>">
+                                    <input type="hidden" class="inputBasico" name="id_entusiasta" value="<?php
+
+
+                                    if (isset($_SESSION["devolveID"])) {
+                                        echo $_SESSION["devolveID"];
+                                    } else {
+                                        echo $fallback;
+                                    }
                                     ?>">
                                 </div>
                                 <div class="label-holder">
                                     <p class="label">Senha: </p>
                                 </div>
                                 <div class="input-holder inputSenha-holder">
-                                    <input type="password" class="inputBasico inputSenha" name="senha" id="inputSenha">
+                                    <input type="password" class="inputBasico inputSenha" name="senha" id="inputSenha"
+                                        value="<?php
+
+                                        echo $coisas[0]["senha"];
+
+                                        ?>">
 
                                     <div class="see-holder" id="botaoVer">
 
@@ -90,7 +114,9 @@ $fallback = $_POST;
                 </div>
                 <div class="container-erro" id="footer-holder">
                     <?php
-                    echo $_SESSION["mensagem"];
+                    if (isset($_SESSION["mensagem"])) {
+                        echo $_SESSION["mensagem"];
+                    }
                     ?>
                 </div>
 

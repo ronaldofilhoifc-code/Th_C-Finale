@@ -1,4 +1,4 @@
-# ÚLTIMA MUDANÇA - Commit 20/08, 21:26
+# ÚLTIMA MUDANÇA - Commit 20/08, 21:26 (anotem coisas no readme)
 
 LEMBRETES:
 

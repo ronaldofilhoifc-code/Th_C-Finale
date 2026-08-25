@@ -6,16 +6,14 @@ $Entity = new Entity();
 
 function emptyCheck($vetor) {
 
-    $result = false;
 
     foreach($vetor as $a) {
         if (empty($a)) {
-            $result = true;
-            break;
+            return true;
         }
     }
 
-    return $result;
+    return false;
 }
 
 $_SESSION["errouLog"] = 1;
@@ -24,8 +22,10 @@ $novoUser = $_POST;
 $novoUser["chave_1cap"] = true;
 $novoUser["chave_2cap"] = false;
 $novoUser["chave_3cap"] = false;
-
-if (strlen($novoUser["nome_usuario"]) >= 2 && !emptyCheck($novoUser)) {
+echo strlen($novoUser["nome_usuario"]) >= 2;
+echo !empty($novoUser["nome_usuario"]);
+echo !empty($novoUser["senha"]);
+if (strlen($novoUser["nome_usuario"]) >= 2 && !empty($novoUser["nome_usuario"]) && !empty($novoUser["senha"])){
 
     try {
         $_SESSION["log"] = $_SESSION["log"] . "\n- Criou um Entusiasta com nome = " . $novoUser["nome_usuario"];
@@ -53,7 +53,7 @@ if (strlen($novoUser["nome_usuario"]) >= 2 && !emptyCheck($novoUser)) {
     $_SESSION["mensagem"] = "Crie um nome com 2 caracteres ou mais!";
     $_SESSION["log"] = $_SESSION["log"] . "\n- Tentou criar um Entusiasta com nome " . $novoUser["nome_usuario"] .
         ", mas falhou. (< 2 caracteres)";
-    header("Location: ../view/registrarInicial.php");
+    // header("Location: ../view/registrarInicial.php");
 }
 
 

@@ -6,9 +6,9 @@ create table entusiasta (
     id_entusiasta int(10) not null primary key AUTO_INCREMENT,
     nome_usuario varchar(50) unique,
     senha varchar(50),
-    chave_1cap boolean,
-    chave_2cap boolean,
-    chave_3cap boolean
+    chave_1cap boolean default true,
+    chave_2cap boolean default false,
+    chave_3cap boolean default false
 
 );
 

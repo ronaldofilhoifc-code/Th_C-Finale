@@ -17,32 +17,32 @@ class Entity extends Conexao
         $mesEpico = substr($dataIncrivel, $ano + 1, $ano2 - 5);
         $diaEpico = substr($dataIncrivel, $ano2 + 1, strlen($dataIncrivel));
 
-        $result = $diaEpico."/".$mesEpico."/".$anoEpico;
+        $result = $diaEpico . "/" . $mesEpico . "/" . $anoEpico;
 
         return $result;
     }
 
-    public function iniciaisBolaPerfil($nomeUsuario) {
+    public function iniciaisBolaPerfil($nomeUsuario)
+    {
 
-    $nomeUsuario = strtoupper($nomeUsuario);
+        $nomeUsuario = strtoupper($nomeUsuario);
 
-    $a = trim($nomeUsuario);
-    $result = "";
+        $a = trim($nomeUsuario);
+        $result = "";
 
-    for ($i = 0; $i < strlen($a); $i++) {
-        if ($a[$i] == " ") {
-            $result = $a[0].$a[$i+1];
-            break;
-        } else {
-            $result = $a[0].$a[1];
+        for ($i = 0; $i < strlen($a); $i++) {
+            if ($a[$i] == " ") {
+                $result = $a[0] . $a[$i + 1];
+                break;
+            } else {
+                $result = $a[0] . $a[1];
+            }
         }
+
+        return $result;
     }
 
-    return $result;
 
-    }
-
-    
     public function list($table)
     {
         $pdo = parent::getInstance();
@@ -75,7 +75,7 @@ class Entity extends Conexao
         return $statement->fetchAll(); //transforma a tabela do banco em um vetor 
     }
 
-    
+
 
 
     //Listar
@@ -108,8 +108,8 @@ class Entity extends Conexao
 
         $statement->execute();
     }
-    
-    
+
+
     public function searchIdLivro($id)
     {
 
@@ -154,9 +154,9 @@ class Entity extends Conexao
         return $statement->fetchAll();
     }
 
-    
 
-    
+
+
     public function update($table, $data, $id, $idname)
     {
         $pdo = parent::getInstance();
@@ -189,11 +189,9 @@ class Entity extends Conexao
                 $stmt->execute();
 
                 return 1;
-
             } else {
 
                 return 2;
-
             }
 
             // FIM DO PROCESSO DE REBAIXAMENTO
@@ -207,11 +205,7 @@ class Entity extends Conexao
             $stmt->execute();
 
             return 0;
-
         }
-
-
-
     }
 
     public function updateEmprestimo($id_emprestimo, $id_usuario, $data_emprestimo, $data_devolucao)
@@ -278,26 +272,26 @@ class Entity extends Conexao
 
 
         if ($statement->rowCount() >= 1) {
-            return true;//1
+            return true; //1
         }
-        return false;//nada
+        return false; //nada
 
 
 
     }
-    public function checkAdmID($id)
+    public function checkCapituloID($capitulo, $id)
     {
+
+        $chaveJorge = "chave_" . $capitulo . "cap";
+
+
         $pdo = parent::getInstance();
-        $sql = "SELECT medidorEspecial FROM login WHERE id_usuario = '$id' and medidorEspecial=1";
+        $sql = "SELECT * FROM entusiasta WHERE id_entusiasta = $id and $chaveJorge =1";
 
         $statement = $pdo->query($sql);
+
         $statement->execute();
-
-
-        if ($statement->rowCount() >= 1) {
-            return true;//1
-        }
-        return false;//nada
-
+        $resultado = $statement->fetchAll();
+        return $resultado[0][$chaveJorge];
     }
 }

@@ -5,6 +5,13 @@ body {
 
 }
 
+.centraliza-botao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aqua; */
+}
+
 .chapter-boot {
     height: 590px;
     /* background-color: chocolate; */

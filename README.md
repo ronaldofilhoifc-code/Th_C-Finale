@@ -9,6 +9,4 @@ LEMBRETES:
 
 alguns problemas que precisam ser corrigidos:
 
-- o pdf de relatório imprimindo no máximo uma página (problema pq se o user fazer muitas ações controller, o pdf quebra)
-- adaptar página de menu (menu.php) para modelo estático (tipo nas páginas dos cruds de entusiasta)
 - mensagens de erro aparecendo caso tenha acontecido um erro, aí o user dá um acerto e volta para a página

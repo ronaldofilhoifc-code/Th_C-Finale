@@ -1,4 +1,4 @@
-# ÚLTIMA MUDANÇA - Commit 20/08, 21:26 (anotem coisas no readme)
+# ÚLTIMA MUDANÇA - Commit 31/08, 17:35 (anotem coisas no readme)
 
 LEMBRETES:
 
@@ -7,6 +7,11 @@ LEMBRETES:
 
 - fazer testes regularmente para pegar erros e colocá-los nesse texto
 
-alguns problemas que precisam ser corrigidos:
+O que precisa ser feito:
 
-- mensagens de erro aparecendo caso tenha acontecido um erro, aí o user dá um acerto e volta para a página
+- Capitulo 1
+- Capitulo 2
+- Capitulo 3
+- Estilo do Menu
+- Verificar capitulo no Menu
+- checar se a correção das mensagens foi feita

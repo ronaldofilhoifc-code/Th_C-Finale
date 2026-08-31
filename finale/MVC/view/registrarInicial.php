@@ -2,6 +2,8 @@
 
 session_start();
 
+$_SESSION["ultimaPagina"] = "loginInicial.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +28,7 @@ session_start();
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 est-10">
+            <div class="col-md-12 est-10 header">
                 <input id="errado" type="hidden" value="<?php
 
 
@@ -75,28 +77,31 @@ session_start();
 
                             </div>
                             <div class="chapter-extremidade">
-                                <button class="btn-form" type="button"
-                                    onclick="window.location.href = 'loginInicial.php'">Fazer login</button>
-                                <button class="btn-form" type="submit">Criar</button>
-                            </div>
 
+                                <button class="btn-form" type="submit">Criar</button>
+                        </form>
+                        <form name="doubtcomesin" method="post" action="../controller/antiLog.php">
+                            <button class="btn-form" type="submit">Fazer Login</button>
                         </form>
                     </div>
-                </div>
-                <div class="container-erro" id="footer-holder">
-                    <?php
-                    if (isset($_SESSION["mensagem"])) {
-                        echo $_SESSION["mensagem"];
-                    }
-                    ?>
-                </div>
 
+
+                </div>
             </div>
+            <div class="container-erro" id="footer-holder">
+                <?php
+                if (isset($_SESSION["mensagem"])) {
+                    echo $_SESSION["mensagem"];
+                }
+                ?>
+            </div>
+
         </div>
+    </div>
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 est-10">
+            <div class="col-md-12 est-10 header">
 
             </div>
         </div>

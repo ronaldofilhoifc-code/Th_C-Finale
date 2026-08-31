@@ -2,8 +2,7 @@
 
 session_start();
 
-
-
+$_SESSION["ultimaPagina"] = "registrarInicial.php";
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +27,7 @@ session_start();
 
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-12 est-10">
+      <div class="col-md-12 est-10 header">
         <input id="errado" type="hidden" value="<?php
         // 
         
@@ -83,31 +82,37 @@ session_start();
 
 
               </div>
-              <div class="chapter-extremidade">
-                <button class="btn-form" type="button"
-                  onclick="window.location.href = 'registrarInicial.php'">Registrar-se</button>
-                <button class="btn-form" type="submit">Entrar</button>
-              </div>
 
+              <div class="chapter-extremidade">
+
+                <button class="btn-form" type="submit">Entrar</button>
+            </form>
+
+            <form name="doubtcomesin" method="post" action="../controller/antiLog.php">
+              <button class="btn-form" type="submit">Registrar-se</button>
             </form>
           </div>
+
+
+
         </div>
-        <div class="container-erro" id="footer-holder">
-          <?php
-
-
-          if (isset($_SESSION["mensagem"])) {
-            echo $_SESSION["mensagem"];
-          }
-          ?>
-        </div>
-
       </div>
+      <div class="container-erro" id="footer-holder">
+        <?php
+
+
+        if (isset($_SESSION["mensagem"])) {
+          echo $_SESSION["mensagem"];
+        }
+        ?>
+      </div>
+
     </div>
+  </div>
   </div>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-12 est-10">
+      <div class="col-md-12 est-10 header">
 
       </div>
     </div>

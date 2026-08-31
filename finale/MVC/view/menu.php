@@ -3,6 +3,8 @@ session_start();
 require_once("../model/Entity.class.php");
 $Entity = new Entity();
 
+$_SESSION["ultimaPagina"] = "menu.php";
+
 if (isset($_COOKIE["id"])) {
     $panorama = $Entity->getUsernameById($_COOKIE["id"]);
     $_SESSION["nomeUsuario"] = $panorama[0];

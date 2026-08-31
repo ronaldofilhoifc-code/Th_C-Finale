@@ -3,6 +3,8 @@ session_start();
 require_once("../model/Entity.class.php");
 $Entity = new Entity();
 
+$_SESSION["ultimaPagina"] = "menu.php";
+
 
 if (!isset($_SESSION["devolveID"])) {
     $fallback = $_POST["id_entusiasta"];
@@ -37,7 +39,7 @@ if (!isset($_SESSION["devolveID"])) {
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 est-10">
+            <div class="col-md-12 est-10 header">
                 <input id="errado" type="hidden" value="<?php
 
 
@@ -104,28 +106,31 @@ if (!isset($_SESSION["devolveID"])) {
 
                             </div>
                             <div class="chapter-extremidade">
-                                <button class="btn-form" type="button"
-                                    onclick="window.location.href = 'menu.php'">Voltar</button>
-                                <button class="btn-form" type="submit">Atualizar</button>
-                            </div>
 
+                                <button class="btn-form" type="submit">Atualizar</button>
+                        </form>
+                        <form name="doubtcomesin" method="post" action="../controller/antiLog.php">
+                            <button class="btn-form" type="submit">Voltar ao Menu</button>
                         </form>
                     </div>
-                </div>
-                <div class="container-erro" id="footer-holder">
-                    <?php
-                    if (isset($_SESSION["mensagem"])) {
-                        echo $_SESSION["mensagem"];
-                    }
-                    ?>
-                </div>
 
+
+                </div>
             </div>
+            <div class="container-erro" id="footer-holder">
+                <?php
+                if (isset($_SESSION["mensagem"])) {
+                    echo $_SESSION["mensagem"];
+                }
+                ?>
+            </div>
+
         </div>
+    </div>
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 est-10">
+            <div class="col-md-12 est-10 header">
 
             </div>
         </div>

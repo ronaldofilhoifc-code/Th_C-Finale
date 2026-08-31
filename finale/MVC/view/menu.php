@@ -37,69 +37,9 @@ if (isset($_COOKIE["id"])) {
 
 
 
-    <!-- <div class="container-fluid header-sticky">
-        <div class="row">
-            <div class="col-md-12 a-boot">
-                <div class="talvez-logo" id="alvo">
-
-                </div>
-                <div class="adicionavel" id="alvo">
-                    <div class="btn btn-primary bola-perfil" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><?php
-
-                                                                                                echo $Entity->iniciaisBolaPerfil($_SESSION["nomeUsuario"]);
-
-
-
-                                                                                                ?></div>
-
-                    <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1"
-                        id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Menu do Entusiasta</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <div class="update-holder">
-                                <form action="../view/atualizarInicial.php" class="wrapper" method="post">
-                                    <input name="id_entusiasta" type="hidden" value="<?php
-
-                                                                                        if (isset($_SESSION["id"])) {
-                                                                                            echo "" . $_SESSION["id"];
-                                                                                        } else if (isset($_COOKIE["id"])) {
-                                                                                            echo "" . $_COOKIE["id"];
-                                                                                        }
-
-                                                                                        ?>">
-
-                                    <button type="submit">Atualizar suas credenciais</button>
-                                </form>
-                                <form action="../controller/deleteEntusiasta.php" method="post">
-                                    <input type="hidden" value="<?php echo $_SESSION['nomeUsuario'] ?>" name="nome">
-                                    <input type="hidden" value="<?php if (isset($_COOKIE["id"])) {
-                                                                    echo $_COOKIE["id"];
-                                                                } else if (isset($_SESSION["id"])) {
-                                                                    echo $_SESSION["id"];
-                                                                } ?>" name="id">
-                                    <button type="submit">Deletar sua conta</button>
-                                </form>
-                                <form action="../controller/logoff.php" class="wrapper" method="post">
-
-                                    <input type="hidden" value="<?php echo $_SESSION['nomeUsuario'] ?>" name="nome">
-                                    <button type="submit">Logoff</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 est-10">
+            <div class="col-md-12 est-10 header">
                 <div class="adicionavel" id="alvo">
                     <div class="btn btn-primary bola-perfil" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><?php
@@ -155,90 +95,10 @@ if (isset($_COOKIE["id"])) {
     </div>
 
 
-    <!-- <div class="container-fluid" id="messiah">
-        <div class="row">
-            <div class="col-md-4 chapter-boot">
-                <div class="chapter-container">
-                    <div class="chapter-extremidade">
-                        Capítulo 1
-                    </div>
-                    <div class="chapter-conteudo">
-
-                    </div>
-                    <div class="chapter-extremidade">
-                        <form action="../controller/redirectCapitulo.php" method="post" class="wrapper centraliza-botao">
-                            <input type="hidden" value="1" name="elchavodelocho">
-                            <input type="hidden" value="<?php if (isset($_COOKIE["id"])) {
-                                                            echo $_COOKIE["id"];
-                                                        } else if (isset($_SESSION["id"])) {
-                                                            echo $_SESSION["id"];
-                                                        } ?>" name="id">
-                            <button type="submit">Assistir</button>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 chapter-boot">
-                <div class="chapter-container">
-                    <div class="chapter-extremidade">
-                        Capítulo 2
-                    </div>
-                    <div class="chapter-conteudo">
-
-                    </div>
-                    <div class="chapter-extremidade">
-                        <form action="../controller/redirectCapitulo.php" method="post" class="wrapper centraliza-botao">
-                            <input type="hidden" value="2" name="elchavodelocho">
-                            <input type="hidden" value="<?php if (isset($_COOKIE["id"])) {
-                                                            echo $_COOKIE["id"];
-                                                        } else if (isset($_SESSION["id"])) {
-                                                            echo $_SESSION["id"];
-                                                        } ?>" name="id">
-                            <button type="submit">Assistir</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 chapter-boot">
-                <div class="chapter-container">
-                    <div class="chapter-extremidade">
-                        Capítulo 3
-                    </div>
-                    <div class="chapter-conteudo">
-
-                    </div>
-                    <div class="chapter-extremidade">
-                        <form action="../controller/redirectCapitulo.php" method="post" class="wrapper centraliza-botao">
-                            <input type="hidden" value="3" name="elchavodelocho">
-                            <input type="hidden" value="<?php if (isset($_COOKIE["id"])) {
-                                                            echo $_COOKIE["id"];
-                                                        } else if (isset($_SESSION["id"])) {
-                                                            echo $_SESSION["id"];
-                                                        } ?>" name="id">
-                            <button type="submit">Assistir</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 relatorio-boot">
-
-                <textarea class="teste" id="log"><?php echo $_SESSION["log"] ?></textarea>
-                <button id="emissao">Emitir Relatório</button>
-                <form action="../controller/resetarLog.php" method="post">
-                    <button title="Resetar relatório" id="atualizacao" type="submit"><img
-                            src="../../assets/imagens/reset.png" class="reset-icon"></button>
-                </form>
-
-            </div>
-        </div>
-    </div> -->
-
+    
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4 est-70">
+            <div class="col-md-4 est-70 centralizar">
                 <div class="chapter-container">
                     <div class="chapter-extremidade">
                         Capítulo 1
@@ -260,7 +120,7 @@ if (isset($_COOKIE["id"])) {
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 est-70">
+            <div class="col-md-4 est-70 centralizar">
                 <div class="chapter-container">
                     <div class="chapter-extremidade">
                         Capítulo 2
@@ -281,7 +141,7 @@ if (isset($_COOKIE["id"])) {
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 est-70">
+            <div class="col-md-4 est-70 centralizar">
                 <div class="chapter-container">
                     <div class="chapter-extremidade">
                         Capítulo 3
@@ -304,7 +164,7 @@ if (isset($_COOKIE["id"])) {
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 est-10">
+            <div class="col-md-12 est-10 centralizar">
                 <textarea class="teste" id="log"><?php echo $_SESSION["log"] ?></textarea>
                 <button id="emissao">Emitir Relatório</button>
                 <form action="../controller/resetarLog.php" method="post">
@@ -317,7 +177,7 @@ if (isset($_COOKIE["id"])) {
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 est-10">
+            <div class="col-md-12 est-10 header">
 
             </div>
         </div>

@@ -33,6 +33,7 @@ if (isset($_COOKIE["id"])) {
     <link rel="stylesheet" href="../../assets/css/header.css">
     <link rel="stylesheet" href="../../assets/css/bolaPerfil.css">
     <link rel="stylesheet" href="../../assets/css/paginaEstatica.css">
+    <link rel="stylesheet" href="../../assets/css/menu.css">
 </head>
 
 <body>
@@ -46,11 +47,11 @@ if (isset($_COOKIE["id"])) {
                     <div class="btn btn-primary bola-perfil" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><?php
 
-                                                                                                echo $Entity->iniciaisBolaPerfil($_SESSION["nomeUsuario"]);
+                        echo $Entity->iniciaisBolaPerfil($_SESSION["nomeUsuario"]);
 
 
 
-                                                                                                ?></div>
+                        ?></div>
 
                     <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1"
                         id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
@@ -64,23 +65,23 @@ if (isset($_COOKIE["id"])) {
                                 <form action="../view/atualizarInicial.php" class="wrapper" method="post">
                                     <input name="id_entusiasta" type="hidden" value="<?php
 
-                                                                                        if (isset($_SESSION["id"])) {
-                                                                                            echo "" . $_SESSION["id"];
-                                                                                        } else if (isset($_COOKIE["id"])) {
-                                                                                            echo "" . $_COOKIE["id"];
-                                                                                        }
+                                    if (isset($_SESSION["id"])) {
+                                        echo "" . $_SESSION["id"];
+                                    } else if (isset($_COOKIE["id"])) {
+                                        echo "" . $_COOKIE["id"];
+                                    }
 
-                                                                                        ?>">
+                                    ?>">
 
                                     <button type="submit">Atualizar suas credenciais</button>
                                 </form>
                                 <form action="../controller/deleteEntusiasta.php" method="post">
                                     <input type="hidden" value="<?php echo $_SESSION['nomeUsuario'] ?>" name="nome">
                                     <input type="hidden" value="<?php if (isset($_COOKIE["id"])) {
-                                                                    echo $_COOKIE["id"];
-                                                                } else if (isset($_SESSION["id"])) {
-                                                                    echo $_SESSION["id"];
-                                                                } ?>" name="id">
+                                        echo $_COOKIE["id"];
+                                    } else if (isset($_SESSION["id"])) {
+                                        echo $_SESSION["id"];
+                                    } ?>" name="id">
                                     <button type="submit">Deletar sua conta</button>
                                 </form>
                                 <form action="../controller/logoff.php" class="wrapper" method="post">
@@ -97,7 +98,7 @@ if (isset($_COOKIE["id"])) {
     </div>
 
 
-    
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4 est-70 centralizar">
@@ -107,16 +108,29 @@ if (isset($_COOKIE["id"])) {
                     </div>
                     <div class="chapter-conteudo">
 
+                        <div class="chapter-info">
+
+                        </div>
+                        <div class="chapter-block" id="chap1-holder">
+                            <input id="chap1" type="hidden" value="<?php echo $_SESSION["chap1"] ?>">
+                        </div>
+
                     </div>
                     <div class="chapter-extremidade">
-                        <form action="../controller/redirectCapitulo.php" method="post" class="wrapper centraliza-botao">
+                        <form action="../controller/redirectCapitulo.php" method="post"
+                            class="wrapper centraliza-botao">
                             <input type="hidden" value="1" name="elchavodelocho">
                             <input type="hidden" value="<?php if (isset($_COOKIE["id"])) {
-                                                            echo $_COOKIE["id"];
-                                                        } else if (isset($_SESSION["id"])) {
-                                                            echo $_SESSION["id"];
-                                                        } ?>" name="id">
-                            <button type="submit">Assistir</button>
+                                $cred = $_COOKIE["id"];
+
+                                echo $cred;
+                            } else if (isset($_SESSION["id"])) {
+                                $cred = $_SESSION["id"];
+
+                                echo $cred;
+                            } ?>" name="id">
+
+                            <button type="submit" id="chap1-btn">Assistir</button>
                         </form>
 
                     </div>
@@ -128,17 +142,23 @@ if (isset($_COOKIE["id"])) {
                         Capítulo 2
                     </div>
                     <div class="chapter-conteudo">
+                        <div class="chapter-info">
 
+                        </div>
+                        <div class="chapter-block" id="chap2-holder">
+                            <input id="chap2" type="hidden" value="<?php echo $_SESSION["chap2"] ?>">
+                        </div>
                     </div>
                     <div class="chapter-extremidade">
-                        <form action="../controller/redirectCapitulo.php" method="post" class="wrapper centraliza-botao">
+                        <form action="../controller/redirectCapitulo.php" method="post"
+                            class="wrapper centraliza-botao">
                             <input type="hidden" value="2" name="elchavodelocho">
                             <input type="hidden" value="<?php if (isset($_COOKIE["id"])) {
-                                                            echo $_COOKIE["id"];
-                                                        } else if (isset($_SESSION["id"])) {
-                                                            echo $_SESSION["id"];
-                                                        } ?>" name="id">
-                            <button type="submit">Assistir</button>
+                                echo $_COOKIE["id"];
+                            } else if (isset($_SESSION["id"])) {
+                                echo $_SESSION["id"];
+                            } ?>" name="id">
+                            <button type="submit" id="chap2-btn">Assistir</button>
                         </form>
                     </div>
                 </div>
@@ -149,17 +169,23 @@ if (isset($_COOKIE["id"])) {
                         Capítulo 3
                     </div>
                     <div class="chapter-conteudo">
+                        <div class="chapter-info">
 
+                        </div>
+                        <div class="chapter-block" id="chap3-holder">
+                            <input id="chap3" type="hidden" value="<?php echo $_SESSION["chap3"] ?>">
+                        </div>
                     </div>
                     <div class="chapter-extremidade">
-                        <form action="../controller/redirectCapitulo.php" method="post" class="wrapper centraliza-botao">
+                        <form action="../controller/redirectCapitulo.php" method="post"
+                            class="wrapper centraliza-botao">
                             <input type="hidden" value="3" name="elchavodelocho">
                             <input type="hidden" value="<?php if (isset($_COOKIE["id"])) {
-                                                            echo $_COOKIE["id"];
-                                                        } else if (isset($_SESSION["id"])) {
-                                                            echo $_SESSION["id"];
-                                                        } ?>" name="id">
-                            <button type="submit">Assistir</button>
+                                echo $_COOKIE["id"];
+                            } else if (isset($_SESSION["id"])) {
+                                echo $_SESSION["id"];
+                            } ?>" name="id">
+                            <button type="submit" id="chap3-btn">Assistir</button>
                         </form>
                     </div>
                 </div>
@@ -186,6 +212,7 @@ if (isset($_COOKIE["id"])) {
     </div>
 
     <script src="../../assets/js/relatorio.js"></script>
+    <script src="../../assets/js/chapBlocker.js"></script>
 
 </body>
 

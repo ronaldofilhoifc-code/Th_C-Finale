@@ -10,6 +10,9 @@ unset($_SESSION["mensagem"]);
 unset($_SESSION["errouLog"]);
 unset($_SESSION["id_entusiasta"]);
 unset($_SESSION["devolveID"]);
+unset($_SESSION["chap1"]);
+unset($_SESSION["chap2"]);
+unset($_SESSION["chap3"]);
 
 setcookie("id", "", time() - 2628000, "/");
 

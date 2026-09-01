@@ -19,3 +19,54 @@
     text-align: center;
     font-weight: bold;
 }
+.btn-menu {
+    border-radius: 25px;
+    width: 75px;
+    height: 35px;
+    transition: width 0.2s; border: 0px;
+    background-color: dimgray;
+}
+.btn-menu:hover {
+    border-radius: 25px;
+    width: 120px;
+    height: 35px;
+   
+}
+#chap3-btn {
+    background-image: linear-gradient(#d4d7ea, #f8b67c);
+}
+#chap2-btn {
+    
+    background-image: linear-gradient(#f8b67c, #F7DF1E);
+}
+#chap1-btn {
+    background-image: linear-gradient(#d4d7ea, rebeccapurple);
+}
+
+/* #d4d7ea - hartebi_ blue */
+
+.btn-desativado {
+    pointer-events: none;
+    background-image: none !important;
+    cursor: not-allowed !important;
+}
+.btn-desativado:hover {
+    width: 75px;
+}
+.now {
+    position: sticky;
+    top: 0;
+}
+@media screen and (max-width: 768px) {
+    .header {
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .team-holder {
+        height: 70px;
+        width: 100%;
+    }
+}

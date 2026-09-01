@@ -40,10 +40,29 @@ if (isset($_COOKIE["id"])) {
 
 
 
-    <div class="container-fluid">
+    <div class="container-fluid now">
         <div class="row">
             <div class="col-md-12 est-10 header">
-                <div class="adicionavel" id="alvo">
+            
+
+                <div class="team-holder">
+                    <img src="../../assets/imagens/Real_Florence.png" title="~ahn, você não tinha uma imagem melhor minha?" class="team-img">
+                    <img id="bigtwist3" src="../../assets/imagens/pepe.png" title="POGGERS ENTUSIASTA, VAMOS ACABAR COM ISSO" class="team-img">
+                    <img src="../../assets/imagens/hart.png" title="Enfim, o final. Daqui só um de nós passa, Def." class="team-img" id="bigtwist1">
+                </div>
+                <div class="team-holder">
+                    <div class="eletric">
+                        Th_C
+                    </div>
+                    <img src="../../assets/imagens/Real_Philismeu.png" title="Como se diz mesmo? Ah, sim. Olá, Entusiasta." class="team-img">
+                    <div class="eletric">
+                        THE FINALE
+                    </div>
+                </div>
+                <div class="team-holder">
+                    <img id="bigtwist2" src="../../assets/imagens/def.png" title="prosit por chegar tão longe, hart_. Vamos acabar com essa Scheiße." class="team-img">
+                    <img src="../../assets/imagens/Real_Fritz.png" title="M- Me- Mestre, eu não sei como isso vai funcionar..." class="team-img">
+                    <div class="adicionavel" id="alvo">
                     <div class="btn btn-primary bola-perfil" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><?php
 
@@ -93,6 +112,8 @@ if (isset($_COOKIE["id"])) {
                         </div>
                     </div>
                 </div>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -130,7 +151,7 @@ if (isset($_COOKIE["id"])) {
                                 echo $cred;
                             } ?>" name="id">
 
-                            <button type="submit" id="chap1-btn">Assistir</button>
+                            <button type="submit" id="chap1-btn" class="btn-menu">Assistir</button>
                         </form>
 
                     </div>
@@ -158,7 +179,7 @@ if (isset($_COOKIE["id"])) {
                             } else if (isset($_SESSION["id"])) {
                                 echo $_SESSION["id"];
                             } ?>" name="id">
-                            <button type="submit" id="chap2-btn">Assistir</button>
+                            <button type="submit" id="chap2-btn" class="btn-menu">Assistir</button>
                         </form>
                     </div>
                 </div>
@@ -185,7 +206,7 @@ if (isset($_COOKIE["id"])) {
                             } else if (isset($_SESSION["id"])) {
                                 echo $_SESSION["id"];
                             } ?>" name="id">
-                            <button type="submit" id="chap3-btn">Assistir</button>
+                            <button type="submit" id="chap3-btn" class="btn-menu">Assistir</button>
                         </form>
                     </div>
                 </div>
@@ -206,7 +227,7 @@ if (isset($_COOKIE["id"])) {
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 est-10 header">
-
+                
             </div>
         </div>
     </div>

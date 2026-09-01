@@ -180,6 +180,27 @@ p {
 .header {
     background-color: rgb(137, 36, 231);
     display: flex !important;
-    justify-content: end;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 57px;
+    padding-right: 57px;
+}
+.team-holder {
+    width: 300px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.team-img {
+    width: 70px;
+    height: 70px;
+}
+.eletric {
+    width: 110px;
+    height: 100%;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }

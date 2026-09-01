@@ -14,9 +14,9 @@
 }
 
 .adicionavel {
-    width: 100px;
+    width: 75px;
     height: 100%;
-    background-color: aqua;
+
     display: flex;
     justify-content: center;
     align-items: center;

@@ -178,7 +178,8 @@ p {
     height: 20px;
 }
 .header {
-    background-color: rgb(137, 36, 231);
+    /* background-color: rgb(137, 36, 231); */
+    background-image: linear-gradient(#D2EAEC, #f9f5fc);
     display: flex !important;
     justify-content: space-between;
     align-items: center;
@@ -199,8 +200,17 @@ p {
 .eletric {
     width: 110px;
     height: 100%;
-    background-color: aqua;
+    /* background-color: aqua; */
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.footer {
+    transform: rotate(180deg);
+}
+.oi {
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: end;
 }

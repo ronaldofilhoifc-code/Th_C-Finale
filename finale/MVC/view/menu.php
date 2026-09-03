@@ -27,6 +27,7 @@ if (isset($_COOKIE["id"])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+
     <!-- Fim insercão Bootstrap Versão 4-->
     <!-- css do site-->
     <link rel="stylesheet" href="../../assets/css/style.css">
@@ -43,77 +44,123 @@ if (isset($_COOKIE["id"])) {
     <div class="container-fluid now">
         <div class="row">
             <div class="col-md-12 est-10 header">
-            
+
 
                 <div class="team-holder">
-                    <img src="../../assets/imagens/Real_Florence.png" title="~ahn, você não tinha uma imagem melhor minha?" class="team-img">
-                    <img id="bigtwist3" src="../../assets/imagens/pepe.png" title="POGGERS ENTUSIASTA, VAMOS ACABAR COM ISSO" class="team-img">
-                    <img src="../../assets/imagens/hart.png" title="Enfim, o final. Daqui só um de nós passa, Def." class="team-img" id="bigtwist1">
+                    <img src="../../assets/imagens/Real_Florence.png"
+                        title="~ahn, você não tinha uma imagem melhor minha?" class="team-img">
+                    <img id="bigtwist3" src="../../assets/imagens/pepe.png"
+                        title="POGGERS ENTUSIASTA, VAMOS ACABAR COM ISSO" class="team-img">
+                    <img src="../../assets/imagens/hart.png" title="Enfim, o final. Daqui só um de nós passa, Def."
+                        class="team-img" id="bigtwist1">
                 </div>
                 <div class="team-holder">
                     <div class="eletric">
                         Th_C
                     </div>
-                    <img src="../../assets/imagens/Real_Philismeu.png" title="Como se diz mesmo? Ah, sim. Olá, Entusiasta." class="team-img">
+                    <img src="../../assets/imagens/Real_Philismeu.png"
+                        title="Como se diz mesmo? Ah, sim. Olá, Entusiasta." class="team-img">
                     <div class="eletric">
                         THE FINALE
                     </div>
                 </div>
                 <div class="team-holder">
-                    <img id="bigtwist2" src="../../assets/imagens/def.png" title="prosit por chegar tão longe, hart_. Vamos acabar com essa Scheiße." class="team-img">
-                    <img src="../../assets/imagens/Real_Fritz.png" title="M- Me- Mestre, eu não sei como isso vai funcionar..." class="team-img">
+                    <img id="bigtwist2" src="../../assets/imagens/def.png"
+                        title="prosit por chegar tão longe, hart_. Vamos acabar com essa Scheiße." class="team-img">
+                    <img src="../../assets/imagens/Real_Fritz.png"
+                        title="M- Me- Mestre, eu não sei como isso vai funcionar..." class="team-img">
                     <div class="adicionavel" id="alvo">
-                    <div class="btn btn-primary bola-perfil" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><?php
+                        <div id="botaoPC" class="btn btn-primary bola-perfil" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><?php
 
-                        echo $Entity->iniciaisBolaPerfil($_SESSION["nomeUsuario"]);
+                            echo $Entity->iniciaisBolaPerfil($_SESSION["nomeUsuario"]);
 
 
 
-                        ?></div>
+                            ?></div>
 
-                    <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1"
-                        id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Menu do Entusiasta</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <div class="update-holder">
-                                <form action="../view/atualizarInicial.php" class="wrapper" method="post">
-                                    <input name="id_entusiasta" type="hidden" value="<?php
-
-                                    if (isset($_SESSION["id"])) {
-                                        echo "" . $_SESSION["id"];
-                                    } else if (isset($_COOKIE["id"])) {
-                                        echo "" . $_COOKIE["id"];
-                                    }
-
-                                    ?>">
-
-                                    <button type="submit">Atualizar suas credenciais</button>
-                                </form>
-                                <form action="../controller/deleteEntusiasta.php" method="post">
-                                    <input type="hidden" value="<?php echo $_SESSION['nomeUsuario'] ?>" name="nome">
-                                    <input type="hidden" value="<?php if (isset($_COOKIE["id"])) {
-                                        echo $_COOKIE["id"];
-                                    } else if (isset($_SESSION["id"])) {
-                                        echo $_SESSION["id"];
-                                    } ?>" name="id">
-                                    <button type="submit">Deletar sua conta</button>
-                                </form>
-                                <form action="../controller/logoff.php" class="wrapper" method="post">
-
-                                    <input type="hidden" value="<?php echo $_SESSION['nomeUsuario'] ?>" name="nome">
-                                    <button type="submit">Logoff</button>
-                                </form>
+                        <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1"
+                            id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Menu do Entusiasta</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
                             </div>
+                            <!-- <div class="offcanvas-body">
+                                <div class="update-holder">
+                                    <form action="../view/atualizarInicial.php" class="wrapper" method="post">
+                                        <input name="id_entusiasta" type="hidden" value="<?php
+
+                                        if (isset($_SESSION["id"])) {
+                                            echo "" . $_SESSION["id"];
+                                        } else if (isset($_COOKIE["id"])) {
+                                            echo "" . $_COOKIE["id"];
+                                        }
+
+                                        ?>">
+
+                                        <button type="submit">Atualizar suas credenciais</button>
+                                    </form>
+                                    <form action="../controller/deleteEntusiasta.php" method="post">
+                                        <input type="hidden" value="<?php echo $_SESSION['nomeUsuario'] ?>" name="nome">
+                                        <input type="hidden" value="<?php if (isset($_COOKIE["id"])) {
+                                            echo $_COOKIE["id"];
+                                        } else if (isset($_SESSION["id"])) {
+                                            echo $_SESSION["id"];
+                                        } ?>" name="id">
+                                        <button type="submit">Deletar sua conta</button>
+                                    </form>
+                                    <form action="../controller/logoff.php" class="wrapper" method="post">
+
+                                        <input type="hidden" value="<?php echo $_SESSION['nomeUsuario'] ?>" name="nome">
+                                        <button type="submit">Logoff</button>
+                                    </form>
+                                </div>
+                            </div> -->
+                            <?php 
+                            include("incluiveis/offcanvas.php");
+                            ?>
                         </div>
+
+                        
                     </div>
                 </div>
-                </div>
-                
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container-fluid segredo" id="segredo">
+        <div class="row">
+            <div class="col-md-12 est-10 oi">
+
+                <div id="botaoMINI" class="btn btn-primary bola-perfil" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasScrollingB" aria-controls="offcanvasScrolling"><?php
+
+                    echo $Entity->iniciaisBolaPerfil($_SESSION["nomeUsuario"]);
+
+
+
+                    ?></div>
+
+                    
+
+                    <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1"
+                            id="offcanvasScrollingB" aria-labelledby="offcanvasScrollingLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Menu do Entusiasta Manco</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            
+                            <?php 
+                            include("incluiveis/offcanvas.php");
+                            ?>
+                            
+                        </div>
+
             </div>
         </div>
     </div>
@@ -226,14 +273,19 @@ if (isset($_COOKIE["id"])) {
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 est-10 header">
-                
+            <div class="col-md-12 est-10 header footer">
+
             </div>
         </div>
     </div>
 
     <script src="../../assets/js/relatorio.js"></script>
     <script src="../../assets/js/chapBlocker.js"></script>
+    <script src="../../assets/js/bomboclat.js"></script>
+
+
+
+
 
 </body>
 

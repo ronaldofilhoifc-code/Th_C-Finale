@@ -45,7 +45,19 @@
     </div>
     <div class="dialogo">
       <div class="image-zone">
-        
+        <img src="../../../assets/imagens/Real_Def_N_Har_invert.png" class="bunda" id="image-zone">
+      </div>
+      
+        <div class="texttext-zone" id="text-zone">
+
+        </div>
+      
+      <div class="image-zone inverter-borda">
+        <div class="icons-balls">
+          <div class="icon-holder" id="slot1"><img src="../../../assets/imagens/setaFrutiger.png" class="controllers" draggable="false"></div>
+          <div class="icon-holder" id="slot2"></div>
+          <div class="icon-holder" id="slot3"></div>
+        </div>
       </div>
     </div>
 

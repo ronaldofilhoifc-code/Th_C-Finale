@@ -251,6 +251,48 @@ p {
 }
 .popup-stuff {
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+.log-holder {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.nome-log-holder {
+    width: 100%;
+    height: 20%;
+    background-color: rgb(237, 100, 198);
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.fala-log-holder {
+    width: 100%;
+    height: 80%;
+    background-color: rgb(237, 198, 100);
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.espaco-nome {
+    width: 200px;
+    height: 100%;
+    background-color: rgb(226, 94, 94);
+}
+.espaco-imagem {
+    width: 110px;
+    height: 110px;
+    background-color: coral;
+}
+.espaco-texto {
+    width: 90%;
+    height: 100%;
+    background-color: rgb(110, 110, 199);
+}
+.log-wrapper {
+    width: 100%;
+    height: 100%;
 }

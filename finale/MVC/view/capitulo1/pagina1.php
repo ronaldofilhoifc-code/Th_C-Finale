@@ -31,6 +31,9 @@
         </div>
         <div class="min-est-90 popup-stuff" id="popup-body">
 
+        
+
+
         </div>
 
       </div>
@@ -67,7 +70,7 @@
                 </div>
 
               </div>
-              
+
               <div class="dialogo">
                 <div class="image-zone">
                   <img src="../../../assets/imagens/Real_Def_N_Har_invert.png" class="bunda" id="image-zone"
@@ -95,10 +98,8 @@
       </div>
     </div>
   </div>
-
-
-  <script src="../../../assets/js/popup.js"></script>
-  <script src="../../../assets/js/programarLightNovel.js"></script>
+  
+  <script src="../../../assets/js/programarLightNovelCap1.js"></script>
 
 </body>
 

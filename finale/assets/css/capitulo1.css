@@ -1,9 +1,9 @@
 body {
-    background-color: chartreuse;
+    background-image: url(../imagens/backgroundCap1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
-
 :root {
     --corFundoDialogo: rgb(17, 174, 247);
     --corTransparenteDialogo:  rgba(17, 174, 247, 0.7);

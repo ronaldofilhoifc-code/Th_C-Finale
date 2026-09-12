@@ -24,6 +24,9 @@
 
         <div class="est-10 close-holder">
 
+          <div class="popup-titulo" id="popup-titulo">
+
+          </div>
           <div class="x-holder" id="close">
             <img src="../../../assets/imagens/oXdaquestao.png">
           </div>
@@ -31,7 +34,7 @@
         </div>
         <div class="min-est-90 popup-stuff" id="popup-body">
 
-        
+          
 
 
         </div>
@@ -61,7 +64,7 @@
           <div class="row">
             <div class="dialogo-holder est-25 col-md-12">
 
-              <div class="nomepersona5">
+              <div class="nomepersona5" id="nomepersona5">
 
                 <div class="real-nomepersona5">
                   <div class="ondevaio-nomepersona5" id="name-zone">
@@ -71,7 +74,7 @@
 
               </div>
 
-              <div class="dialogo">
+              <div class="dialogo" id="dialogo">
                 <div class="image-zone">
                   <img src="../../../assets/imagens/Real_Def_N_Har_invert.png" class="bunda" id="image-zone"
                     draggable="false">
@@ -98,7 +101,7 @@
       </div>
     </div>
   </div>
-  
+
   <script src="../../../assets/js/programarLightNovelCap1.js"></script>
 
 </body>

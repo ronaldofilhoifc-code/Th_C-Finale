@@ -15,3 +15,29 @@ O que precisa ser feito:
 - Estilo do Menu
 - Verificar capitulo no Menu
 - checar se a correção das mensagens foi feita
+
+
+
+//código Beta do dialogo
+ const dialogos = [];
+
+
+const pessoas = ["Pepe", "Hartebi_"];
+const frases = ["Poggers", "DesPogers"];
+const caminhos = ["../imagem","url"];
+
+for(let i=0;i<pessoas.length();i++){
+    
+const dicionario = {
+  pessoa: pessoas[i],
+  frase_falada: frases[i],
+  caminho_imagem: caminhos[i]
+};
+
+dialogos[i]=dicionario;
+}
+let iAtual = 0;
+
+    //quando clicar
+    dialogos[iatual].pessoa;
+    iAtual++;

@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'CONSTANCE Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fontes/constance-2-cufonfonts-webfont/Constance-7BLXE.woff') format('woff');
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -33,6 +40,7 @@ body {
     align-items: center;
     /* background-color: darkgreen; */
 }
+
 .teste {
     width: 500px;
     height: 500px;
@@ -58,45 +66,55 @@ body {
     align-items: center;
     flex-direction: column;
 }
+
 .texto {
     flex-direction: column;
 }
+
 .formulario {
     height: 400px;
 }
-.label-holder, .input-holder {
+
+.label-holder,
+.input-holder {
     width: 100%;
     display: flex;
     align-items: center;
     padding-left: 25px;
     padding-right: 25px;
 }
+
 .label-holder {
     height: 25px;
 }
+
 .input-holder {
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .inputBasico {
     height: 40px;
     width: 100%;
     border: 1px solid black;
 }
+
 .inputBasicoCheck {
     height: 25px;
     width: 25px;
 }
+
 .checkbox-holder {
     width: 16%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
+
 .remember-holder {
     width: 86%;
     height: 100%;
@@ -112,11 +130,13 @@ body {
     align-items: center;
     flex-direction: column;
 }
+
 .mini-chapter-extremidade {
     height: 10%;
     width: 100%;
     background-color: blue;
 }
+
 p {
     margin: 0;
 }
@@ -125,6 +145,7 @@ p {
     display: flex;
     flex-direction: column;
 }
+
 .container-formulario {
     height: 100%;
     /* background-color: chartreuse; */
@@ -132,6 +153,7 @@ p {
     justify-content: center;
     align-items: center;
 }
+
 .container-erro {
     display: none;
     height: 20%;
@@ -139,10 +161,12 @@ p {
     align-items: center;
     /* background-color: chocolate; */
 }
+
 .inputSenha {
     width: 85%;
     border-right: 0px;
 }
+
 .see-holder {
     height: 40px;
     width: 15%;
@@ -153,10 +177,12 @@ p {
     border: 1px solid black;
     border-left: 0px;
 }
+
 .ver-icon {
     width: 25px;
     height: 25px;
 }
+
 .btn-form {
     width: 125px;
 }
@@ -177,6 +203,7 @@ p {
     width: 20px;
     height: 20px;
 }
+
 .header {
     /* background-color: rgb(137, 36, 231); */
     background-image: linear-gradient(#D2EAEC, #f9f5fc);
@@ -186,6 +213,7 @@ p {
     padding-left: 57px;
     padding-right: 57px;
 }
+
 .team-holder {
     width: 300px;
     height: 100%;
@@ -193,10 +221,12 @@ p {
     align-items: center;
     justify-content: space-between;
 }
+
 .team-img {
     width: 70px;
     height: 70px;
 }
+
 .eletric {
     width: 110px;
     height: 100%;
@@ -205,12 +235,153 @@ p {
     justify-content: center;
     align-items: center;
 }
+
 .footer {
     transform: rotate(180deg);
 }
+
 .oi {
     /* background-color: blue; */
     display: flex;
     align-items: center;
     justify-content: end;
+}
+
+.paginaprincipal {
+    position: absolute;
+    z-index: 1;
+    
+   
+}
+
+.paginapopup {
+    position: absolute;
+    z-index: 2;
+    display: none;
+}
+
+.popup-body {
+    display: flex;
+    flex-direction: column;
+    padding: 0%;
+    background-color: rgba(56, 58, 61, 0.87);
+}
+
+.close-holder {
+    width: 100%;
+    /* background-color: #383a3d; */
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+    position: sticky;
+    top: 0;
+}
+
+.popup-titulo {
+    width: 80%;
+    height: 100%;
+    /* background-color: blueviolet; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-number-holder {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    font-family: 'CONSTANCE Regular', sans-serif;
+    color: #D2EAEC;
+    font-size: 20px;
+    text-align: center;
+}
+
+.popup-titulo p {
+    font-family: 'CONSTANCE Regular', sans-serif;
+    color: #D2EAEC;
+    font-size: 20px;
+}
+
+.x-holder {
+    height: 10vh;
+    width: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgb(255, 0, 234); */
+}
+
+.x-holder img {
+    width: 40%;
+    height: 40%;
+}
+
+.popup-stuff {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.log-holder {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    /* background-color: darkblue; */
+    margin-top: 10px;
+    border-top: 2px solid #d2ece7;
+    border-bottom: 2px solid #d2ece7;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.nome-log-holder {
+    width: 100%;
+    height: 25%;
+    /* background-color: rgb(237, 100, 198); */
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.fala-log-holder {
+    width: 100%;
+    height: 60%;
+    /* background-color: rgb(237, 198, 100); */
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+
+.espaco-nome {
+    width: 200px;
+    height: 100%;
+    /* background-color: rgb(226, 94, 94); */
+}
+
+.espaco-imagem {
+    width: 110px;
+    height: 110px;
+    /* background-color: coral; */
+}
+
+.espaco-texto {
+    width: 90%;
+    height: 100%;
+    /* background-color: rgb(110, 110, 199); */
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+    font-size: 18px;
+    color: #D2EAEC;
+}
+
+.log-wrapper {
+    width: 95%;
+    height: 95%;
 }

@@ -1,0 +1,101 @@
+body {
+    background-image: url(../imagens/backgroundCap1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+:root {
+    --corFundoDialogo: rgb(17, 174, 247);
+    --corTransparenteDialogo:  rgba(17, 174, 247, 0.7);
+}
+.dialogo-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.dialogo {
+    width: 90%;
+    height: 75%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+
+    border-radius: 0px 0px 500px 500px;
+}
+.nomepersona5 {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.real-nomepersona5 {
+    width: 90%;
+    height: 100%;
+    background-color: var(--corFundoDialogo);
+    padding-left: 70px;
+    padding-right: 50px;
+    border-radius: 500px 500px 0px 0px;
+    display: flex;
+    align-items: center;
+}
+.ondevaio-nomepersona5 {
+    width: 200px;
+    height: 90%;
+    background-color: rgb(244, 220, 255);
+}
+.image-zone {
+    width: 15%;
+    height: 100%;
+    border-radius: 0px 0px 0px 500px;
+    background-color: var(--corFundoDialogo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.inverter-borda {
+    border-radius:  0px 0px 500px 0px;
+    background-image: none;
+    display: flex;
+    justify-content: start;
+}
+.bunda {
+    width: 130px;
+    height: 130px;
+    margin-left: 45px;
+    margin-bottom: 15px;
+}
+
+.texttext-zone {
+    width: 70%;
+    height: 100%;
+    background-color: var(--corTransparenteDialogo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid var(--corFundoDialogo);
+
+}
+.icons-balls {
+    width: 35%;
+    height: 90%;
+    background-color: darkgreen;
+    margin-right: 35px;
+    display: flex;
+    flex-direction: column;
+}
+.icon-holder {
+    height: 33.33333333%;
+    width: 100%;
+    background-color: chocolate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.controllers {
+    width: 40px;
+    height: 40px;
+}
+

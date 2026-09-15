@@ -5,7 +5,7 @@ const slot1 = document.getElementById("slot1");
 const dialogos = [];
 
 const pessoas = [
-    "Pepe the Frog",
+    "Florence",
     "hartebi_",
     "Jorjão",
     "hartebi_",
@@ -13,7 +13,7 @@ const pessoas = [
 ];
 
 const frases = [
-    "POGGERS ESSE É UM TESTE DO DIÁLOGO",
+    "~FRUTIGER AERO? Isso é tão anos 2000, esse Philismeu é um brega.",
     "Pois é Pepe, se tudo der certo o próximo texto é de um tal de... Jorjão? Quem é esse?",
     "JDHFEWLJIBRCIUO3BTU5YRETB43RBY43RBYX8B3RY834O2BX meu nome é jorjão",
     "puts grila jorjão obrigado por nos ajudar a testar o diálogo, tu é um grande amigo",
@@ -21,7 +21,7 @@ const frases = [
 ];
 
 const caminhos = [
-    "../../../assets/imagens/el.png",
+    "../../../assets/imagens/sprFlorenceIndiferente.png",
     "../../../assets/imagens/Real_hartebi.png",
     "../../../assets/imagens/ver-icon.png",
     "../../../assets/imagens/Real_hartebi.png",

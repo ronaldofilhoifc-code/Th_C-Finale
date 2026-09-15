@@ -28,6 +28,12 @@ let textosLimbo = [
     "<p>~isso mesmo, Sapinho! O que encontrou, diva?</p>",
     "<p>POGGERS, de acordo com as leituras, é um domínio P.D.O...</p>",
     "<p>Bom, nossa única alternativa é ir lá... O que significa P.D.O?</p>",
+    "<p>POGGERS, significa 'Philismeu Disharmonious Organization'</p>",
+    "<p>~pessoas, me parece suspeito... mas é nossa única opção. Vamos lá, Jaqueta e Sapinho!</p>",
+    "<p>okkk, comece a navegação, Pepe!</p>",
+    "<p>OLÁ ENTUSIASTA, ME CLIQUE PARA ENTRAR EM 'P.D.O'</p>",
+    "-100"
+    
 ];
 
 let iLimbo = -1;
@@ -39,10 +45,14 @@ limboSeta.addEventListener("click", function () {
     if (textosLimbo[iLimbo] == -99) {
         blocoTexto.innerHTML = "";
         iLimbo++;
+    } else if (iLimbo == 30) {
+        limboSeta.src="../../../assets/imagens/el.png";
     }
-    blocoTexto.innerHTML += textosLimbo[iLimbo];
 
-
-
-
+    if (iLimbo != 31) {
+        blocoTexto.innerHTML += textosLimbo[iLimbo];
+    } else {
+        window.location.href = "pagina2.php";
+    }
+    
 });

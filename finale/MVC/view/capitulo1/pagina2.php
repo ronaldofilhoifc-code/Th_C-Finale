@@ -18,30 +18,6 @@
 
 <body>
 
-  <div class="container-fluid paginapopup" id="popup">
-    <div class="row">
-      <div class="col-md-12 min-est-100 popup-body">
-
-        <div class="est-10 close-holder">
-
-          <div class="popup-titulo" id="popup-titulo">
-
-          </div>
-          <div class="x-holder" id="close">
-            <img src="../../../assets/imagens/oXdaquestao.png">
-          </div>
-
-        </div>
-        <div class="min-est-90 popup-stuff" id="popup-body">
-
-          
-
-
-        </div>
-
-      </div>
-    </div>
-  </div>
 
   <div class="container-fluid paginaprincipal"> <!--MEGA CONTAINER-->
     <div class="row">
@@ -102,7 +78,7 @@
     </div>
   </div>
 
-  <script src="../../../assets/js/programarLightNovelCap1.js"></script>
+  <script src="../../../assets/js/programarLightNovelCap1.js" type="module"></script>
 
 </body>
 

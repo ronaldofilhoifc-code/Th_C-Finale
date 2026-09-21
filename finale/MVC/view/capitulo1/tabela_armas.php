@@ -1,3 +1,10 @@
+<?php 
+include_once("../../model/Entity.class.php");
+
+$entity = new Entity();
+$lista = $entity->list('arma');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-Br">
 
@@ -31,16 +38,19 @@
       </thead>
 
       <tbody>
-        <tr>
-          <td>aaaaa</td>
-          <td>aaaaa</td>
-          <td>aaaaa</td>
-          <td>aaaaa</td>
-          <td>aaaaa</td>
-          <td>aaaaa</td>
-
-
-        </tr>
+        <?php
+        
+       foreach ($lista as $linha){
+        ?>
+              <tr> 
+                    <td><?php echo htmlspecialchars($linha['id_arma']); ?></td> 
+                    <td><?php echo htmlspecialchars($linha['porte']); ?></td> 
+                    <td><?php echo htmlspecialchars($linha['raridade']); ?></td> 
+                    <td><?php echo htmlspecialchars($linha['potencial']); ?></td> 
+                    <td><?php echo htmlspecialchars($linha['quantidade']); ?></td> 
+                    <td><?php echo htmlspecialchars($linha['condicao']); ?></td> 
+                </tr> 
+        <?php } ?>
 
 
       </tbody>

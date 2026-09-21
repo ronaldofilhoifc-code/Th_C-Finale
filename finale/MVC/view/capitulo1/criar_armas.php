@@ -19,12 +19,25 @@
 
 <body>
 
-<div class="container-fluid">
+  <div class="container">
+
+    <form method="POST" action="../../controller/criarArma.php">
+    <label>Porte</label>
+    <input type="text" name="porte" required>
+    <label>Raridade</label>
+    <input type="text" name="raridade" required>
+    <label>Potencial</label>
+    <input type="text" name="potencial" required> 
+    <label>Quantidade</label>
+    <input type="number" name="quantidade" required>
+    <label>Condição</label>
+    <input type="text" name="quantidade" required>
+    <button class="btn btn-danger" type="submit" name="condicao">Criar</button>
 
 
+    </form>
 
-
-</div>
+  </div>
 
 
 

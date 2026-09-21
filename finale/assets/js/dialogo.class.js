@@ -64,7 +64,7 @@
             slot2.addEventListener("click", () => this.log());
         }
 
-        
+
     }
 
     #fecharPopup() {
@@ -156,6 +156,12 @@
             imagensLog[indice].src = this.#dialogo[indice]["caminho_imagem"];
             pageNumberHolder[indice].innerText = "★   " + String(indice + 1).padStart(2, '0');
         }
+
+        window.scrollTo({
+            top: popupBody.scrollHeight,
+            behavior: 'auto' 
+        });
+
 
         return true;
     }

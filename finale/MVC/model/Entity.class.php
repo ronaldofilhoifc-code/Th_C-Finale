@@ -53,6 +53,7 @@ class Entity extends Conexao
 
         return $statement->fetchAll(); //transforma a tabela do banco em um vetor 
     }
+    
     public function list_emprestimo()
     {
         $pdo = parent::getInstance();
@@ -74,6 +75,7 @@ class Entity extends Conexao
 
         return $statement->fetchAll(); //transforma a tabela do banco em um vetor 
     }
+    
 
 
 

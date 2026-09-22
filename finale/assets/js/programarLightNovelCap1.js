@@ -1,8 +1,27 @@
 ﻿import { Dialogo } from "./dialogo.class.js";
 
 const slot1 = document.getElementById("slot1");
+let fundo = document.getElementById("ostracizar");
+let blocoDuplo = document.getElementsByClassName("bloco-duplo");
+const duplo1 = document.getElementById("duplo-1");
+const duplo2 = document.getElementById("duplo-2");
+const meio = document.getElementById("meio");
 
-const dialogos = [];
+// editar as caixas para alterar entre cenas com um personagem / 2 personagens
+
+const dialogos = [
+
+
+];
+
+const condicoesCena = [
+
+    {solo: true, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "none", personagem3: "none",}
+
+];
+
+// console.log(blocoDuplo);
+
 
 const pessoas = [
     "Florence",
@@ -33,6 +52,7 @@ const pessoas = [
     "jacketbi_",
     "Pepe the Purse",
     "Florence",
+
 ];
 
 const caminhos = [
@@ -64,7 +84,8 @@ const caminhos = [
     "../../../assets/imagens/hart.png",
     "../../../assets/imagens/pepe.png",
     "../../../assets/imagens/sprFlorenceIndiferente.png",
-   
+
+
 ];
 
 const frases = [
@@ -96,9 +117,11 @@ const frases = [
     "É...",
     "POGGERS, é...",
     "~é... vamos lá?",
-    
+
+
 ];
 
+let icena = 0;
 
 
 for (let i = 0; i < pessoas.length; i++) {
@@ -114,5 +137,12 @@ const dialogox = new Dialogo(dialogos, "name-zone", "text-zone", "image-zone");
 if (slot1) {
     slot1.addEventListener("click", () => {
         dialogox.next();
+
+        if (condicoesCena[icena].solo) {
+
+            
+            
+        }
+
     });
 }

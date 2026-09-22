@@ -159,7 +159,7 @@
 
         window.scrollTo({
             top: popupBody.scrollHeight,
-            behavior: 'auto' 
+            behavior: 'smooth' 
         });
 
 

@@ -159,7 +159,7 @@
 
         window.scrollTo({
             top: popupBody.scrollHeight,
-            behavior: 'auto' 
+            behavior: 'auto'
         });
 
 
@@ -181,13 +181,37 @@
         }, this.#velocidadeDigitacao);
     }
 
-    // baguncinhaNaCena(solo, personagem1, personagem2, trocar, fundoE) {
+    baguncinhaNaCena(solo, personagem1, personagem2, trocar, fundoE) {
 
-    //     if (!trocar) {
-    //         fundo.style.backgroundImage = condicoesCena[icena]["fundoE"];
-    //     }
+        // metodo que recebe as propriedades do condicoesCena de cada capitulo e troca as cenas correspondentes
+        // viu gusta eu sou muito inteligente eu uso o JS OOP >:D
 
-    // }
+        const fundo = document.getElementById("ostracizar");
+        const duplo1 = document.getElementById("duplo-1");
+        const duplo2 = document.getElementById("duplo-2");
+        const meio = document.getElementById("meio");
+        const Imgduplo1 = document.getElementById("img-duplo1");
+        const Imgduplo2 = document.getElementById("img-duplo2");
+        const Imgmeio = document.getElementById("img-meio");
+
+        if (!trocar) {
+            fundo.style.backgroundImage = fundoE;
+        }
+
+        if (solo) {
+            duplo1.style.display = "none";
+            duplo2.style.display = "none";
+            meio.style.display = "flex";
+            Imgmeio.src = personagem1;
+        } else {
+            duplo1.style.display = "flex";
+            duplo2.style.display = "flex";
+            meio.style.display = "none";
+            Imgduplo1.src = personagem1;
+            Imgduplo2.src = personagem2;
+        }
+
+    }
 
 
 

@@ -1,16 +1,6 @@
 ﻿import { Dialogo } from "./dialogo.class.js";
 
 const slot1 = document.getElementById("slot1");
-let fundo = document.getElementById("ostracizar");
-const duplo1 = document.getElementById("duplo-1");
-const duplo2 = document.getElementById("duplo-2");
-const meio = document.getElementById("meio");
-
-const Imgduplo1 = document.getElementById("img-duplo1");
-const Imgduplo2 = document.getElementById("img-duplo2");
-const Imgmeio = document.getElementById("img-meio");
-
-
 
 const dialogos = [
 
@@ -64,7 +54,6 @@ const condicoesCena = [
 ];
 
 // console.log(blocoDuplo);
-
 
 const pessoas = [
     "Florence",
@@ -173,8 +162,7 @@ const frases = [
 
 ];
 
-let icena = 0;
-
+let icena = 0; // indice em qual cena está
 
 for (let i = 0; i < pessoas.length; i++) {
     dialogos[i] = {
@@ -189,42 +177,12 @@ const dialogox = new Dialogo(dialogos, "name-zone", "text-zone", "image-zone");
 if (slot1) {
     slot1.addEventListener("click", () => {
         dialogox.next();
+
         icena++;
 
-        console.log(condicoesCena[29]["fundoE"]);
-
-        if (!condicoesCena[icena]["trocar"]) {
-            fundo.style.backgroundImage = condicoesCena[icena]["fundoE"];
-        }
-        
-
-        if (condicoesCena[icena]["solo"]) {
-            duplo1.style.display = "none";
-            duplo2.style.display = "none";
-            meio.style.display = "flex";
-            Imgmeio.src = condicoesCena[icena]["personagem1"];
-        } else {
-            duplo1.style.display = "flex";
-            duplo2.style.display = "flex";
-            meio.style.display = "none";
-            Imgduplo1.src = condicoesCena[icena]["personagem1"];
-            Imgduplo2.src = condicoesCena[icena]["personagem2"];
-        }
-
-
+        dialogox.baguncinhaNaCena(condicoesCena[icena]["solo"],condicoesCena[icena]["personagem1"],condicoesCena[icena]["personagem2"],condicoesCena[icena]["trocar"],condicoesCena[icena]["fundoE"],)
 
     });
 }
 
-if (condicoesCena[icena]["solo"]) {
-    duplo1.style.display = "none";
-    duplo2.style.display = "none";
-    meio.style.display = "flex";
-    Imgmeio.src = condicoesCena[icena]["personagem1"];
-} else {
-    duplo1.style.display = "flex";
-    duplo2.style.display = "flex";
-    meio.style.display = "none";
-    Imgduplo1.src = condicoesCena[icena]["personagem1"];
-    Imgduplo2.src = condicoesCena[icena]["personagem2"];
-}
+dialogox.baguncinhaNaCena(condicoesCena[icena]["solo"],condicoesCena[icena]["personagem1"],condicoesCena[icena]["personagem2"],condicoesCena[icena]["trocar"],condicoesCena[icena]["fundoE"],)

@@ -180,4 +180,19 @@
             }
         }, this.#velocidadeDigitacao);
     }
+
+    // baguncinhaNaCena(solo, personagem1, personagem2, trocar, fundoE) {
+
+    //     if (!trocar) {
+    //         fundo.style.backgroundImage = condicoesCena[icena]["fundoE"];
+    //     }
+
+    // }
+
+
+
+
+
+
+
 }

@@ -1,11 +1,12 @@
 body {
+    background-image: url(../../MVC/view/capitulo1/backgrounds/cap1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 :root {
     --corFundoDialogo: rgb(17, 174, 247);
-    --corTransparenteDialogo:  rgba(17, 174, 247, 0.7);
+    --corTransparenteDialogo:  rgba(17, 174, 247, 0.81);
 }
 .dialogo-holder {
     display: flex;

@@ -1,13 +1,22 @@
-let formulario = document.getElementById("oNormal");
-let footer = document.getElementById("footer-holder");
-let campo = document.getElementById("errado");
+var campo = document.getElementById("errado");
+var formulario = document.getElementById("oNormal");
+var campoErro = document.getElementById("campoErro");
+
+console.log(formulario);
+console.log(campo);
+console.log(campoErro);
+
 
 if (campo.value == 0) {
-    footer.style.display = "flex";
-    footer.style.height = "20%";
-    formulario.style.height = "80%";
+
+    // quando tem algo errado (eu acho, faz 100 anos que escrevi isso)
+
+    campoErro.style.display = "flex";
+
 } else {
-    footer.style.display = "none";
-    footer.style.height = "0%";
-    formulario.style.height = "100%";
+
+    // quando não há nenhum erro
+
+    campoErro.style.display = "none";
+
 }

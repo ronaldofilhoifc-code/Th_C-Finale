@@ -44,14 +44,23 @@ class Entity extends Conexao
 
 
     public function list($table)
-    {
-        $pdo = parent::getInstance();
-        $sql = "SELECT * FROM $table;";
+    {   
+         $pdo = parent::getInstance();
+        if($table == "associativa"){
+             $sql = "SELECT a.id_associativa, a.id_entusiasta, a.id_arma, a.data_conquista, a.maestria, a.inventario, e.nome_usuario
+                     FROM associativa a
+                     INNER JOIN entusiasta e ON e.id_entusiasta = a.id_entusiasta;";
+        }else{
+            $sql = "SELECT * FROM $table;";
+        }
+       
+        
 
         $statement = $pdo->query($sql);
-        $statement->execute(); //-> : acessar um método ou uma propriedade
-
-        return $statement->fetchAll(); //transforma a tabela do banco em um vetor 
+        
+        $statement->execute();
+      
+        return $statement->fetchAll();
     }
     
     public function list_emprestimo()

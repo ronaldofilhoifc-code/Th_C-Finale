@@ -2,7 +2,58 @@
 
 const slot1 = document.getElementById("slot1");
 
-const dialogos = [];
+const dialogos = [
+
+
+];
+
+// condicoesCena = edita as caixas para alterar entre cenas com um personagem / 2 personagens
+
+// solo (true/false) = mede se uma cena é solo ou não, alternando as caixas para um ou dois
+// personagem1 (caminho de imagem, string) = em cenas solo, coloca o sprite na caixa única. em cenas duo, coloca o sprite esquerdo
+// personagem2 (caminho de imagem, string) = em cenas solo, não faz nada. em cenas duo, coloca o sprite direito,
+// trocar (true/false) = se é true, não troca o fundo. se é false, troca o fundo :P
+// fundoE (função url(caminho de imagem), string) = troca o fundo da cena caso trocar seja falso
+
+const condicoesCena = [
+
+    { solo: true, personagem1: "../../../assets/imagens/Real_Florence_Brava.png", personagem2: "none", trocar: true },
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: true },
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart_puto.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true},
+    /*diva, oi?*/{ solo: true, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true},
+    /*tu acha mesmo?*/{ solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true},
+    /*eu estabeleci*/{ solo: true, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: true},
+    /*entao temos um objetivo!*/{ solo: true, personagem1: "../../../assets/imagens/hart.png", personagem2: "../../../assets/imagens/hart.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/hart.png", personagem2: "../../../assets/imagens/pepe.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true},
+    /*eu nao sou sua amiga*/{ solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: true},
+    { solo: true, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: true},
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: true}, 
+    { solo: true, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/predios.jpg)"},
+    
+    
+    
+
+];
+
+// console.log(blocoDuplo);
 
 const pessoas = [
     "Florence",
@@ -33,6 +84,10 @@ const pessoas = [
     "jacketbi_",
     "Pepe the Purse",
     "Florence",
+    "Pepe the Purse",
+
+    "Florence",
+
 ];
 
 const caminhos = [
@@ -64,7 +119,11 @@ const caminhos = [
     "../../../assets/imagens/hart.png",
     "../../../assets/imagens/pepe.png",
     "../../../assets/imagens/sprFlorenceIndiferente.png",
-   
+    "../../../assets/imagens/pepe.png",
+
+    "../../../assets/imagens/sprFlorenceIndiferente.png",
+
+
 ];
 
 const frases = [
@@ -96,10 +155,14 @@ const frases = [
     "É...",
     "POGGERS, é...",
     "~é... vamos lá?",
-    
+    "Poggers, direcionando-nos para 'Prédios Brega'...",
+
+    "~vou falar algo para simular a troca de cena, me muda depois",
+
+
 ];
 
-
+let icena = 0; // indice em qual cena está
 
 for (let i = 0; i < pessoas.length; i++) {
     dialogos[i] = {
@@ -114,5 +177,12 @@ const dialogox = new Dialogo(dialogos, "name-zone", "text-zone", "image-zone");
 if (slot1) {
     slot1.addEventListener("click", () => {
         dialogox.next();
+
+        icena++;
+
+        dialogox.baguncinhaNaCena(condicoesCena[icena]["solo"],condicoesCena[icena]["personagem1"],condicoesCena[icena]["personagem2"],condicoesCena[icena]["trocar"],condicoesCena[icena]["fundoE"],)
+
     });
 }
+
+dialogox.baguncinhaNaCena(condicoesCena[icena]["solo"],condicoesCena[icena]["personagem1"],condicoesCena[icena]["personagem2"],condicoesCena[icena]["trocar"],condicoesCena[icena]["fundoE"],)

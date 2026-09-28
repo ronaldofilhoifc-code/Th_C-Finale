@@ -16,7 +16,7 @@
   <link href="../../../assets/css/capitulo1.css" rel="stylesheet">
 </head>
 
-<body>
+<body id="ostracizar">
 
 
   <div class="container-fluid paginaprincipal"> <!--MEGA CONTAINER-->
@@ -32,6 +32,18 @@
         <div class="container-fluid">
           <div class="row">
             <div class="offcanvas-popper-holder est-70 col-md-12">
+
+              <div class="modao">
+                <div class="char-holder bloco-duplo" id="duplo-1">
+                  <div class="char-img-holder imagem-esquerda"><img id="img-duplo1" class="wrapper" src="#"></div>
+                </div>
+                <div class="char-holder bloco-unico" id="meio">
+                  <div class="char-img-holder imagem-solo"><img id="img-meio" class="wrapper" src="#"></div>
+                </div>
+                <div class="char-holder bloco-duplo" id="duplo-2">
+                  <div class="char-img-holder imagem-direita"><img id="img-duplo2" class="wrapper" src="#"></div>
+                </div>
+              </div>
 
             </div>
           </div>

@@ -21,6 +21,7 @@ $_SESSION["ultimaPagina"] = "registrarInicial.php";
   <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="stylesheet" href="../../assets/css/header.css">
   <link rel="stylesheet" href="../../assets/css/paginaEstatica.css">
+  <link rel="stylesheet" href="../../assets/css/login-holder.css">
 </head>
 
 <body>
@@ -29,14 +30,14 @@ $_SESSION["ultimaPagina"] = "registrarInicial.php";
     <div class="row">
       <div class="col-md-12 est-10 header">
         <input id="errado" type="hidden" value="<?php
-        // 
-        
-        if (isset($_SESSION["checkCorreto"])) {
-          echo $_SESSION["checkCorreto"];
-        } else {
-          echo 1;
-        }
-        ?>">
+                                                // 
+
+                                                if (isset($_SESSION["checkCorreto"])) {
+                                                  echo $_SESSION["checkCorreto"];
+                                                } else {
+                                                  echo 1;
+                                                }
+                                                ?>">
       </div>
     </div>
   </div>
@@ -45,7 +46,7 @@ $_SESSION["ultimaPagina"] = "registrarInicial.php";
       <div class="col-md-12 est-80 organiza-info">
 
         <div class="container-formulario" id="oNormal">
-          <div class="chapter-container formulario">
+          <!-- <div class="chapter-container formulario">
 
             <form action="../controller/login.php" method="post" class="wrapper">
               <div class="chapter-extremidade texto">
@@ -91,28 +92,81 @@ $_SESSION["ultimaPagina"] = "registrarInicial.php";
             <form name="doubtcomesin" method="post" action="../controller/antiLog.php">
               <button class="btn-form" type="submit">Registrar-se</button>
             </form>
+          </div> -->
+
+          <div class="bloco-card">
+
+            <div class="split-log-50">
+              <div class="logo-pepe-holder">
+
+              </div>
+              <div class="logo-ola-holder">
+
+              </div>
+              <div class="logo-linha-holder">
+
+              </div>
+            </div>
+
+            <div class="split-log-50">
+              <form action="../controller/login.php" method="post" class="wrapper">
+                <div class="logo-pepe-holder"></div>
+                <div class="logo-ola-holder inputs-holder">
+                  <div class="label-holder">
+
+                  </div>
+                  <div class="input-holder">
+                    <input type="text" class="inputBasico" name="nome-usuario">
+                  </div>
+                  <div class="label-holder">
+
+                  </div>
+                  <div class="input-holder">
+                    <input type="password" class="inputBasico inputSenha" name="senha" id="inputSenha">
+                  </div>
+                </div>
+                <div class="logo-botoes-holder">
+                  <div class="logo-linha-holder vsf">
+
+                  </div>
+                  <div class="logo-botoes-holder-holder">
+
+                    <div class="split-botao">
+                      <button class="btn-form" type="submit">Entrar</button>
+
+              </form>
+            </div>
+            <div class="split-botao">
+              <form name="doubtcomesin" method="post" action="../controller/antiLog.php">
+              <button class="btn-form" type="submit">Registrar-se</button>
+            </form>
+            </div>
           </div>
-
-
-
         </div>
-      </div>
-      <div class="container-erro" id="footer-holder">
-        <?php
 
-
-        if (isset($_SESSION["mensagem"])) {
-          echo $_SESSION["mensagem"];
-        }
-        ?>
       </div>
 
     </div>
+
+
+  </div>
+  </div>
+  <div class="container-erro" id="footer-holder">
+    <?php
+
+
+    if (isset($_SESSION["mensagem"])) {
+      echo $_SESSION["mensagem"];
+    }
+    ?>
+  </div>
+
+  </div>
   </div>
   </div>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-12 est-10 header">
+      <div class="col-md-12 est-10 header footer">
 
       </div>
     </div>

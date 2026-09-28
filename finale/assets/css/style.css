@@ -148,7 +148,7 @@ p {
 
 .container-formulario {
     height: 100%;
-    /* background-color: chartreuse; */
+    background-color: #f9f5fc;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -213,6 +213,9 @@ p {
     padding-left: 57px;
     padding-right: 57px;
 }
+.footer {
+    background-image: linear-gradient(#f9f5fc,#D2EAEC );
+}
 
 .team-holder {
     width: 300px;
@@ -236,9 +239,7 @@ p {
     align-items: center;
 }
 
-.footer {
-    transform: rotate(180deg);
-}
+
 
 .oi {
     /* background-color: blue; */

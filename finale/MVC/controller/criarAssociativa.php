@@ -6,8 +6,10 @@ $valores = $_POST;
 print_r($valores);
 
 
- if (($valores["id_entusiasta"] || $valores["id_arma"] || $valores["data_conquista"] || $valores["maestria"]|| $valores["inventario"])) {
+ if (($valores["id_entusiasta"] && $valores["id_arma"] && $valores["data_conquista"] && $valores["maestria"]&& $valores["inventario"])) {
     $entity->insert("associativa", $valores);
+}else{
+     header("Location: ../view/capitulo2/criar_associativa.php");
 }
 
 

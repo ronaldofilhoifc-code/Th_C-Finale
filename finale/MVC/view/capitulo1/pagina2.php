@@ -31,7 +31,7 @@
         </div>
         <div class="container-fluid">
           <div class="row">
-            <div class="offcanvas-popper-holder est-70 col-md-12">
+            <div class="offcanvas-popper-holder est-70 col-md-12" id="ryuji">
 
               <div class="modao">
                 <div class="char-holder bloco-duplo" id="duplo-1">
@@ -59,7 +59,12 @@
 
                   </div>
                 </div>
+              </div> <!--Fim do nome p5-->
 
+              <div class="mini-image-holder">
+                  <div class="mini-image-holder-holder">
+                    
+                  </div>
               </div>
 
               <div class="dialogo" id="dialogo">

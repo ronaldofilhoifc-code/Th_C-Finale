@@ -107,11 +107,11 @@ body {
 }
 
 .checkbox-holder {
-    width: 16%;
+    width: fit-content;
     height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
+
 
 }
 
@@ -120,6 +120,7 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
+    padding-left: 15px;
 }
 
 .chapter-conteudo {
@@ -163,13 +164,13 @@ p {
 }
 
 .inputSenha {
-    width: 85%;
+    width: 90%;
     border-right: 0px;
 }
 
 .see-holder {
     height: 40px;
-    width: 15%;
+    width: 10%;
     /* background-color: chartreuse; */
     display: flex;
     justify-content: center;

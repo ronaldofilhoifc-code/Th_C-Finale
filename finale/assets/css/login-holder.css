@@ -1,3 +1,14 @@
+:root {
+    --colorBotao: #e9a40e;
+}
+
+
+
+
+
+
+
+
 .bloco-card {
     width: 80%;
     height: 85%;
@@ -8,10 +19,12 @@
     border-radius: 50px;
     box-shadow: #61aa8a 5px 7px 15px;
 }
+
 .container-formulario {
     display: flex;
     flex-direction: column;
 }
+
 .bloco-erro {
     width: 80%;
     height: 15%;
@@ -116,23 +129,54 @@
     padding-left: 35px;
 }
 
-.btn-form {
-    width: 75% !important;
-    height: 40px;
-}
-#entrar, #criar {
+
+
+#entrar,
+#criar {
     display: flex;
     align-items: center;
 }
+
 #entrar {
-    padding-left: 15px;
+    padding-left: 25px;
     justify-content: start;
 }
+
 #criar {
-    padding-right: 15px;
+    padding-right: 25px;
     justify-content: end;
 }
 
+.checkbox-holder-ja {
+    height: 18%;
+    /* background-color: #61aa8a; */
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+    display: flex;
+}
+.btn-form {
+    width: 45% !important;
+    height: 40px;
+    border-radius: 25px;
+    min-height: fit-content;
+    background-color: rgb(240, 233, 170);
+    border: 2px solid var(--colorBotao);
+    transition: background-color 0.2s;
+    
+}
+.btn-form:hover {
+    background-color: var(--colorBotao);
+    color: aliceblue;
+}
+#botaoRegistrar {
+    background-color: transparent;
+    border: none;
+    color: black;
+}
+#botaoRegistrar:hover {
+    border: 2px solid var(--colorBotao);
+}
 
 @media screen and (max-width: 800px) {
 
@@ -209,6 +253,20 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .btn-form {
+        width: 70% !important;
+        height: 40px;
+        border-radius: 25px;
+        min-width: fit-content;
+        font-size: 13px;
+    }
+    #big-title {
+        font-size: 21px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
 

@@ -30,14 +30,14 @@ $_SESSION["ultimaPagina"] = "registrarInicial.php";
     <div class="row">
       <div class="col-md-12 est-10 header">
         <input id="errado" type="hidden" value="<?php
-        // 
-        
-        if (isset($_SESSION["checkCorreto"])) {
-          echo $_SESSION["checkCorreto"];
-        } else {
-          echo 1;
-        }
-        ?>">
+                                                // 
+
+                                                if (isset($_SESSION["checkCorreto"])) {
+                                                  echo $_SESSION["checkCorreto"];
+                                                } else {
+                                                  echo 1;
+                                                }
+                                                ?>">
       </div>
     </div>
   </div>
@@ -79,17 +79,25 @@ $_SESSION["ultimaPagina"] = "registrarInicial.php";
                     Usuário:
                   </div>
                   <div class="input-holder">
-                    <input type="text" class="inputBasico" name="nome-usuario">
+                    <input type="text" class="inputBasico" name="nome-usuario" placeholder="Insira seu nome de Entusiasta:">
                   </div>
                   <div class="label-holder">
                     Senha:
                   </div>
                   <div class="input-holder">
-                    <input type="password" class="inputBasico inputSenha" name="senha" id="inputSenha">
+                    <input type="password" class="inputBasico inputSenha" name="senha" id="inputSenha" placeholder="Insira sua senha:">
                     <div class="see-holder" id="botaoVer">
 
                       <img src="../../assets/imagens/ver-icon.png" class="ver-icon" id="ver-imagem">
 
+                    </div>
+                  </div>
+                  <div class="checkbox-holder-ja">
+                    <div class="checkbox-holder">
+                      <input type="checkbox" class="inputBasicoCheck" name="cookie">
+                    </div>
+                    <div class="remember-holder">
+                      Manter-se conectado
                     </div>
                   </div>
                 </div>
@@ -107,7 +115,7 @@ $_SESSION["ultimaPagina"] = "registrarInicial.php";
             <div class="split-botao">
               <form id="criar" name="doubtcomesin" method="post" action="../controller/antiLog.php"
                 class="wrapper gambiarra">
-                <button class="btn-form" type="submit">Registrar-se</button>
+                <button class="btn-form" type="submit" id="botaoRegistrar">Registrar-se</button>
               </form>
             </div>
           </div> <!-- fim do bloco card -->
@@ -117,12 +125,7 @@ $_SESSION["ultimaPagina"] = "registrarInicial.php";
 
 
 
-        </div> <!-- Fim do Container Formulario-->
-
-
-        <!-- <div class="container-erro" id="footer-holder">
-          
-        </div> -->
+        </div>
 
       </div>
 

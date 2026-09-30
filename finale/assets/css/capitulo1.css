@@ -8,6 +8,7 @@ body {
 :root {
     --corFundoDialogo: rgb(17, 174, 247);
     --corTransparenteDialogo: rgba(17, 174, 247, 0.81);
+    --tamanhoCaixa: 100%;
 }
 
 .dialogo-holder {
@@ -18,7 +19,7 @@ body {
 }
 
 .dialogo {
-    width: 90%;
+    width: var(--tamanhoCaixa);
     height: 75%;
     background-color: transparent;
     display: flex;
@@ -36,7 +37,7 @@ body {
 }
 
 .real-nomepersona5 {
-    width: 90%;
+    width: var(--tamanhoCaixa);
     height: 100%;
     background-color: var(--corFundoDialogo);
     padding-left: 70px;
@@ -202,18 +203,80 @@ body {
 
 .b3 {
     border-radius: 0px 15px 0px 0px;
+
 }
 
 .b4 {
     border-radius: 15px 0px 0px 0px;
 }
 
+.absolute-70 {
+    position: relative;
+    width: 70%;
+    height: 100%;
+
+}
+
+.mini-image-holder-holder * {
+    z-index: 99;
+}
+
+.secret {
+    display: none;
+}
+
+
 
 
 @media screen and (max-width: 800px) {
 
+    .secret {
+        display: block;
+    }
+
+    #text-zone {
+        border-top: none;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        z-index: 2;
+        position: absolute;
+    }
+
+    .absolute-textzone {
+        width: 70%;
+        z-index: 3;
+        background-color: transparent;
+    }
+
+    #block-zone {
+        display: none;
+    }
+
+    #text-zone2 {
+        border-bottom: none;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .relative-wrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 4;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .b3,
+    .b4 {
+        align-self: end;
+    }
+
     .mini-image-holder {
-        width: 90%;
+        width: var(--tamanhoCaixa);
         min-height: 170px;
         display: flex;
         justify-content: center;
@@ -221,8 +284,13 @@ body {
         z-index: 2;
     }
 
+    .bloco {
+        width: 30px;
+        height: 30px;
+    }
+
     .texttext-zone {
-        width: 100%;
+        width: 70%;
         height: 100%;
         background-color: var(--corTransparenteDialogo);
         display: flex;
@@ -233,24 +301,11 @@ body {
 
     }
 
-    .absolute-textzone {
-        width: 100%;
-        background-color: transparent;
-    }
 
-    #text-zone {
-        border-top: none;
-        text-align: center;
-        padding: 10px;
-    }
 
-    #block-zone {
-        display: none;
-    }
 
-    #text-zone2 {
-        border-bottom: none;
-    }
+
+
 
     .icon-holder {
         height: 33.33333333%;

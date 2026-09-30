@@ -61,10 +61,21 @@
                 </div>
               </div> <!--Fim do nome p5-->
 
+              
+
               <div class="mini-image-holder">
+
+                <div class="oquinze">
+
+                </div>
+                <div class="texttext-zone" id="text-zone2">
                   <div class="mini-image-holder-holder">
-                    
+                    <img class="wrapper" id="image-responsive-holder">
                   </div>
+                </div>
+                <div class="oquinze">
+
+                </div>
               </div>
 
               <div class="dialogo" id="dialogo">
@@ -73,9 +84,23 @@
                     draggable="false">
                 </div>
 
-                <div class="texttext-zone" id="text-zone">
+                <div class="absolute-textzone">
+                  <div class="texttext-zone" id="text-zone">
 
+                  </div>
+                  <div class="texttext-zone" id="block-zone">
+                    <div class="split50-block" id="splitcima">
+                      <div class="bloco b1"></div>
+                      <div class="bloco b2"></div>
+                    </div>
+                    <div class="split50-block" id="splitbaixo">
+                      <div class="bloco b3"></div>
+                      <div class="bloco b4"></div>
+                    </div>
+                  </div>
                 </div>
+
+
 
                 <div class="image-zone inverter-borda">
                   <div class="icons-balls">

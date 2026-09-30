@@ -11,6 +11,9 @@ body {
     background-color: rgb(248, 253, 253);
 
 }
+.espaco-nome {
+    color: #D2EAEC;
+}
 
 .centralizar {
     display: flex;

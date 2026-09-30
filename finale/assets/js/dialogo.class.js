@@ -4,6 +4,7 @@
     #idNome;
     #idTexto;
     #idImg;
+    #idImgResponsiva;
 
     #intervaloTexto = null;
     #velocidadeDigitacao = 30;
@@ -17,7 +18,7 @@
     }
     //set e get da posicaoAtual para caso a gente precise voltar ou pular algum texto 
 
-    constructor(listaDialogos, idNome, idTexto, idImg) {
+    constructor(listaDialogos, idNome, idTexto, idImgResponsiva, idImg) {
         const htmlbasico = `
             <div class="container-fluid paginapopup" id="popup" style="display: none;">
                 <div class="row">
@@ -44,6 +45,7 @@
         this.idNome = idNome;
         this.idTexto = idTexto;
         this.idImg = idImg;
+        this.idImgResponsiva = idImgResponsiva;
 
         this.#vincularEventosPopup();
         this.next();
@@ -91,6 +93,7 @@
         const elementoNome = document.getElementById(this.idNome);
         const elementoTexto = document.getElementById(this.idTexto);
         const elementoImg = document.getElementById(this.idImg);
+        const elementoImgResponsiva = document.getElementById(this.idImgResponsiva);
 
         if (elementoNome) elementoNome.innerText = this.#dialogo[this.posicaoAtual]["pessoa"];
 
@@ -100,6 +103,7 @@
 
         if (elementoImg) {
             elementoImg.src = this.#dialogo[this.posicaoAtual]["caminho_imagem"];
+            elementoImgResponsiva.src = this.#dialogo[this.posicaoAtual]["caminho_imagem"];
         }
 
         return true;

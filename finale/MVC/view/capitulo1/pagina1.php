@@ -18,6 +18,9 @@
     </div>
     <div class="blocodetexto est-10 limbo">
         <div class="seta-holder">
+            <img src="../../../assets/imagens/limboSkip.png" class="wrapper" id="aa" draggable="false">
+        </div>
+        <div class="seta-holder">
             <img src="../../../assets/imagens/limboSeta.png" class="wrapper" id="limboSeta" draggable="false">
         </div>
     </div>

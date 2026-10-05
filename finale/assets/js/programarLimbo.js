@@ -1,4 +1,5 @@
 let limboSeta = document.getElementById("limboSeta");
+let aa = document.getElementById("aa");
 let blocoTexto = document.getElementById("blocotexto");
 
 let textosLimbo = [
@@ -33,7 +34,7 @@ let textosLimbo = [
     "<p>okkk, comece a navegação, Pepe!</p>",
     "<p>OLÁ ENTUSIASTA, ME CLIQUE PARA ENTRAR EM 'P.D.O'</p>",
     "-100"
-    
+
 ];
 
 let iLimbo = -1;
@@ -46,7 +47,7 @@ limboSeta.addEventListener("click", function () {
         blocoTexto.innerHTML = "";
         iLimbo++;
     } else if (iLimbo == 30) {
-        limboSeta.src="../../../assets/imagens/el.png";
+        limboSeta.src = "../../../assets/imagens/el.png";
     }
 
     if (iLimbo != 31) {
@@ -54,5 +55,14 @@ limboSeta.addEventListener("click", function () {
     } else {
         window.location.href = "pagina2.php";
     }
-    
+
+});
+console.log(aa);
+
+aa.addEventListener("click", function () {
+
+
+    window.location.href = "pagina2.php";
+
+
 });

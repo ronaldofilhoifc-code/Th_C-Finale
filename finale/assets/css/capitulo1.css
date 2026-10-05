@@ -87,9 +87,7 @@ body {
     flex-direction: column;
 }
 
-#slot3 {
-    display: none;
-}
+
 
 #slot1 {
     margin-bottom: 10px;
@@ -114,7 +112,7 @@ body {
 }
 
 .icon-holder {
-    height: 33.33333333%;
+    height: 29%;
     width: 100%;
     display: flex;
     align-items: center;

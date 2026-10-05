@@ -47,15 +47,14 @@ const condicoesCena = [
     { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: true },
     { solo: true, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: true },
     { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: true },
-    { solo: true, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/predios.jpg)", skippable: true },
-    { solo: true, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/a.jpg)", skippable: true },
-
-
-
+    /* TROCA DE CENA */{ solo: true, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/predios.jpg)", skippable: true },
+    { solo: true, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "", trocar: true },
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true },
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true },
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true },
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true },
 
 ];
-
-// console.log(blocoDuplo);
 
 const pessoas = [
     "Florence",
@@ -88,6 +87,10 @@ const pessoas = [
     "Florence",
     "Pepe the Purse",
 
+    "Florence",
+    "Florence",
+    "hartebi_",
+    "hartebi_",
     "Florence",
     "Florence",
 
@@ -126,6 +129,11 @@ const caminhos = [
 
     "../../../assets/imagens/sprFlorenceIndiferente.png",
     "../../../assets/imagens/sprFlorenceIndiferente.png",
+    "../../../assets/imagens/hart.png",
+    "../../../assets/imagens/hart.png",
+    "../../../assets/imagens/sprFlorenceIndiferente.png",
+    "../../../assets/imagens/sprFlorenceIndiferente.png",
+
 
 
 ];
@@ -161,9 +169,12 @@ const frases = [
     "~é... vamos lá?",
     "Poggers, direcionando-nos para 'Prédios Brega'...",
 
-    "~vou falar algo para simular a troca de cena, me muda depois",
-    "~O CARA É O PROGRAMADOR MAIS INSANO",
-
+    "~tá, cavalheiros...",
+    "~qual desses prédios sem qualidade é o da D.I.E?",
+    "Eu vou saber?!",
+    "Não é você a dona desse empreendimento?",
+    "~calma lá também, né divo.",
+    "~não precisa me tratar com animosidade...",
 
 ];
 
@@ -192,8 +203,8 @@ if (slot1) {
         dialogox.baguncinhaNaCena(condicoesCena[icena]["solo"], condicoesCena[icena]["personagem1"], condicoesCena[icena]["personagem2"], condicoesCena[icena]["trocar"], condicoesCena[icena]["fundoE"],);
 
         if (icena == condicoesCena.length - 1) {
-        imgslot3.style.filter = "grayscale(100%)";
-    }
+            imgslot3.style.filter = "grayscale(100%)";
+        }
 
     });
 }
@@ -215,10 +226,15 @@ slot3.addEventListener("click", () => {
         }
     }
 
+    icena = oSkip;
+
     if (oSkip != 0) {
         dialogox.baguncinhaNaCena(condicoesCena[oSkip]["solo"], condicoesCena[oSkip]["personagem1"], condicoesCena[oSkip]["personagem2"], condicoesCena[oSkip]["trocar"], condicoesCena[oSkip]["fundoE"],);
         dialogox.posicaoAtual = oSkip - 1;
         dialogox.next();
+
+
+
     } else {
 
         alert("Essa é a última cena desse capítulo.");
@@ -228,7 +244,7 @@ slot3.addEventListener("click", () => {
 
     if (oSkip == condicoesCena.length - 1) {
         imgslot3.style.filter = "grayscale(100%)";
-        
+
     }
 
 

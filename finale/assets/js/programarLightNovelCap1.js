@@ -16,6 +16,9 @@ const dialogos = [
 // trocar (true/false) = se é true, não troca o fundo. se é false, troca o fundo :P
 // fundoE (função url(caminho de imagem), string) = troca o fundo da cena caso trocar seja falso
 
+let florenceIndiferente = "../../../assets/imagens/sprFlorenceIndiferente.png";
+let hartJaqueta = "../../../assets/imagens/hart.png";
+
 const condicoesCena = [
 
     { solo: true, personagem1: "../../../assets/imagens/Real_Florence_Brava.png", personagem2: "none", trocar: true },
@@ -53,7 +56,12 @@ const condicoesCena = [
     { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true },
     { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true },
     { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true },
-
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true },
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true },
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true },
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true },
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true },
+    { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: true },
 ];
 
 const pessoas = [
@@ -89,10 +97,16 @@ const pessoas = [
 
     "Florence",
     "Florence",
-    "hartebi_",
-    "hartebi_",
+    "jacketbi_",
+    "jacketbi_",
     "Florence",
     "Florence",
+    "jacketbi_",
+    "Florence",
+    "Florence",
+    "Florence",
+    "Florence",
+    "Pepe the Purse",
 
 ];
 
@@ -133,8 +147,12 @@ const caminhos = [
     "../../../assets/imagens/hart.png",
     "../../../assets/imagens/sprFlorenceIndiferente.png",
     "../../../assets/imagens/sprFlorenceIndiferente.png",
-
-
+    "../../../assets/imagens/hart.png",
+    "../../../assets/imagens/sprFlorenceIndiferente.png",
+    "../../../assets/imagens/sprFlorenceIndiferente.png",
+    "../../../assets/imagens/sprFlorenceIndiferente.png",
+    "../../../assets/imagens/sprFlorenceIndiferente.png",
+    "../../../assets/imagens/pepe.png",
 
 ];
 
@@ -175,6 +193,12 @@ const frases = [
     "Não é você a dona desse empreendimento?",
     "~calma lá também, né divo.",
     "~não precisa me tratar com animosidade...",
+    "Normalmente eu sou indiferente a quem não é meu amigo, assim...",
+    "~ah sério que tu vai manter rancor por isso?",
+    "~nós temos um objetivo a cumprir aqui, hart_!",
+    "~tu por acaso quer que o nosso único domínio seja essa aberração aqui?!",
+    "~nós nem sabemos o que aquele Philemon ou seja lá quer fazer com a web e você esta aqui, que nem uma criança!",
+    "pog, o nome dele é Philismeu, Florence...",
 
 ];
 
@@ -238,13 +262,14 @@ slot3.addEventListener("click", () => {
     } else {
 
         alert("Essa é a última cena desse capítulo.");
+        imgslot3.style.filter = "grayscale(100%)";
     }
 
     // alert(condicoesCena.length);
 
     if (oSkip == condicoesCena.length - 1) {
-        imgslot3.style.filter = "grayscale(100%)";
 
+        imgslot3.style.filter = "grayscale(100%)";
     }
 
 

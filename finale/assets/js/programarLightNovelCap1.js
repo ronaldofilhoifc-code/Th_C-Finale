@@ -8,6 +8,16 @@ const dialogos = [
 
 ];
 
+// sprites da caixa de diálogo
+
+let sprFlorenceIndiferente = "../../../assets/imagens/sprFlorenceIndiferente.png";
+
+// sprites de exibição em cena (as jaquetas aparecem tanto em caixa de diálogo quanto em cena)
+
+let hartJaqueta = "../../../assets/imagens/hart.png";
+let pepeJaqueta = "../../../assets/imagens/pepe.png";
+let florenceBolaRoxa = "../../../assets/imagens/Real_Florence.png";
+
 // condicoesCena = edita as caixas para alterar entre cenas com um personagem / 2 personagens
 
 // solo (true/false) = mede se uma cena é solo ou não, alternando as caixas para um ou dois
@@ -15,9 +25,6 @@ const dialogos = [
 // personagem2 (caminho de imagem, string) = em cenas solo, não faz nada. em cenas duo, coloca o sprite direito,
 // trocar (true/false) = se é true, não troca o fundo. se é false, troca o fundo :P
 // fundoE (função url(caminho de imagem), string) = troca o fundo da cena caso trocar seja falso
-
-let florenceIndiferente = "../../../assets/imagens/sprFlorenceIndiferente.png";
-let hartJaqueta = "../../../assets/imagens/hart.png";
 
 const condicoesCena = [
 
@@ -50,7 +57,9 @@ const condicoesCena = [
     { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: true },
     { solo: true, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: true },
     { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: true },
-    /* TROCA DE CENA */{ solo: true, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/predios.jpg)", skippable: true },
+
+    /* TROCA DE CENA */
+    { solo: true, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/predios.jpg)", skippable: true },
     { solo: true, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "", trocar: true },
     { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true },
     { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true },
@@ -62,6 +71,30 @@ const condicoesCena = [
     { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true },
     { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true },
     { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: pepeJaqueta, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+
+    { solo: true, personagem1: pepeJaqueta, personagem2: "", trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/die.jpg)", skippable: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: true, personagem1: pepeJaqueta, personagem2: hartJaqueta, trocar: true },
+    { solo: true, personagem1: pepeJaqueta, personagem2: hartJaqueta, trocar: true },
+    { solo: true, personagem1: pepeJaqueta, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: florenceBolaRoxa, trocar: true },
+
+    { solo: true, personagem1: "../../../assets/imagens/imagem_transparente.png", personagem2: "", trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/interior_die.jpg)", skippable: true },
+
 ];
 
 const pessoas = [
@@ -107,6 +140,29 @@ const pessoas = [
     "Florence",
     "Florence",
     "Pepe the Purse",
+    "Florence",
+    "jacketbi_",
+    "jacketbi_",
+
+    "Pepe the Purse",
+    "Florence",
+    "jacketbi_",
+    "Florence",
+    "jacketbi_",
+    "Florence",
+    "Florence",
+    "Florence",
+    "Pepe the Purse",
+    "Pepe the Purse",
+    "Pepe the Purse",
+    "jacketbi_",
+    "Florence",
+    "Pepe the Purse",
+    "Florence",
+    "Florence",
+    "Florence",
+
+    "",
 
 ];
 
@@ -153,6 +209,28 @@ const caminhos = [
     "../../../assets/imagens/sprFlorenceIndiferente.png",
     "../../../assets/imagens/sprFlorenceIndiferente.png",
     "../../../assets/imagens/pepe.png",
+    sprFlorenceIndiferente,
+    hartJaqueta,
+    hartJaqueta,
+
+    pepeJaqueta,
+    sprFlorenceIndiferente,
+    hartJaqueta,
+    sprFlorenceIndiferente,
+    hartJaqueta,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    pepeJaqueta,
+    pepeJaqueta,
+    pepeJaqueta,
+    hartJaqueta,
+    hartJaqueta,
+    pepeJaqueta,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    "../../../assets/imagens/imagem_transparente.png",
 
 ];
 
@@ -199,6 +277,28 @@ const frases = [
     "~tu por acaso quer que o nosso único domínio seja essa aberração aqui?!",
     "~nós nem sabemos o que aquele Philemon ou seja lá quer fazer com a web e você esta aqui, que nem uma criança!",
     "pog, o nome dele é Philismeu, Florence...",
+    "~que seja, Pepe...",
+    "Que seja mesmo, vocês dois. ",
+    "Vamos para esse prédio logo. ",
+
+    "POGGERS, aquele prédio ali é o da D.I.E?",
+    "~exatamente, sapinho! Estiloso, né?",
+    "Florence, por que estamos sobrevoando o prédio?",
+    "~eu não achei forma melhor de mostrar...",
+    "Diga-se, tu não achou imagem melhor.",
+    "~diva, serei honesta contigo, desculpa ter te magoado tanto...",
+    "~ou não, deixa de ser ressentido, querido.",
+    "~tu que é o webmaster aqui, diva! Conserta a imagem você!",
+    "VOCÊS DOIS CONSEGUEM PARAR DE BRIGAR POR UM INSTANTE?!",
+    "tá funcional pelo menos, conseguimos entrar no prédio...",
+    "e agora as duas crianças vão entrar na construção e esquecer isso!",
+    "...",
+    "...",
+    "POG MIL PERDÕES SENHORA FLORENCE, EU NÃO QUERI-",
+    "~na verdade, sapinho, obrigado!",
+    "~você me lembrar da funcionalidade trouxe-me o Fritz na cabeça...",
+    "~vamos entrar, companheiros. Temos um objetivo.",
+    "> Nossos heróis entram no D.I.E..."
 
 ];
 

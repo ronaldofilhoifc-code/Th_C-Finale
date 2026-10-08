@@ -2,7 +2,7 @@
 <html lang="pt-Br">
 
 <head>
-    <title>Camada UM</title>
+    <title>labirinto de portas</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Inserção do Bootstrap versão 4 -->
@@ -17,6 +17,9 @@
 </head>
 
 <body>
+    <div class="container-fluid header_holder">
+        <p id="camada"></p>
+    </div>
     <div class="container-fluid">
         <div class="lados parede">
             <div class="porta porta-lado"></div>

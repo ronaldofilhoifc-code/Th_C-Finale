@@ -1,26 +1,30 @@
-class TernaryTreeOrdemInsercao {
+class TernaryTree {
   constructor() {
     this.root = null;
   }
 
   // Método para inserir mantendo a ordem exata de chegada
-  insert(camada,posição,value) {//posição- meio,esquerda ou direita
-    const newNode = new Node(value);
+  insert(camada,posição,acao) {//posição- 0-esquerda,1-meio ou 2-direita
+    //camada e posição do nodo pai
 
     if (!this.root) {
-      this.root = newNode;
-      return;
+      this.root = new Node(1,1);
     }
 
     // Usamos uma fila (Array) para encontrar o primeiro espaço livre por nível
     const queue = [this.root];
 
     while (queue.length > 0) {
-      const currentNode = queue.shift(); // Pega o nó da vez
 
-      // 1. Tenta colocar na esquerda
+      let nodeanterior = currentNode;
+      let currentNode = queue.shift(); // Pega o nó da vez
+
+      if(currentNode.nivel == camada && ((nodeanterior.left == currentNode && acao==0) ||(nodeanterior.middle == currentNode && acao==1)||
+      (nodeanterior.right == currentNode && acao==2) || !nodeanterior
+    ) ){//se é o node que precisa adicionar
+        
       if (!currentNode.left) {
-        currentNode.left = newNode;
+        currentNode.left =  new Node(acao,camada);
         return;
       } else {
         queue.push(currentNode.left);
@@ -28,7 +32,7 @@ class TernaryTreeOrdemInsercao {
 
       // 2. Tenta colocar no meio
       if (!currentNode.middle) {
-        currentNode.middle = newNode;
+        currentNode.middle = new Node(acao,camada);
         return;
       } else {
         queue.push(currentNode.middle);
@@ -36,11 +40,17 @@ class TernaryTreeOrdemInsercao {
 
       // 3. Tenta colocar na direita
       if (!currentNode.right) {
-        currentNode.right = newNode;
+        currentNode.right = new Node(acao,camada);
         return;
       } else {
         queue.push(currentNode.right);
       }
+
+
+
+      }
+
+ 
     }
   }
 

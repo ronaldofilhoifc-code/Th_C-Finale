@@ -11,12 +11,20 @@ const dialogos = [
 // sprites da caixa de diálogo
 
 let sprFlorenceIndiferente = "../../../assets/imagens/sprFlorenceIndiferente.png";
+let sprArlindoIndiferente = "../../../assets/imagens/sprArlindoGrund.png";
+let sprTransparente = "../../../assets/imagens/imagem_transparente.png";
+
 
 // sprites de exibição em cena (as jaquetas aparecem tanto em caixa de diálogo quanto em cena)
 
 let hartJaqueta = "../../../assets/imagens/hart.png";
 let pepeJaqueta = "../../../assets/imagens/pepe.png";
 let florenceBolaRoxa = "../../../assets/imagens/Real_Florence.png";
+let bundleHartPepe = "../../../assets/imagens/bundleHartPepe.png";
+
+let arlindoAura = "../../../assets/imagens/arlindoAura.png";
+let arlindoEnojado = "../../../assets/imagens/sprArlindoEnojado.png";
+let arlindoTriste = "../../../assets/imagens/ArlindoTriste.png";
 
 // condicoesCena = edita as caixas para alterar entre cenas com um personagem / 2 personagens
 
@@ -93,9 +101,21 @@ const condicoesCena = [
     { solo: false, personagem1: pepeJaqueta, personagem2: florenceBolaRoxa, trocar: true },
     { solo: false, personagem1: pepeJaqueta, personagem2: florenceBolaRoxa, trocar: true },
 
-    { solo: true, personagem1: "../../../assets/imagens/imagem_transparente.png", personagem2: "", trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/interior_die.jpg)", skippable: true },
-
+    /* ... trecho anterior do condicoesCena ... */
+    { solo: true, personagem1: "../../../assets/imagens/imagem_transparente.png", personagem2: "", trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/interior_die.jpg)", skippable: true }, // Índice 59
+    { solo: true, personagem1: pepeJaqueta, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: arlindoAura, trocar: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: arlindoAura, trocar: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: arlindoEnojado, trocar: true },
+    { solo: false, personagem1: bundleHartPepe, personagem2: arlindoAura, trocar: true },
+    { solo: false, personagem1: arlindoAura, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoAura, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoAura, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoAura, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoTriste, personagem2: florenceBolaRoxa, trocar: true },
 ];
+
+
 
 const pessoas = [
     "Florence",
@@ -163,7 +183,16 @@ const pessoas = [
     "Florence",
 
     "",
-
+    "Pepe the Purse",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "hartebi_ e Pepe",
+    "Florence",
+    "Florence",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
 ];
 
 const caminhos = [
@@ -230,7 +259,18 @@ const caminhos = [
     sprFlorenceIndiferente,
     sprFlorenceIndiferente,
     sprFlorenceIndiferente,
-    "../../../assets/imagens/imagem_transparente.png",
+
+    sprTransparente,
+    pepeJaqueta,
+    sprArlindoIndiferente,
+    sprArlindoIndiferente,
+    sprArlindoIndiferente,
+    sprTransparente,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprArlindoIndiferente,
+    sprArlindoIndiferente,
+    sprArlindoIndiferente,
 
 ];
 
@@ -298,9 +338,23 @@ const frases = [
     "~na verdade, sapinho, obrigado!",
     "~você me lembrar da funcionalidade trouxe-me o Fritz na cabeça...",
     "~vamos entrar, companheiros. Temos um objetivo.",
-    "> Nossos heróis entram no D.I.E..."
+
+    "> Nossos heróis entram no prédio da D.I.E...",
+    "POGGERS, que prédio bonito!",
+    "Com licença senhor... sapo, bolsa... que seja...",
+    "Você e seus... amigos estão... perturbando a paz com seus barulhos...",
+    "...e principalmente com esse estilo... Quem é você, bola roxa desafortunada?",
+    "POGGERS ELE NÃO FALOU ISSO",
+    "...",
+    "~diva...",
+    "...sim?",
+    "honestamente... não encha minha agenda com sua ladainha...",
+    "...eu já respondi 64000 requerimentos desde que decidiram explodir o cara lá... ",
 
 ];
+
+// alert(condicoesCena.length);
+// alert(pessoas.length);
 
 let icena = 0; // indice em qual cena está
 

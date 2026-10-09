@@ -40,7 +40,11 @@ class TernaryTree {
     }
   }
 
-  // Mostra a árvore de forma gráfica no console interpretando os números
+  clique(lado,caminho){
+    //caminho em que você está e o lado em que vai ir
+    //lado -> 0,1,2
+  }
+  
   
 }
 

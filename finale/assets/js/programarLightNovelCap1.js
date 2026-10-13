@@ -12,6 +12,7 @@ const dialogos = [
 
 let sprFlorenceIndiferente = "../../../assets/imagens/sprFlorenceIndiferente.png";
 let sprArlindoIndiferente = "../../../assets/imagens/sprArlindoGrund.png";
+let sprArlindoGrund = "../../../assets/imagens/sprArlindoGrund.png";
 let sprTransparente = "../../../assets/imagens/imagem_transparente.png";
 
 
@@ -25,6 +26,11 @@ let bundleHartPepe = "../../../assets/imagens/bundleHartPepe.png";
 let arlindoAura = "../../../assets/imagens/arlindoAura.png";
 let arlindoEnojado = "../../../assets/imagens/sprArlindoEnojado.png";
 let arlindoTriste = "../../../assets/imagens/ArlindoTriste.png";
+let arlindoPre = "../../../assets/imagens/ArlindoPre.png";
+let arlindoO = "../../../assets/imagens/ArlindoO.png";
+let arlindoO2 = "../../../assets/imagens/ArlindoO2.png";
+let arlindoSa = "../../../assets/imagens/ArlindoSa.png";
+let arlindoQue = "../../../assets/imagens/ArlindoQue.png";
 
 // condicoesCena = edita as caixas para alterar entre cenas com um personagem / 2 personagens
 
@@ -113,6 +119,43 @@ const condicoesCena = [
     { solo: false, personagem1: arlindoAura, personagem2: florenceBolaRoxa, trocar: true },
     { solo: false, personagem1: arlindoAura, personagem2: florenceBolaRoxa, trocar: true },
     { solo: false, personagem1: arlindoTriste, personagem2: florenceBolaRoxa, trocar: true },
+
+    { solo: false, personagem1: pepeJaqueta, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: hartJaqueta, trocar: true },
+
+    { solo: false, personagem1: arlindoAura, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: true, personagem1: florenceBolaRoxa, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: true, personagem1: florenceBolaRoxa, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: arlindoAura, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: arlindoAura, trocar: true },
+
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: arlindoPre, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: arlindoTriste, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: arlindoEnojado, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: arlindoO, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: arlindoSa, trocar: true },
+
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: arlindoQue, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: arlindoAura, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: arlindoTriste, trocar: true },
+    { solo: false, personagem1: arlindoTriste, personagem2: hartJaqueta, trocar: true },
+    { solo: true, personagem1: arlindoEnojado, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: arlindoEnojado, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: true, personagem1: arlindoAura, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoAura, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: arlindoPre, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: arlindoPre, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: arlindoPre, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: arlindoPre, personagem2: pepeJaqueta, trocar: true },
+    { solo: false, personagem1: arlindoPre, personagem2: pepeJaqueta, trocar: true },
+    { solo: false, personagem1: arlindoPre, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoPre, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: true, personagem1: arlindoEnojado, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: true, personagem1: arlindoEnojado, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: true, personagem1: arlindoO2, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: true, personagem1: arlindoO2, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoO2, personagem2: florenceBolaRoxa, trocar: true },
 ];
 
 
@@ -193,6 +236,44 @@ const pessoas = [
     "Arlindo Grund",
     "Arlindo Grund",
     "Arlindo Grund",
+
+    "Pepe the Purse",
+    "jacketbi_",
+    "Pepe the Purse",
+
+    "Florence",
+    "Florence",
+    "Florence",
+    "Arlindo Grund",
+    "Arlindo Grund",
+
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "jacketbi_",
+    "Arlindo Grund",
+    "Florence",
+    "Arlindo Grund",
+    "jacketbi_",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "jacketbi_",
+    "Pepe the Purse",
+    "Pepe the Purse",
+    "Florence",
+    "Florence",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Florence",
+
+
 ];
 
 const caminhos = [
@@ -272,6 +353,41 @@ const caminhos = [
     sprArlindoIndiferente,
     sprArlindoIndiferente,
 
+    pepeJaqueta,
+    hartJaqueta,
+    pepeJaqueta,
+
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprArlindoGrund,
+    sprArlindoGrund,
+
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    hartJaqueta,
+    sprArlindoGrund,
+    sprFlorenceIndiferente,
+    sprArlindoGrund,
+    hartJaqueta,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    hartJaqueta,
+    pepeJaqueta,
+    pepeJaqueta,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprFlorenceIndiferente,
 ];
 
 const frases = [
@@ -351,6 +467,42 @@ const frases = [
     "honestamente... não encha minha agenda com sua ladainha...",
     "...eu já respondi 64000 requerimentos desde que decidiram explodir o cara lá... ",
 
+    "POGGERS HART_ A FLORENCE VAI ESTOURAR ESSE TWINK ",
+    "Ah mas com certeza sapinho... ",
+    "EI, só a Florence pode me chamar assim!. ",
+
+    "~ ...",
+    "~ ...normalmente isso é coisa de Karen, e eu peço perdão, grund.",
+    "~ mas você sabe quem eu sou?",
+    "diva... que bom que você sabe que está errada...",
+    "mas eu só me abaixo a gente...",
+
+    "pre...",
+    "ten...",
+    "ci...",
+    "o...",
+    "sa...",
+
+    "que nem você...",
+    "assim que a Pérola criadora desse lugar atender minha prece!",
+    "...poxa vida Clodovil, eu só queria um aumento...",
+    "Fala esse nome denovo, amigo...",
+    "...a jaqueta falou?",
+    "~só ignora divo, escuta o que ele quer te falar.",
+    "tá... jaqueta, tu quer saber do Clodovil?",
+    "SIM! Nos fale desse cidadão...",
+    "mas quem são vocês, primeiro?!...",
+    "o que traz uma bola roxa flutuante, carregando uma bolsa de sapo e uma jaqueta azul a esse lugar?",
+    "eu sou hartebi_, um webmaster apaixonado pela expressão artística...",
+    "POGGERS MEU NOME É PEPE THE FROG...",
+    "...e eu não sei quem eu sou...",
+    "~e finalmente, diva...",
+    "~meu nome é Florence, a Segunda Pérola, e a representante de todo o Estilo.",
+    "...",
+    "...minha senhora...",
+    "...É O MEU DIA DE SORTE!",
+    "MIL PERDÕES POR TE TRATAR TÃO MAL, MINHA SENHORA !",
+    "~sem problemas, divo.",
 ];
 
 // alert(condicoesCena.length);
@@ -432,4 +584,6 @@ slot3.addEventListener("click", () => {
 
 
 
-dialogox.baguncinhaNaCena(condicoesCena[icena]["solo"], condicoesCena[icena]["personagem1"], condicoesCena[icena]["personagem2"], condicoesCena[icena]["trocar"], condicoesCena[icena]["fundoE"],)
+dialogox.baguncinhaNaCena(condicoesCena[icena]["solo"], condicoesCena[icena]["personagem1"], condicoesCena[icena]["personagem2"], condicoesCena[icena]["trocar"], condicoesCena[icena]["fundoE"],);
+
+console.log(condicoesCena.length + " " + pessoas.length + " " + frases.length + " " + caminhos.length);

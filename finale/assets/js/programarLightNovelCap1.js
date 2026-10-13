@@ -32,6 +32,8 @@ let arlindoO2 = "../../../assets/imagens/ArlindoO2.png";
 let arlindoSa = "../../../assets/imagens/ArlindoSa.png";
 let arlindoQue = "../../../assets/imagens/ArlindoQue.png";
 
+let clodovilTelefone = "../../../assets/imagens/clodovilTelefone.png";
+
 // condicoesCena = edita as caixas para alterar entre cenas com um personagem / 2 personagens
 
 // solo (true/false) = mede se uma cena é solo ou não, alternando as caixas para um ou dois
@@ -144,6 +146,7 @@ const condicoesCena = [
     { solo: false, personagem1: arlindoEnojado, personagem2: florenceBolaRoxa, trocar: true },
     { solo: true, personagem1: arlindoAura, personagem2: florenceBolaRoxa, trocar: true },
     { solo: false, personagem1: arlindoAura, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: arlindoPre, personagem2: hartJaqueta, trocar: true },
     { solo: false, personagem1: arlindoPre, personagem2: hartJaqueta, trocar: true },
     { solo: false, personagem1: arlindoPre, personagem2: hartJaqueta, trocar: true },
     { solo: false, personagem1: arlindoPre, personagem2: hartJaqueta, trocar: true },
@@ -263,6 +266,7 @@ const pessoas = [
     "Arlindo Grund",
     "Arlindo Grund",
     "jacketbi_",
+    "jacketbi_",
     "Pepe the Purse",
     "Pepe the Purse",
     "Florence",
@@ -379,6 +383,7 @@ const caminhos = [
     sprArlindoGrund,
     sprArlindoGrund,
     hartJaqueta,
+    hartJaqueta,
     pepeJaqueta,
     pepeJaqueta,
     sprFlorenceIndiferente,
@@ -467,13 +472,13 @@ const frases = [
     "honestamente... não encha minha agenda com sua ladainha...",
     "...eu já respondi 64000 requerimentos desde que decidiram explodir o cara lá... ",
 
-    "POGGERS HART_ A FLORENCE VAI ESTOURAR ESSE TWINK ",
+    "POGGERS, HART_! A FLORENCE VAI ESTOURAR ESSE TWINK!",
     "Ah mas com certeza sapinho... ",
-    "EI, só a Florence pode me chamar assim!. ",
+    "EI, só a Florence pode me chamar assim!",
 
-    "~ ...",
-    "~ ...normalmente isso é coisa de Karen, e eu peço perdão, grund.",
-    "~ mas você sabe quem eu sou?",
+    "~...",
+    "~...normalmente isso é coisa de Karen, e eu peço perdão, Grund.",
+    "~mas você sabe quem eu sou?",
     "diva... que bom que você sabe que está errada...",
     "mas eu só me abaixo a gente...",
 
@@ -493,7 +498,8 @@ const frases = [
     "SIM! Nos fale desse cidadão...",
     "mas quem são vocês, primeiro?!...",
     "o que traz uma bola roxa flutuante, carregando uma bolsa de sapo e uma jaqueta azul a esse lugar?",
-    "eu sou hartebi_, um webmaster apaixonado pela expressão artística...",
+    "Hum, gente, que tal uma introdução nossa ao amigo?",
+    "eu sou hartebi_, Entusiasta da expressão artística por meio do Web Design e Webmaster...",
     "POGGERS MEU NOME É PEPE THE FROG...",
     "...e eu não sei quem eu sou...",
     "~e finalmente, diva...",
@@ -501,7 +507,7 @@ const frases = [
     "...",
     "...minha senhora...",
     "...É O MEU DIA DE SORTE!",
-    "MIL PERDÕES POR TE TRATAR TÃO MAL, MINHA SENHORA !",
+    "MIL PERDÕES POR TE TRATAR TÃO MAL, MINHA SENHORA!",
     "~sem problemas, divo.",
 ];
 

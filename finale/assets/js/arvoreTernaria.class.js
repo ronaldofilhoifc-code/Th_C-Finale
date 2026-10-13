@@ -40,9 +40,40 @@ class TernaryTree {
     }
   }
 
-  clique(lado,caminho){
-    //caminho em que você está e o lado em que vai ir
-    //lado -> 0,1,2
+  clique(lado, caminho) {
+    const novoCaminho = [...caminho, lado];
+
+    if (!this.root) {
+      return false;
+    }
+
+    let currentNode = this.root;
+
+    for (const direcao of novoCaminho) {
+      const proximoNode = direcao === 0 ? currentNode.left : direcao === 1 ? currentNode.middle : currentNode.right;
+
+      if (!proximoNode) {
+        console.error(`Erro: O caminho ${novoCaminho} não existe na árvore.`);
+        return [1, []];
+      }
+
+      currentNode = proximoNode;
+    }
+
+    let caminhoFinal = [...novoCaminho];
+    if (currentNode.acao < 0) {
+      alert("volta");
+      const retrocessos = Math.abs(currentNode.acao)+1;//abs -> módulo
+
+      for (let i = 0; i < retrocessos && caminhoFinal.length > 0; i++) {
+        caminhoFinal.pop();
+      }
+    }
+    if(currentNode.acao == 100){
+      alert("vc ganhou")
+    }
+
+    return [caminhoFinal.length + 1, caminhoFinal];
   }
   
   

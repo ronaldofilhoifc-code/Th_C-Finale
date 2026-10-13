@@ -33,6 +33,7 @@ let arlindoO = "../../../assets/imagens/ArlindoO.png";
 let arlindoO2 = "../../../assets/imagens/ArlindoO2.png";
 let arlindoSa = "../../../assets/imagens/ArlindoSa.png";
 let arlindoQue = "../../../assets/imagens/ArlindoQue.png";
+let arlindoQ2 = "../../../assets/imagens/ArlindoQ2.png";
 
 let clodovilTelefone = "../../../assets/imagens/clodovilTelefone.png";
 
@@ -190,6 +191,74 @@ const condicoesCena = [
     { solo: false, personagem1: hartJaqueta, personagem2: florenceBolaRoxa, trocar: true },
     { solo: false, personagem1: hartJaqueta, personagem2: florenceBolaRoxa, trocar: true },
     { solo: false, personagem1: bundleHartPepe, personagem2: florenceBolaRoxa, trocar: true },
+
+    { solo: true, personagem1: arlindoSa, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoSa, personagem2: clodovilTelefone, trocar: true },
+    { solo: false, personagem1: arlindoSa, personagem2: clodovilTelefone, trocar: true },
+    { solo: false, personagem1: arlindoSa, personagem2: clodovilTelefone, trocar: true },
+    { solo: false, personagem1: arlindoSa, personagem2: clodovilTelefone, trocar: true },
+    { solo: false, personagem1: arlindoSa, personagem2: clodovilTelefone, trocar: true },
+    { solo: false, personagem1: sprTransparente, personagem2: sprTransparente, trocar: true },
+    { solo: false, personagem1: arlindoSa, personagem2: clodovilTelefone, trocar: true },
+    { solo: false, personagem1: arlindoSa, personagem2: clodovilTelefone, trocar: true },
+    { solo: false, personagem1: arlindoSa, personagem2: clodovilTelefone, trocar: true },
+    { solo: false, personagem1: arlindoSa, personagem2: clodovilTelefone, trocar: true },
+    { solo: false, personagem1: arlindoSa, personagem2: clodovilTelefone, trocar: true },
+    { solo: false, personagem1: arlindoSa, personagem2: clodovilTelefone, trocar: true },
+    { solo: false, personagem1: arlindoSa, personagem2: clodovilTelefone, trocar: true },
+    { solo: false, personagem1: arlindoSa, personagem2: clodovilTelefone, trocar: true },
+    { solo: true, personagem1: arlindoAura, personagem2: clodovilTelefone, trocar: true },
+    { solo: false, personagem1: arlindoAura, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoO2, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: sprTransparente, personagem2: sprTransparente, trocar: true },
+    { solo: true, personagem1: pepeJaqueta, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: arlindoEnojado, trocar: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: arlindoEnojado, trocar: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: arlindoSa, trocar: true },
+    /*troca de cena para frente do elevador*/
+    { solo: false, personagem1: pepeJaqueta, personagem2: arlindoAura, trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/elevadorConveniente.jpg)", skippable: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: arlindoAura, trocar: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: arlindoO, trocar: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: arlindoO, trocar: true },
+    { solo: false, personagem1: arlindoO2, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoEnojado, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoEnojado, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoEnojado, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoO2, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoQ2, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoQ2, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoQ2, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: arlindoAura, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: arlindoPre, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: arlindoPre, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: arlindoEnojado, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: arlindoAura, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: arlindoEnojado, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: arlindoEnojado, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: arlindoEnojado, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: arlindoAura, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoAura, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoAura, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoEnojado, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoEnojado, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoEnojado, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoTriste, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoPre, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoSa, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoEnojado, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoPre, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoQ2, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoEnojado, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoEnojado, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: arlindoEnojado, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: arlindoTriste, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoAura, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoAura, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoAura, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoAura, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoAura, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoO2, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: arlindoO2, personagem2: florenceBolaRoxa, trocar: true },
 ];
 
 
@@ -337,6 +406,72 @@ const pessoas = [
     "Florence",
     "Pepe e hart_",
 
+    "Arlindo Grund",
+    "Pessoa no Telefone",
+    "Pessoa no Telefone",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Pessoa no Telefone",
+    "",
+    "Pessoa no Telefone",
+    "Pessoa no Telefone",
+    "Arlindo Grund",
+    "Pessoa no Telefone",
+    "Pessoa no Telefone",
+    "Pessoa no Telefone",
+    "Pessoa no Telefone",
+    "",
+    "Arlindo Grund",
+    "Florence",
+    "Arlindo Grund",
+    "",
+    "Pepe the Purse",
+    "Arlindo Grund",
+    "Pepe the Purse",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Pepe the Purse",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Florence",
+    "Arlindo Grund",
+    "Florence",
+    "Florence",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "jacketbi_",
+    "jacketbi_",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "jacketbi_",
+    "jacketbi_",
+    "Florence",
+    "Florence",
+    "Florence",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "Arlindo Grund",
+    "jacketbi_",
+    "jacketbi_",
+    "Florence",
+    "Arlindo Grund",
+    "Florence",
+    "Florence",
+    "Florence",
+    "Florence",
+    "Arlindo Grund",
+    "Arlindo Grund",
 
 ];
 
@@ -482,6 +617,73 @@ const caminhos = [
     sprFlorenceIndiferente,
     sprFlorenceIndiferente,
     sprTransparente,
+
+    sprArlindoGrund,
+    sprClodovilTel,
+    sprClodovilTel,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprClodovilTel,
+    sprTransparente,
+    sprClodovilTel,
+    sprClodovilTel,
+    sprArlindoGrund,
+    sprClodovilTel,
+    sprClodovilTel,
+    sprClodovilTel,
+    sprClodovilTel,
+    sprTransparente,
+    sprArlindoGrund,
+    sprFlorenceIndiferente,
+    sprArlindoGrund,
+    sprTransparente,
+    pepeJaqueta,
+    sprArlindoGrund,
+    pepeJaqueta,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    pepeJaqueta,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprFlorenceIndiferente,
+    sprArlindoGrund,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    hartJaqueta,
+    hartJaqueta,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    hartJaqueta,
+    hartJaqueta,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    sprArlindoGrund,
+    hartJaqueta,
+    hartJaqueta,
+    sprFlorenceIndiferente,
+    sprArlindoGrund,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprArlindoGrund,
+    sprArlindoGrund,
 ];
 
 const frases = [
@@ -622,6 +824,72 @@ const frases = [
     "~senhores, vocês conseguem ficar quietos?!",
     "~tem uma ligação acontecendo!",
     "SIM! Desculpa, Florence...",
+    "...alô-ou?",
+    "★ diva, eu já te falei para não me ligar se tem uma Karen na recepção!",
+    "★ cara mais chato do que gente respondendo não a uma pergunta de 'vai tudo bem ?'",
+    "calma chefe! não desligue...",
+    "uma 'pessoa' deveras... importante está aqui na recepção...",
+    "★ não é possível... NÃO É POSSÍ-",
+    "*som de guitarra*",
+    "★ digo, ah sim, é a...",
+    "★ Florence, né?",
+    "sim, exatamente! Me pergunto como você sabia...",
+    "★ ah, ahaha, tolo Grunt...",
+    "★ eu sei de muitas coisas! Nossa inteligência é altamente sofisticada...",
+    "★ haha...",
+    "★ peçam para eles subirem pelo Elevador Convenientemente Posicionado... não demore!",
+    "> não há mais ninguém na linha...",
+    "então, Florence...",
+    "~sim, divo?",
+    "o Clodovil pediu-lhes a subir naquele elevador...",
+    "> Grund aponta para uma parede da recepção, sem elevador algum",
+    "KEK, Arlindo?",
+    "..sim, sapobolsa?",
+    "não tem nenhum elevador aqui!",
+    "uh-hum...",
+    "...",
+    "POGGERS QUE ELEVADOR CONVENIENTE!",
+    "haha, sapobolsa... não é a toa que ele se chama 'Elevador Convenientemente Posicionado'!",
+    "vamos... subam nele! O Clodovil espera à vocês lá em cima...",
+    "~só uma dúvida, arlindo...",
+    "sim, Florence...",
+    "~esse elevador é deveras funcional...",
+    "~quem foi seu criador?",
+    "engraçado você perguntar, Florence...",
+    "pois veja... uma pequena bolinha oval amarela veio aqui e falou para colocar tal máquina aqui...",
+    "a gente acatou o pedido, pois como você disse, é bem funcional...",
+    "Desculpa interromper, mas agora que você mencionou...",
+    "Existia alguma outra... coisa... com essa bolinha amarela?",
+    "...",
+    "...na verdade até tinha, uma etiqueta com as cores da Alemanha escrito 'Louis Vuitton'",
+    "pera, Louis Vuitton?",
+    "o sapo e você contém inscrições iguais a dele...",
+    "vocês são, por acaso, relacionados?",
+    "...",
+    "Infelizmente sim, Arlindo.",
+    "~sinto dizer, arlindo...",
+    "~sou muito fã do seu trabalho...",
+    "~mas você deixou o assassino que estamos procurando entrar nesse prédio.",
+    "não...",
+    "não é possível...",
+    "não é...",
+    "POS...",
+    "SÍ...",
+    "VEL...",
+    "QUE FIZ TAMANHO ERRO!",
+    "Ele falou exatamente para mim...",
+    "'Você tem todo motivo para duvidar de mim, Mein Herr.'!",
+    "E AGORA ACABOU!",
+    "Não se preocupe, Arlindo...",
+    "Ele tem mesmo a mania de transformar todo lugar que ele vai em um Cabaré...",
+    "~esse traste... Arlindo, ele já saiu do recinto?",
+    "temo que sim, Senhora Florence. peço perdão...",
+    "~não perca seu estilo por isso, meu jovem.",
+    "~iremos encontrá-lo, não importa onde esse chucrute esteja escondido.",
+    "~muito obrigado pelo seu serviço, você é um ótimo trabalhador.",
+    "~está dispensado por hoje, vá descansar, camarada. a sua mais-valia garante seu aumento.",
+    "você é exatamente o que eu imaginei, Florence...",
+    "muito obrigado por me ouvir... Foi um prazer ajudá-los!",
 ];
 
 // alert(condicoesCena.length);
@@ -658,48 +926,44 @@ if (slot1) {
     });
 }
 
-slot3.addEventListener("click", () => {
+if (slot3) {
+    slot3.addEventListener("click", () => {
 
-    // percorre todo o condicoesCena em busca da primeira mudança de cena, medido pelo campo "skippable". Ao achar, deixa falso.
-    // posicaoatual em dialogo.class.js muda a posicao atual do next()
+        let oSkip = -1;
 
-    let oSkip = 0;
-
-    for (let i = 0; i < condicoesCena.length; i++) {
-        if (condicoesCena[i]["skippable"]) {
-
-            oSkip = i;
-            condicoesCena[oSkip]["skippable"] = false;
-            break;
-
+        for (let i = icena + 1; i < condicoesCena.length; i++) {
+            if (condicoesCena[i].skippable) {
+                oSkip = i;
+                break;
+            }
         }
-    }
 
-    icena = oSkip;
+        if (oSkip === -1) {
+            alert("Essa é a última cena desse capítulo.");
+            imgslot3.style.filter = "grayscale(100%)";
+            return;
+        }
 
-    if (oSkip != 0) {
-        dialogox.baguncinhaNaCena(condicoesCena[oSkip]["solo"], condicoesCena[oSkip]["personagem1"], condicoesCena[oSkip]["personagem2"], condicoesCena[oSkip]["trocar"], condicoesCena[oSkip]["fundoE"],);
-        dialogox.posicaoAtual = oSkip - 1;
+        condicoesCena[oSkip].skippable = false;
+        icena = oSkip;
+
+        dialogox.baguncinhaNaCena(
+            condicoesCena[icena].solo,
+            condicoesCena[icena].personagem1,
+            condicoesCena[icena].personagem2,
+            condicoesCena[icena].trocar,
+            condicoesCena[icena].fundoE
+        );
+
+        dialogox.posicaoAtual = icena - 1;
         dialogox.next();
 
+        if (icena >= condicoesCena.length - 1) {
+            imgslot3.style.filter = "grayscale(100%)";
+        }
+    });
+}
 
-
-    } else {
-
-        alert("Essa é a última cena desse capítulo.");
-        imgslot3.style.filter = "grayscale(100%)";
-    }
-
-    // alert(condicoesCena.length);
-
-    if (oSkip == condicoesCena.length - 1) {
-
-        imgslot3.style.filter = "grayscale(100%)";
-    }
-
-
-
-});
 
 
 

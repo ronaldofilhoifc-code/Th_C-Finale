@@ -150,7 +150,7 @@ const frases = [
     "★ Olá, Entusi-",
     "★ *cof cof*",
     "★ -asta...",
-    "★ O nome é Clodovil, Máximo Representante da D.I.E após a Desestruturação.",
+    "★ O nome é Clodovil, comendador da D.I.E após a Desestruturação.",
     "★ Normalmente eu falo para as pessoas me chamarem só de 'Clodovil'...",
     "★ ...Mas eu abro uma exceção para você, desafortunado. Tente usar o nome inteiro.",
     "★ Seus amigos te colocaram em um pepino, hein...",

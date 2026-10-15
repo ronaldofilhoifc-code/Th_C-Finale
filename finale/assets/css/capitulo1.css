@@ -70,8 +70,8 @@ body {
 
 .tag-ball {
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 2.5vh;
+    height: 2.5vh;
     background-color: var(--corFundoDialogo);
     border: 2px solid #47d6c3;
 }

@@ -55,7 +55,18 @@
               <div class="nomepersona5" id="nomepersona5">
 
                 <div class="real-nomepersona5">
-                  <div class="ondevaio-nomepersona5" id="name-zone">
+                  <div class="ondevaio-nomepersona5"> <!-- #name-zone para deferir onde o nome fica -->
+
+                    <div class="ball-holder">
+
+                      <div class="tag-ball">
+
+                      </div>
+
+                    </div>
+                    <div class="name-holder" id="name-zone">
+
+                    </div>
 
                   </div>
                 </div>
@@ -71,11 +82,7 @@
 
 
 
-                <!-- <div class="texttext-zone" id="text-zone2">
-                  <div class="mini-image-holder-holder">
-                    <img class="wrapper" id="image-responsive-holder">
-                  </div>
-                </div> -->
+
 
                 <div class="absolute-70">
                   <div class="texttext-zone" id="text-zone2">
@@ -137,7 +144,7 @@
                 </div>
               </div>
 
-            </div>
+            </div> <!--Fim da caixa de diálogo-->
           </div>
         </div>
       </div>

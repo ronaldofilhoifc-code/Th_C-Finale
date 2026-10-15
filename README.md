@@ -12,9 +12,6 @@ O que precisa ser feito:
 - Capitulo 1
 - Capitulo 2
 - Capitulo 3
-- Estilo do Menu
-- Verificar capitulo no Menu
-- checar se a correção das mensagens foi feita
 
 Planilha para escrever dialogos:
 

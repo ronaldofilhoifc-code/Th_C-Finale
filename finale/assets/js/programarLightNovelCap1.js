@@ -14,6 +14,7 @@ let sprFlorenceIndiferente = "../../../assets/imagens/sprFlorenceIndiferente.png
 let sprArlindoIndiferente = "../../../assets/imagens/sprArlindoGrund.png";
 let sprArlindoGrund = "../../../assets/imagens/sprArlindoGrund.png";
 let sprTransparente = "../../../assets/imagens/imagem_transparente.png";
+let sprIgor = "../../../assets/imagens/sprIgor.png";
 
 let sprClodovilTel = "../../../assets/imagens/sprClodovilTel.png";
 
@@ -36,6 +37,10 @@ let arlindoQue = "../../../assets/imagens/ArlindoQue.png";
 let arlindoQ2 = "../../../assets/imagens/ArlindoQ2.png";
 
 let clodovilTelefone = "../../../assets/imagens/clodovilTelefone.png";
+
+let igorA = "../../../assets/imagens/igor.png";
+let igor = "../../../assets/imagens/igorA.png";
+let fragmento = "../../../assets/imagens/Fragmento.png";
 
 // condicoesCena = edita as caixas para alterar entre cenas com um personagem / 2 personagens
 
@@ -216,7 +221,7 @@ const condicoesCena = [
     { solo: false, personagem1: pepeJaqueta, personagem2: arlindoEnojado, trocar: true },
     { solo: false, personagem1: pepeJaqueta, personagem2: arlindoSa, trocar: true },
     /*troca de cena para frente do elevador*/
-    { solo: false, personagem1: pepeJaqueta, personagem2: arlindoAura, trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/elevadorConveniente.jpg)", skippable: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: arlindoAura, trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/bb.jpg", skippable: true },
     { solo: false, personagem1: pepeJaqueta, personagem2: arlindoAura, trocar: true },
     { solo: false, personagem1: pepeJaqueta, personagem2: arlindoO, trocar: true },
     { solo: false, personagem1: pepeJaqueta, personagem2: arlindoO, trocar: true },
@@ -259,6 +264,44 @@ const condicoesCena = [
     { solo: false, personagem1: arlindoAura, personagem2: florenceBolaRoxa, trocar: true },
     { solo: false, personagem1: arlindoO2, personagem2: florenceBolaRoxa, trocar: true },
     { solo: false, personagem1: arlindoO2, personagem2: florenceBolaRoxa, trocar: true },
+
+    /*troca de cena para dentro do elevador*/
+    { solo: true, personagem1: sprTransparente, personagem2: arlindoAura, trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/velvet.jpeg", skippable: true },
+    { solo: true, personagem1: florenceBolaRoxa, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: true, personagem1: florenceBolaRoxa, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: true, personagem1: florenceBolaRoxa, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: igorA, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: igorA, trocar: true },
+    { solo: false, personagem1: hartJaqueta, personagem2: igorA, trocar: true },
+    { solo: false, personagem1: hartJaqueta, personagem2: igorA, trocar: true },
+    { solo: false, personagem1: hartJaqueta, personagem2: igorA, trocar: true },
+    { solo: false, personagem1: igor, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: igor, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: igor, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: igor, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: igor, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: igor, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: igor, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: igor, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: true, personagem1: florenceBolaRoxa, personagem2: florenceBolaRoxa, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: true, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: true, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: true, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: true, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: fragmento, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: fragmento, trocar: true },
+    { solo: true, personagem1: florenceBolaRoxa, personagem2: fragmento, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: true, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: true, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
 ];
 
 
@@ -473,6 +516,43 @@ const pessoas = [
     "Arlindo Grund",
     "Arlindo Grund",
 
+    "",
+    "Florence",
+    "Florence",
+    "Florence",
+    "???",
+    "Pepe the Igor (???)",
+    "jacketbi_",
+    "jacketbi_",
+    "Pepe the Igor",
+    "Florence",
+    "Florence",
+    "Pepe the Igor",
+    "Pepe the Igor",
+    "Florence",
+    "Florence",
+    "Pepe the Igor",
+    "Florence",
+    "Florence",
+    "jacketbi_",
+    "Florence",
+    "Florence",
+    "Florence",
+    "Florence",
+    "Florence",
+    "Florence",
+    "Fragmento",
+    "Florence",
+    "Florence",
+    "jacketbi_",
+    "Florence",
+    "Florence",
+    "jacketbi_",
+    "Florence",
+    "Florence",
+    "jacketbi_",
+    "Florence",
+
 ];
 
 const caminhos = [
@@ -684,6 +764,42 @@ const caminhos = [
     sprFlorenceIndiferente,
     sprArlindoGrund,
     sprArlindoGrund,
+    sprTransparente,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprIgor,
+    sprIgor,
+    hartJaqueta,
+    hartJaqueta,
+    sprIgor,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprIgor,
+    sprIgor,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprIgor,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    hartJaqueta,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    sprTransparente,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    hartJaqueta,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    hartJaqueta,
+    sprFlorenceIndiferente,
+    sprFlorenceIndiferente,
+    hartJaqueta,
+    sprFlorenceIndiferente,
 ];
 
 const frases = [
@@ -890,6 +1006,42 @@ const frases = [
     "~está dispensado por hoje, vá descansar, camarada. a sua mais-valia garante seu aumento.",
     "você é exatamente o que eu imaginei, Florence...",
     "muito obrigado por me ouvir... Foi um prazer ajudá-los!",
+    "> Nossos heróis entram no elevador...",
+    "~ah, tava demorando...",
+    "~quem foi o desafortunado que colocou isso aqui? No MEU PRÉDIO!",
+    "~isso aqui é literalmente a Velvet Room!",
+    "WELCOME, to the Velvet Room",
+    "MY name is Pepe, i'm delighted to make your aquaintance...",
+    "Pepe, dá para tu parar com isso?",
+    "Pior caso, a gente é processado pela Atlus!",
+    "POGGERS, eu até queria, mas eu não consigo voltar para a bolsa...",
+    "~ué, como assim?",
+    "~o seu Estilo foi alterado do nada?",
+    "POGGERS, pelo visto.",
+    "SE eu tento pensar na bolsa, algo como 'Sua Estrutura não permite voltar atrás' surge na minha cabeça ou algo assim...",
+    "~será que...",
+    "~eu me lembro vagamente de terem surrupiado um Fragmento de Fredrick de mim...",
+    "POGGERS, o que são esses?",
+    "~aff...",
+    "~lembram-se do Fredrick explodindo, né?",
+    "Como esquecer... sinto muito, amiga...",
+    "...",
+    "~obrigado, hartebi_...",
+    "~enfim.",
+    "~pelo visto chamam esse evento de 'Desestruturação'...",
+    "~e um pouco depois dele, eu e o Def corriamos para pegar os Fragmentos do Fredrick...",
+    "~ele ficou com um, e eu fiquei com esse:",
+    "> Florrie, eu amo seu estilo...",
+    "~eu odeio que ele fala, meu pobre irmão...",
+    "~e é esse fragmento que me permite ainda alterar o Estilo das coisas na Web.",
+    "E então o Def N. Har_ possui outro desses, certo?",
+    "~é o que acredito.",
+    "~porém, antes de sermos banidos ao Limbo, lembro de ser tocada por um terceiro par de mãos...",
+    "EW QUE NOJO!",
+    "~seguro dizer, não foi a melhor experiência do mundo...",
+    "~mas é seguro dizer também que não há mais Fragmentos a solta.",
+    "O que nos indica que há um terceiro partido com o poder dividido de Frederick, né?",
+    "~provavelmente, divo.",
 ];
 
 // alert(condicoesCena.length);

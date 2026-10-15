@@ -9,14 +9,6 @@
     #intervaloTexto = null;
     #velocidadeDigitacao = 30;
 
-    get posicaoAtual() {
-        return this.#posicaoAtual;
-    }
-
-    set posicaoAtual(valor) {
-        this.#posicaoAtual = valor;
-    }
-    //set e get da posicaoAtual para caso a gente precise voltar ou pular algum texto 
 
     constructor(listaDialogos, idNome, idTexto, idImgResponsiva, idImg) {
         const htmlbasico = `
@@ -125,40 +117,42 @@
         if (nomepersona5) nomepersona5.style.display = "none";
         if (dialogo) dialogo.style.display = "none";
 
-        popupTitulo.innerHTML = "<p class='fonteTituloCap1'>LOG DE DIÁLOGO: Capítulo 1</p>";
+               popupTitulo.innerHTML = "<p class='fonteTituloCap1'>LOG DE DIÁLOGO: Capítulo 1</p>";
 
-        const indiceLimite = this.posicaoAtual + 1;
+        // Limpa o conteúdo antigo para não acumular toda vez que abrir
         popupBody.innerHTML = "";
 
-        for (let indice = 0; indice < indiceLimite; indice++) {
+        // Define até onde o diálogo atual avançou
+        const indiceLimite = this.posicaoAtual + 1;
+        const qtd_log = 20;
+
+        // Calcula de forma segura onde o log deve começar (mostra no máximo as últimas 20 falas)
+        let indiceInicio = indiceLimite - qtd_log;
+        if (indiceInicio < 0) {
+            indiceInicio = 0;
+        }
+
+        // Loop ÚNICO: Já cria a estrutura com os dados corretos dentro dela
+        for (let i = indiceInicio; i < indiceLimite && i < this.#dialogo.length; i++) {
+            const falaAtual = this.#dialogo[i];
+            const numeroPagina = "★   " + String(i + 1).padStart(2, '0');
+
             const html = `
                 <div class="log-holder est-30">
                     <div class="nome-log-holder">
-                        <div class="espaco-nome"></div>
+                        <div class="espaco-nome">${falaAtual["pessoa"]}</div>
                     </div>
                     <div class="fala-log-holder">
                         <div class="espaco-imagem">
-                            <img draggable="false" class="log-wrapper">
+                            <img draggable="false" class="log-wrapper" src="${falaAtual["caminho_imagem"]}">
                         </div>
-                        <div class="espaco-texto"></div>
+                        <div class="espaco-texto">${falaAtual["frase_falada"]}</div>
                     </div>
-                    <div class="page-number-holder"></div>
+                    <div class="page-number-holder">${numeroPagina}</div>
                 </div>
             `;
 
             popupBody.insertAdjacentHTML("beforeend", html);
-        }
-
-        const nomesLog = document.getElementsByClassName("espaco-nome");
-        const imagensLog = document.getElementsByClassName("log-wrapper");
-        const textosLog = document.getElementsByClassName("espaco-texto");
-        const pageNumberHolder = document.getElementsByClassName("page-number-holder");
-
-        for (let indice = 0; indice < indiceLimite; indice++) {
-            nomesLog[indice].innerText = this.#dialogo[indice]["pessoa"];
-            textosLog[indice].innerText = this.#dialogo[indice]["frase_falada"];
-            imagensLog[indice].src = this.#dialogo[indice]["caminho_imagem"];
-            pageNumberHolder[indice].innerText = "★   " + String(indice + 1).padStart(2, '0');
         }
 
         window.scrollTo({
@@ -166,8 +160,8 @@
             behavior: 'smooth' 
         });
 
-
         return true;
+
     }
 
     #digitarTexto(elemento, textoCompleto) {

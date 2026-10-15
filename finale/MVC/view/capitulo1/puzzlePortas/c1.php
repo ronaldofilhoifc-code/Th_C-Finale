@@ -131,7 +131,8 @@
                         class="controllers" draggable="false"></div>
                     <div class="icon-holder" id="slot2"><img src="../../../../assets/imagens/menuFrutiger.png"
                         class="controllers" draggable="false"></div>
-                    <div class="icon-holder" id="slot3"></div>
+                    <div class="icon-holder" id="slot3"><img id="imgslot3" src="../../../../assets/imagens/skipFrutiger.png"
+                        class="controllers" draggable="false"></div>
                   </div>
                 </div>
               </div>

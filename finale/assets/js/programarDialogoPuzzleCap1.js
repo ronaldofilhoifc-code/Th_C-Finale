@@ -1,6 +1,7 @@
 import { Dialogo } from "./dialogo.class.js";
 
 const slot1 = document.getElementById("slot1");
+const slot3 = document.getElementById("slot3");
 
 const dialogos = [
 
@@ -122,7 +123,7 @@ const caminhos = [ // NESSE VETOR VAI OS SPRITES DA CAIXA DE DIALOGO (sprX)
     sprClodovil,
     sprClodovil,
     sprClodovil,
-    
+
     sprClodovil,
     sprClodovil,
     sprClodovil,
@@ -188,13 +189,34 @@ const dialogoy = new Dialogo(dialogos, "name-zone", "text-zone", "image-responsi
 
 if (slot1) {
     slot1.addEventListener("click", () => {
-        dialogoy.next();
 
-        icena++;
+        if (icena == condicoesCena.length) {
 
-        dialogoy.baguncinhaNaCena(condicoesCena[icena]["solo"], condicoesCena[icena]["personagem1"], condicoesCena[icena]["personagem2"], condicoesCena[icena]["trocar"], condicoesCena[icena]["fundoE"],)
+            window.location.href = "portas.php";
+
+        } else {
+            dialogoy.next();
+
+            icena++;
+
+            dialogoy.baguncinhaNaCena(condicoesCena[icena]["solo"], condicoesCena[icena]["personagem1"], condicoesCena[icena]["personagem2"], condicoesCena[icena]["trocar"], condicoesCena[icena]["fundoE"],)
+        }
+
+
 
     });
 }
+
+slot3.addEventListener("click", () => {
+
+    // percorre todo o condicoesCena em busca da primeira mudança de cena, medido pelo campo "skippable". Ao achar, deixa falso.
+    // posicaoatual em dialogo.class.js muda a posicao atual do next()
+
+    // portas.php
+
+    window.location.href = "portas.php";
+
+
+});
 
 dialogoy.baguncinhaNaCena(condicoesCena[icena]["solo"], condicoesCena[icena]["personagem1"], condicoesCena[icena]["personagem2"], condicoesCena[icena]["trocar"], condicoesCena[icena]["fundoE"],)

@@ -1,4 +1,4 @@
-# ÚLTIMA MUDANÇA - Commit 31/08, 17:35 (anotem coisas no readme)
+# ÚLTIMA MUDANÇA - Commit 08/10 (anotem coisas no readme)
 
 LEMBRETES:
 
@@ -15,3 +15,7 @@ O que precisa ser feito:
 - Estilo do Menu
 - Verificar capitulo no Menu
 - checar se a correção das mensagens foi feita
+
+Planilha para escrever dialogos:
+
+https://docs.google.com/spreadsheets/d/1m7hf-czraAbyVOICaL3C3hkxSMgefEzrGb40gWaE4-k/edit?usp=sharing

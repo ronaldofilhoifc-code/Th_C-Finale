@@ -1238,7 +1238,7 @@ const frases = [
     "~ah, tava demorando...",
     "~quem foi o desafortunado que colocou isso aqui? No MEU PRÉDIO!",
     "~isso aqui é literalmente a Velvet Room!",
-    "WELCOME, to the Velvet Room",
+    "WELCOME, to the Velvet Room.",
     "MY name is Pepe, i'm delighted to make your aquaintance...",
     "Pepe, dá para tu parar com isso?",
     "Pior caso, a gente é processado pela Atlus!",
@@ -1314,7 +1314,6 @@ const frases = [
     "~né, amigo?",
     "...Você me chamou do que?",
     "~ignora...",
-
     "> Nossos heróis chegam no Escritório-Mor...",
     "★ Eles chegaram mesmo, Produção?",
     "> Sim, Clodovil. Eles chegaram.",

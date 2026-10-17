@@ -255,6 +255,13 @@ body {
 .secret {
     display: none;
 }
+.vogue {
+    background-image: url(../../MVC/view/capitulo1/backgrounds/estoqueClodovil.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
 
 
 

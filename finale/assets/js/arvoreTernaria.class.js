@@ -1,8 +1,22 @@
 import Node from './nodo.class.js';
 
 class TernaryTree {
-  constructor() {
+
+  #voltas;
+  #bola1;
+  #bola2;
+
+
+  constructor(bola1, bola2) {
     this.root = null;
+    this.voltas = 0;
+    this.bola1 = document.getElementById(bola1);
+    this.bola2 = document.getElementById(bola2);
+  }
+
+  updateBall(oQueAconteceu) {
+    this.bola2.innerText = this.voltas;
+    this.bola1.src = "../../../../assets/imagens/porta"+oQueAconteceu+".png";
   }
 
   insert(caminhoAtePai, direcaoNoPai, acao) {
@@ -61,8 +75,14 @@ class TernaryTree {
     }
 
     let caminhoFinal = [...novoCaminho];
+    this.updateBall("Avancou");
+
     if (currentNode.acao < 0) {
-      alert("volta");
+
+      // se o cara volta, ele entra aqui
+      this.voltas++;
+      this.updateBall("Voltou");
+
       const retrocessos = Math.abs(currentNode.acao)+1;//abs -> módulo
 
       for (let i = 0; i < retrocessos && caminhoFinal.length > 0; i++) {
@@ -70,7 +90,7 @@ class TernaryTree {
       }
     }
     if(currentNode.acao == 100){
-      alert("vc ganhou")
+      // se chega na camada 5, entra nesse if
     }
 
     return [caminhoFinal.length + 1, caminhoFinal];

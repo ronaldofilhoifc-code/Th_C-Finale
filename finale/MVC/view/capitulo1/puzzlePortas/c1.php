@@ -2,7 +2,7 @@
 <html lang="pt-Br">
 
 <head>
-  <title>Camada UM</title>
+  <title>Cap. 1: Entrada ao Estoque</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Inserção do Bootstrap versão 4 -->
@@ -16,7 +16,7 @@
   <link href="../../../../assets/css/capitulo1.css" rel="stylesheet">
 </head>
 
-<body id="ostracizar">
+<body id="ostracizar" class="vogue">
 
 
   <div class="container-fluid paginaprincipal"> <!--MEGA CONTAINER-->

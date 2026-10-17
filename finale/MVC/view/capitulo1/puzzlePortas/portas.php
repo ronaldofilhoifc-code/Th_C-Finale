@@ -2,7 +2,7 @@
 <html lang="pt-Br">
 
 <head>
-    <title>labirinto de portas</title>
+    <title>Cap. 1 PUZZLE: ClodoEstoque</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Inserção do Bootstrap versão 4 -->
@@ -17,18 +17,49 @@
 </head>
 
 <body>
-    <div class="container-fluid header_holder">
-        <p id="camada"></p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 header_holder">
+                <!-- <p id="camada"></p> #camada coloca o texto da camada onde está -->
+
+                <div class="nametag-holder">
+                    <div class="cantos"><div class="knowsball"><img id="bola1" draggable="false" src="#"></div></div>
+                    <div class="meioA" id="camada"></div>
+                    <div class="cantos"><div class="knowsball" id="bola2" title="Seu número de retornos:"></div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="container-fluid">
-        <div class="lados parede">
-            <div class="porta porta-lado"></div>
-        </div>
-        <div class="meio parede">
-             <div class="porta porta-meio"></div>
-        </div>
-        <div class="lados parede">
-             <div class="porta porta-lado"></div>
+
+        <div class="row senhor">
+            <div class="col-md-4 porta-flex">
+                <div class="lados parede">
+                    <div class="porta porta-lado">
+                        <div class="door-kun">
+                            <img draggable="false" src="../../../../assets/imagens/porta.jpg" class="door">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 porta-flex">
+                <div class="meio parede">
+                    <div class="porta porta-meio">
+                        <div class="door-kun">
+                            <img draggable="false" src="../../../../assets/imagens/porta.jpg" class="door">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 porta-flex">
+                <div class="lados parede">
+                    <div class="porta porta-lado">
+                        <div class="door-kun">
+                            <img draggable="false" src="../../../../assets/imagens/porta.jpg" class="door">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

@@ -4,12 +4,13 @@ const titulo = document.getElementById("camada");
 
 let camada =1;
 
-titulo.innerText = "camada "+ camada;
+titulo.innerText = "Você está na Camada " + camada+".";
 
 let caminhoAtual=[];
 
-let ternaria = new TernaryTree();
+let ternaria = new TernaryTree("bola1", "bola2");
 
+ternaria.updateBall("Ficou");
 
 ternaria.insert([], null, 99); 
 
@@ -61,6 +62,6 @@ portas.forEach(porta =>{
 
         console.log(caminhoAtual);
 
-        titulo.innerText = "camada " + camada;
+        titulo.innerText = "Você está na Camada " + camada+".";
     });
 });

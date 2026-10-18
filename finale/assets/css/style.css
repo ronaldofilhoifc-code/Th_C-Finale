@@ -578,3 +578,16 @@ td, th {
     justify-content: center;
     align-items: center;
 }
+.super-buttons {
+    display: flex;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+}
+.btn-super {
+    width: 175px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0%;
+}

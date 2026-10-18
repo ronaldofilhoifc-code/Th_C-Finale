@@ -209,8 +209,9 @@ $lista = $Entity->list('entusiasta');
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 est-10 header footer">
-
+            <div class="col-md-12 est-10 header footer super-buttons">
+                <button class="btn btn-info btn-super" onclick="window.location.href = 'menu.php'">Voltar ao Menu</button>
+                <button class="btn btn-info btn-super" onclick="window.location.href = 'registrarInicial.php'">Criar novo Entusiasta</button>
             </div>
         </div>
     </div>

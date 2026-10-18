@@ -2,7 +2,7 @@
 <html lang="pt-Br">
 
 <head>
-  <title>Criar Arma</title>
+  <title>Crie uma Arma</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Inserção do Bootstrap versão 4 -->
@@ -11,10 +11,13 @@
   <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
   <!-- Fim insercão Bootstrap Versão 4-->
   <!-- css do site-->
-  <!-- <link href="../../../assets/css/style.css" rel="stylesheet">
-  <link href="../../../assets/css/paginaEstatica.css" rel="stylesheet">
-  <link href="../../../assets/css/capitulo1.css" rel="stylesheet"> -->
+  
   <link href="../../assets/css/criar_armas.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/header.css">
+  <link rel="stylesheet" href="../../assets/css/bolaPerfil.css">
+  <link rel="stylesheet" href="../../assets/css/paginaEstatica.css">
+  <link rel="stylesheet" href="../../assets/css/menu.css">
 </head>
 
 <body>

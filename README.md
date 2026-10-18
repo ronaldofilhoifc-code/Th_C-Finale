@@ -9,6 +9,9 @@ LEMBRETES:
 
 O que precisa ser feito:
 
+DEVE SE CRIAR: Páginas para ver os Entusiastas no banco (tipo um tabela_entusiasta.php)
+^ GUSTAVO LEIA ESSA AQUI E FAÇA PVR OwO
+
 - Menu: estilizar botões de relatório e offcanvas, adicionar crud de armas, estilizar crud entusiasta
 
 - Capitulo 1: Diálogos pós puzzle em falha/sucesso, criar armas, cena final
@@ -18,6 +21,7 @@ O que precisa ser feito:
 - criar_armas.php e tabela_armas.php: Estilizar
 
 - criar_associativa.php e tabela_associativa.php: Estilizar
+
 
 Planilha para escrever dialogos:
 

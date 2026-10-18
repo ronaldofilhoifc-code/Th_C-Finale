@@ -429,3 +429,28 @@ p {
     display: flex;
     justify-content: space-between;
 }
+.section-holder {
+    width: 100%;
+    height: 25vh;
+    background-color: chartreuse;
+    display: flex;
+    flex-direction: column;
+}
+.florence-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+.section-title {
+
+    height: 20%;
+    display: flex;
+    align-items: center;
+
+}
+.section-btns {
+
+    height: 80%;
+
+}

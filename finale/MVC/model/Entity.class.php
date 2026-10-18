@@ -252,9 +252,10 @@ class Entity extends Conexao
         $sql = "SELECT * FROM $tabela WHERE $nomeColuna = '$username'";
         $statement = $pdo->prepare($sql);
         $statement->execute();
+        $return_arr = "";
 
         while ($row = $statement->fetch()) {
-            $return_arr[] = $row['id_entusiasta'];
+            $return_arr = $row['id_entusiasta'];
         }
 
         return $return_arr;

@@ -36,3 +36,6 @@ body, html {
 .min-est-90 {
     min-height: 90vh;
 }
+.min-est-80 {
+    min-height: 80vh;
+}

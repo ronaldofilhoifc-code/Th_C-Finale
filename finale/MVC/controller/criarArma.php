@@ -18,4 +18,4 @@ try {
 
 
 
-header("Location: ../view/capitulo1/criar_armas.php");
+header("Location: ../view/criar_armas.php");

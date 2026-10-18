@@ -95,33 +95,17 @@
         <div class="section-holder">
             <div class="section-title">Armas:</div>
             <div class="section-btns">
-                <div class="split50-section">
-                    <div class="split50-button">
-                        <form action="../view/atualizarInicial.php" class="wrapper center" method="post">
-                            <input name="id_entusiasta" type="hidden" value="<?php
-
-                            if (isset($_SESSION["id"])) {
-                                echo "" . $_SESSION["id"];
-                            } else if (isset($_COOKIE["id"])) {
-                                echo "" . $_COOKIE["id"];
-                            }
-
-                            ?>">
-
-                            <button class="btn-area" type="submit" id="btnManageArma">Gerenciar Armas</button>
-                        </form>
-                    </div>
-                </div>
+                
                 <div class="split50-section">
 
 
                     <div class="split50-button">
-                        <button type="button" class="btn-area"
-                            onclick="window.location.href = 'capitulo1/criar_armas.php'">Criar nova</button>
+                        <button type="button" class="btn-area" onclick="window.location.href = 'criar_armas.php'">Criar
+                            nova</button>
                     </div>
                     <div class="split50-button">
-                        <button type="button" class="btn-area"
-                            onclick="window.location.href = 'capitulo1/tabela_armas.php'">Ver todas</button>
+                        <button type="button" class="btn-area" onclick="window.location.href = 'gerenciar_armas.php'">Ver
+                            todas</button>
                     </div>
                 </div>
             </div>
@@ -129,33 +113,17 @@
         <div class="section-holder">
             <div class="section-title">Associações:</div>
             <div class="section-btns">
-                <div class="split50-section">
-                    <div class="split50-button">
-                        <form action="../view/atualizarInicial.php" class="wrapper center" method="post">
-                            <input name="id_entusiasta" type="hidden" value="<?php
-
-                            if (isset($_SESSION["id"])) {
-                                echo "" . $_SESSION["id"];
-                            } else if (isset($_COOKIE["id"])) {
-                                echo "" . $_COOKIE["id"];
-                            }
-
-                            ?>">
-
-                            <button class="btn-area" type="submit" id="btnManageArma2">Gerenciar Associações</button>
-                        </form>
-                    </div>
-                </div>
+                
                 <div class="split50-section">
 
 
                     <div class="split50-button">
                         <button type="button" class="btn-area"
-                            onclick="window.location.href = 'capitulo2/criar_associativa.php'">Criar nova</button>
+                            onclick="window.location.href = 'criar_associativa.php'">Criar nova</button>
                     </div>
                     <div class="split50-button">
                         <button type="button" class="btn-area"
-                            onclick="window.location.href = 'capitulo2/tabela_associativa.php'">Ver todas</button>
+                            onclick="window.location.href = 'tabela_associativa.php'">Ver todas</button>
                     </div>
                 </div>
             </div>

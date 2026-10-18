@@ -6,7 +6,7 @@ session_start();
 <html lang="pt-Br">
 
 <head>
-  <title>Cap. 1: Saída do Estoque</title>
+  <title>PARTE 1: Saída do ClodoEstoque.</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Inserção do Bootstrap versão 4 -->

@@ -2,7 +2,7 @@
 <html lang="pt-Br">
 
 <head>
-  <title>Capitulo 1</title>
+  <title>PARTE 1: Na P.D.O</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Inserção do Bootstrap versão 4 -->

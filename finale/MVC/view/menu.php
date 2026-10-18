@@ -142,7 +142,7 @@ if (isset($_COOKIE["id"])) {
             <div class="col-md-6 est-70 centralizar">
                 <div class="chapter-container">
                     <div class="chapter-extremidade">
-                        Capítulo 1
+                        Parte 1
                     </div>
                     <div class="chapter-conteudo">
 
@@ -177,7 +177,7 @@ if (isset($_COOKIE["id"])) {
             <div class="col-md-6 est-70 centralizar">
                 <div class="chapter-container">
                     <div class="chapter-extremidade">
-                        Capítulo 2
+                        Parte 2
                     </div>
                     <div class="chapter-conteudo">
                         <div class="chapter-info">

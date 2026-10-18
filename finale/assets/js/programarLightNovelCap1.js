@@ -97,7 +97,7 @@ const condicoesCena = [
     { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: true },
 
     /* TROCA DE CENA */
-    { solo: true, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/predios.jpg)", skippable: true },
+    { solo: true, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/pepe.png", trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/predios.jpg)", skippable: true, title: "PARTE 1: Qual desses é a D.I.E?" },
     { solo: true, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "", trocar: true },
     { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true },
     { solo: false, personagem1: "../../../assets/imagens/Real_Florence.png", personagem2: "../../../assets/imagens/hart.png", trocar: true },
@@ -113,7 +113,7 @@ const condicoesCena = [
     { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
     { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
 
-    { solo: true, personagem1: pepeJaqueta, personagem2: "", trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/die.jpg)", skippable: true },
+    { solo: true, personagem1: pepeJaqueta, personagem2: "", trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/die.jpg)", skippable: true, title: "PARTE 1: Sobrevoando a D.I.E."},
     { solo: false, personagem1: pepeJaqueta, personagem2: florenceBolaRoxa, trocar: true },
     { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
     { solo: false, personagem1: florenceBolaRoxa, personagem2: hartJaqueta, trocar: true },
@@ -132,7 +132,7 @@ const condicoesCena = [
     { solo: false, personagem1: pepeJaqueta, personagem2: florenceBolaRoxa, trocar: true },
 
     /* ... trecho anterior do condicoesCena ... */
-    { solo: true, personagem1: "../../../assets/imagens/imagem_transparente.png", personagem2: "", trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/interior_die.jpg)", skippable: true }, // Índice 59
+    { solo: true, personagem1: "../../../assets/imagens/imagem_transparente.png", personagem2: "", trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/interior_die.jpg)", skippable: true, title: "PARTE 1: Finalmente, a D.I.E!"}, // Índice 59
     { solo: true, personagem1: pepeJaqueta, personagem2: florenceBolaRoxa, trocar: true },
     { solo: false, personagem1: pepeJaqueta, personagem2: arlindoAura, trocar: true },
     { solo: false, personagem1: pepeJaqueta, personagem2: arlindoAura, trocar: true },
@@ -235,7 +235,7 @@ const condicoesCena = [
     { solo: false, personagem1: pepeJaqueta, personagem2: arlindoEnojado, trocar: true },
     { solo: false, personagem1: pepeJaqueta, personagem2: arlindoSa, trocar: true },
     /*troca de cena para frente do elevador*/
-    { solo: false, personagem1: pepeJaqueta, personagem2: arlindoAura, trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/bb.jpg", skippable: true },
+    { solo: false, personagem1: pepeJaqueta, personagem2: arlindoAura, trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/bb.jpg", skippable: true, title: "PARTE 1: Que Elevador Conveniente!" },
     { solo: false, personagem1: pepeJaqueta, personagem2: arlindoAura, trocar: true },
     { solo: false, personagem1: pepeJaqueta, personagem2: arlindoO, trocar: true },
     { solo: false, personagem1: pepeJaqueta, personagem2: arlindoO, trocar: true },
@@ -280,7 +280,7 @@ const condicoesCena = [
     { solo: false, personagem1: arlindoO2, personagem2: florenceBolaRoxa, trocar: true },
 
     /*troca de cena para dentro do elevador*/
-    { solo: true, personagem1: sprTransparente, personagem2: arlindoAura, trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/velvet.jpeg", skippable: true },
+    { solo: true, personagem1: sprTransparente, personagem2: arlindoAura, trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/velvet.jpeg", skippable: true, title: "PARTE 1: Elevador Fragmentado."},
     { solo: true, personagem1: florenceBolaRoxa, personagem2: florenceBolaRoxa, trocar: true },
     { solo: true, personagem1: florenceBolaRoxa, personagem2: florenceBolaRoxa, trocar: true },
     { solo: true, personagem1: florenceBolaRoxa, personagem2: florenceBolaRoxa, trocar: true },
@@ -363,7 +363,7 @@ const condicoesCena = [
 
     /*cena do escritório-mor*/
 
-    { solo: true, personagem1: sprTransparente, personagem2: arlindoAura, trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/escritorioMor.jpg", skippable: true },
+    { solo: true, personagem1: sprTransparente, personagem2: arlindoAura, trocar: false, fundoE: "url(../../view/capitulo1/backgrounds/escritorioMor.jpg", skippable: true, title: "PARTE 1: Escritório-Mor."},
     { solo: true, personagem1: clodovilBugado, personagem2: fragmento, trocar: true },
     { solo: true, personagem1: sprTransparente, personagem2: arlindoAura, trocar: true },
     { solo: true, personagem1: clodovilIncredulo, personagem2: fragmento, trocar: true },
@@ -1663,6 +1663,7 @@ if (slot1) {
             dialogox.next();
             if (condicoesCena[icena]["skippable"]) {
                 condicoesCena[icena]["skippable"] = false;
+                document.title = condicoesCena[icena]["title"];
             }
             dialogox.baguncinhaNaCena(condicoesCena[icena]["solo"], condicoesCena[icena]["personagem1"], condicoesCena[icena]["personagem2"], condicoesCena[icena]["trocar"], condicoesCena[icena]["fundoE"],);
         } else {
@@ -1698,6 +1699,7 @@ if (slot3) {
         }
 
         condicoesCena[oSkip].skippable = false;
+        document.title = condicoesCena[oSkip]["title"];
         icena = oSkip;
 
         dialogox.baguncinhaNaCena(

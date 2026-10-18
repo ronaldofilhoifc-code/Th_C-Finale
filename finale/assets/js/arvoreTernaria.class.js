@@ -14,9 +14,11 @@ class TernaryTree {
     this.bola2 = document.getElementById(bola2);
   }
 
+
+
   updateBall(oQueAconteceu) {
     this.bola2.innerText = this.voltas;
-    this.bola1.src = "../../../../assets/imagens/porta"+oQueAconteceu+".png";
+    this.bola1.src = "../../../../assets/imagens/porta" + oQueAconteceu + ".png";
   }
 
   insert(caminhoAtePai, direcaoNoPai, acao) {
@@ -83,20 +85,94 @@ class TernaryTree {
       this.voltas++;
       this.updateBall("Voltou");
 
-      const retrocessos = Math.abs(currentNode.acao)+1;//abs -> módulo
+      const retrocessos = Math.abs(currentNode.acao) + 1;//abs -> módulo
 
       for (let i = 0; i < retrocessos && caminhoFinal.length > 0; i++) {
         caminhoFinal.pop();
       }
     }
-    if(currentNode.acao == 100){
+    if (currentNode.acao == 100) {
       // se chega na camada 5, entra nesse if
+
+
     }
 
     return [caminhoFinal.length + 1, caminhoFinal];
   }
-  
-  
+
+  megaCheck(vetorDePortas, camadaAtual, caminhoAtual, titulo, itemName, item) {
+    itemName.innerText = "Tinta Suvinil";
+
+    const mapeamentoCamadas = {
+      "c1": document.getElementById("camadaEpica1"),
+      "c2": document.getElementById("camadaEpica2"),
+      "c3": document.getElementById("camadaEpica3"),
+      "c4": document.getElementById("camadaEpica4"),
+      "c5": document.getElementById("camadaEpica5")
+    };
+
+    let coisas = [false, false, false, false, false];
+
+    mapeamentoCamadas["c1"].value = coisas[0];
+    mapeamentoCamadas["c2"].value = coisas[1];
+    mapeamentoCamadas["c3"].value = coisas[2];
+    mapeamentoCamadas["c4"].value = coisas[3];
+    mapeamentoCamadas["c5"].value = coisas[4];
+
+    vetorDePortas.forEach(porta => {
+      porta.addEventListener('click', (event) => {
+
+        if (camadaAtual != 5) {
+          const index = Array.from(vetorDePortas).indexOf(event.currentTarget);
+          const lado = index === 1 ? 1 : index === 2 ? 2 : 0;
+
+          const retorno = this.clique(lado, caminhoAtual);
+
+          if (retorno) {
+            caminhoAtual = retorno[1];
+            camadaAtual = retorno[0];
+          }
+
+          titulo.innerText = "Você está na Camada " + camadaAtual + ".";
+        } else {
+          porta.type = "submit";
+          window.location.href = "posPuzzle.php";
+        }
+
+        if (camadaAtual == 1) {
+          itemName.innerText = "Tinta Suvinil";
+        }
+        if (camadaAtual == 2) {
+          itemName.innerText = "C.F 88";
+        }
+        if (camadaAtual == 3) {
+          itemName.innerText = "Rolo Lendário";
+        }
+        if (camadaAtual == 4) {
+          itemName.innerText = "Linho";
+        }
+        if (camadaAtual == 5) {
+          itemName.innerText = "SWAG.";
+        }
+      });
+    });
+
+    item.addEventListener("click", () => {
+      let chaveInput = "c" + camadaAtual;
+      
+      if (mapeamentoCamadas[chaveInput]) {
+        mapeamentoCamadas[chaveInput].value = true;
+      }
+    });
+  }
+
+
+
+
+
 }
+
+
+
 
 export default TernaryTree;

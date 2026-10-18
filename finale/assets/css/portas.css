@@ -22,6 +22,25 @@ body {
 .header_holder {
     height: 10vh;
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.coisa-holder {
+    width: 175px !important;
+    display: flex;
+}
+.objeto-holder {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.decor-holder {
+    width: 30%;
+    height: 100%;
+    background-color: blue;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -37,10 +56,11 @@ body {
 .porta {
     width: 90%;
     height: 80%;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
+    border: none;
 }
 
 .porta-flex {

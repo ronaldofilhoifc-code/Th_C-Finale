@@ -23,49 +23,68 @@
                 <!-- <p id="camada"></p> #camada coloca o texto da camada onde está -->
 
                 <div class="nametag-holder">
-                    <div class="cantos"><div class="knowsball"><img id="bola1" draggable="false" src="#"></div></div>
+                    <div class="cantos">
+                        <div class="knowsball"><img id="bola1" draggable="false" src="#"></div>
+                    </div>
                     <div class="meioA" id="camada"></div>
-                    <div class="cantos"><div class="knowsball" id="bola2" title="Seu número de retornos:"></div>
+                    <div class="cantos">
+                        <div class="knowsball" id="bola2" title="Seu número de retornos:"></div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
 
-        <div class="row senhor">
-            <div class="col-md-4 porta-flex">
-                <div class="lados parede">
-                    <div class="porta porta-lado">
-                        <div class="door-kun">
-                            <img draggable="false" src="../../../../assets/imagens/porta.jpg" class="door">
-                        </div>
+                <div class="coisa-holder nametag-holder" id="item">
+                    <div class="objeto-holder" id="item-name">
+
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4 porta-flex">
-                <div class="meio parede">
-                    <div class="porta porta-meio">
-                        <div class="door-kun">
-                            <img draggable="false" src="../../../../assets/imagens/porta.jpg" class="door">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 porta-flex">
-                <div class="lados parede">
-                    <div class="porta porta-lado">
-                        <div class="door-kun">
-                            <img draggable="false" src="../../../../assets/imagens/porta.jpg" class="door">
-                        </div>
+                    <div class="decor-holder">
+
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="container-fluid">
+
+            <div class="row senhor">
+                <form method="post" action="winorlose.php" name="josias" class="wrapper-flex" id="babaquice">
+                    <input name="camadaEpica1" id="camadaEpica1" type="hidden">
+                    <input name="camadaEpica2" id="camadaEpica2" type="hidden">
+                    <input name="camadaEpica3" id="camadaEpica3" type="hidden">
+                    <input name="camadaEpica4" id="camadaEpica4" type="hidden">
+                    <input name="camadaEpica5" id="camadaEpica5" type="hidden">
+                    <div class="col-md-4 porta-flex">
+                        <div class="lados parede">
+                            <button type="button" class="porta porta-lado paramore">
+                                <div class="door-kun">
+                                    <img draggable="false" src="../../../../assets/imagens/porta.jpg" class="door">
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 porta-flex">
+                        <div class="meio parede">
+                            <button type="button" class="porta porta-meio paramore">
+                                <div class="door-kun">
+                                    <img draggable="false" src="../../../../assets/imagens/porta.jpg" class="door">
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 porta-flex">
+                        <div class="lados parede">
+                            <button type="button" class="porta porta-lado paramore">
+                                <div class="door-kun">
+                                    <img draggable="false" src="../../../../assets/imagens/porta.jpg" class="door">
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
 
 
 
-    <script src="../../../../assets/js/portas.js" type="module"></script>
+        <script src="../../../../assets/js/portas.js" type="module"></script>
 
 
 

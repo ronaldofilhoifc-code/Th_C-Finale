@@ -31,8 +31,8 @@
     <label>Quantidade</label>
     <input type="number" name="quantidade" required>
     <label>Condição</label>
-    <input type="text" name="quantidade" required>
-    <button class="btn btn-danger" type="submit" name="condicao">Criar</button>
+    <input type="text" name="condicao" required>
+    <button class="btn btn-danger" type="submit">Criar</button>
 
 
     </form>

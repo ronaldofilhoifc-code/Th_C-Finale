@@ -5,7 +5,16 @@ let bomboclat = document.getElementById("alvo");
 
 let segredo = document.getElementById("segredo");
 
+let campoUser = document.getElementById("casual");
+let textoUserLogado = document.getElementById("usuario-logado");
 
+textoUserLogado.innerHTML += "<p>Você está logado como "+campoUser.value+".</p>";
+
+let btnUpdateEntusiasta = document.getElementById("btnUpdateEntusiasta");
+let btnDeleteEntusiasta = document.getElementById("btnDeleteEntusiasta");
+
+btnDeleteEntusiasta.innerText = "Deletar "+campoUser.value;
+btnUpdateEntusiasta.innerText = "Editar "+campoUser.value;
 
 window.addEventListener("resize", function () {
 

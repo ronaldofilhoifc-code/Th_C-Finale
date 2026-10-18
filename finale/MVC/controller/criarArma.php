@@ -3,10 +3,18 @@ include_once("../model/Entity.class.php");
 $entity = new Entity();
 $valores = $_POST;
 
-if (!($valores["porte"] || $valores["raridade"] || $valores["potencial"] || $valores["quantidade"])) {
-    $entity->insert("arma", $valores);
-}
 
+try {
+
+    $entity->insert("arma", $valores);
+    $_SESSION["log"] = $_SESSION["log"] . "\n- Criou uma arma";
+
+} catch (Exception $e) {
+
+    echo $e;
+    $_SESSION["log"] = $_SESSION["log"] . "\n- Falhou em criar uma arma";
+
+}
 
 
 

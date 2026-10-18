@@ -1,4 +1,4 @@
-# ÚLTIMA MUDANÇA - Commit 08/10 (anotem coisas no readme)
+# ÚLTIMA MUDANÇA - Commit 17/10 (anotem coisas no readme)
 
 LEMBRETES:
 
@@ -9,9 +9,15 @@ LEMBRETES:
 
 O que precisa ser feito:
 
-- Capitulo 1
-- Capitulo 2
-- Capitulo 3
+- Menu: estilizar botões de relatório e offcanvas, adicionar crud de armas, estilizar crud entusiasta
+
+- Capitulo 1: Diálogos pós puzzle em falha/sucesso, criar armas, cena final
+
+- Capitulo 2: Diálogos e Cenas, Criar associativa, finais.
+
+- criar_armas.php e tabela_armas.php: Estilizar
+
+- criar_associativa.php e tabela_associativa.php: Estilizar
 
 Planilha para escrever dialogos:
 

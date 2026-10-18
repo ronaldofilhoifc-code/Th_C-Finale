@@ -83,8 +83,6 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
-    padding-left: 25px;
-    padding-right: 25px;
 }
 
 .label-holder {
@@ -116,6 +114,13 @@ body {
     align-items: center;
 
 
+}
+.loginMaldit {
+    width: 90% !important;
+    border-right: none;
+}
+.aaa {
+    border-left: none !important;
 }
 
 .remember-holder {
@@ -167,8 +172,8 @@ p {
 }
 
 .inputSenha {
-    width: 90%;
-    border-right: 0px;
+    width: 40%;
+
 }
 
 .see-holder {
@@ -179,7 +184,7 @@ p {
     justify-content: center;
     align-items: center;
     border: 1px solid black;
-    border-left: 0px;
+
 }
 
 .ver-icon {

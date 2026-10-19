@@ -229,6 +229,101 @@ p {
 .footer {
     background-image: linear-gradient(#f9f5fc, #D2EAEC);
 }
+.estilo_cria_um {
+    background-image: linear-gradient(#D2EAEC, transparent);
+}
+#cria-dois {
+    background-image: linear-gradient(transparent, #D2EAEC) !important;
+}
+.mini-fala-tutorial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mini-fala-holder {
+    width: 400px;
+    height: 100px;
+    display: flex;
+    
+    
+}
+#jorjinho {
+    background-image: url(../../MVC/view/capitulo1/backgrounds/escritorioMor.jpg);;
+}
+.mini-foto-holder {
+    width: 100px;
+    height: 100%;
+    
+}
+.mini-texto-holder {
+    width: 300px;
+    height: 100%;
+}
+.caricato {
+    width: 100%;
+    height: 100%;
+    border: 13px solid #D2EAEC;
+    position: relative;
+}
+.bruma-leve {
+    background-color: #D2EAEC;
+    border-radius: 25px 0px 0px 25px;
+}
+.frazer {
+    border-radius: 0px 25px 25px 0px;
+}
+.texto-real {
+    background-color: rgba(210, 234, 236, 0.7);
+    border-radius: 20px;
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.texto-real p{
+    margin: 0;
+    font-size: 13px;
+}
+.overlay-muito-merda {
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+.split-mm {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+.botuquinha {
+    width: 20px;
+    height: 50%;
+    background-color: #D2EAEC;
+}
+#bt1 {
+  border-radius: 0px 0px 15px 0px;  
+}
+#bt2 {
+  border-radius: 0px 0px 0px 15px;  
+}
+#bt3 {
+  border-radius: 0px 15px 0px 0px;  
+}
+#bt4 {
+  border-radius: 15px 0px 0px 0px;  
+}
+#push-down {
+    align-items: end;
+}
+.no-color {
+    background-color: none;
+    background-image: url(../../MVC/view/capitulo1/backgrounds/criarArma.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
 
 .team-holder {
     width: 300px;
@@ -590,4 +685,7 @@ td, th {
     justify-content: center;
     align-items: center;
     padding: 0%;
+}
+.casamento {
+    background-image: url(../../MVC/view/capitulo1/backgrounds/escritorioMor.jpg);
 }

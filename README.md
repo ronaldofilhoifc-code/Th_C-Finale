@@ -9,15 +9,9 @@ LEMBRETES:
 
 O que precisa ser feito:
 
-- Capitulo 1: Diálogos pós puzzle em falha/sucesso, criar armas, cena final
+- Capitulo 1: Cena final
 
 - Capitulo 2: Diálogos e Cenas, Criar associativa, finais
-
-- tabela_entusiasta.php: update e tratamento de exceção (remover entusiasta associado) V
-
-- gerenciar_armas.php: update e tratamento de exceção (remover arma associada) V
-
-- tabela_associativa.php: update, delete e possíveis tratamentos de exceção V
 
 Planilha para escrever dialogos:
 

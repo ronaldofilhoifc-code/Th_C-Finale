@@ -1,4 +1,4 @@
-# ÚLTIMA MUDANÇA - Commit 08/10 (anotem coisas no readme)
+# ÚLTIMA MUDANÇA - Commit 17/10 (anotem coisas no readme)
 
 LEMBRETES:
 
@@ -9,12 +9,15 @@ LEMBRETES:
 
 O que precisa ser feito:
 
-- Capitulo 1
-- Capitulo 2
-- Capitulo 3
-- Estilo do Menu
-- Verificar capitulo no Menu
-- checar se a correção das mensagens foi feita
+- Capitulo 1: Diálogos pós puzzle em falha/sucesso, criar armas, cena final
+
+- Capitulo 2: Diálogos e Cenas, Criar associativa, finais
+
+- tabela_entusiasta.php: update e tratamento de exceção (remover entusiasta associado)
+
+- gerenciar_armas.php: update e tratamento de exceção (remover arma associada)
+
+- tabela_associativa.php: update, delete e possíveis tratamentos de exceção
 
 Planilha para escrever dialogos:
 

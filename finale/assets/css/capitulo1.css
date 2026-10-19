@@ -10,6 +10,7 @@ body {
     --corFundoDialogo: rgb(17, 174, 247);
     --corTransparenteDialogo: rgba(17, 174, 247, 0.81);
     --tamanhoCaixa: 100%;
+    --borderName: 2px solid #47d6c3;
 }
 
 .dialogo-holder {
@@ -50,8 +51,37 @@ body {
 
 .ondevaio-nomepersona5 {
     width: 200px;
-    height: 90%;
+    height: 85%;
     background-color: rgb(244, 220, 255);
+    display: flex;
+    border-radius: 25px 25px 25px 25px;
+    border: var(--borderName);
+    
+}
+
+.ball-holder {
+    width: 30%;
+    height: 100%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tag-ball {
+    border-radius: 50%;
+    width: 2.5vh;
+    height: 2.5vh;
+    background-color: var(--corFundoDialogo);
+    border: 2px solid #47d6c3;
+}
+
+.name-holder {
+    width: 70%;
+    height: 100%;
+    /* background-color: brown; */
+    display: flex;
+    align-items: center;
 }
 
 .image-zone {
@@ -225,6 +255,13 @@ body {
 .secret {
     display: none;
 }
+.vogue {
+    background-image: url(../../MVC/view/capitulo1/backgrounds/estoqueClodovil.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
 
 
 

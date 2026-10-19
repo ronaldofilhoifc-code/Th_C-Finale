@@ -23,7 +23,6 @@ if (empty($resultado2)) {
         $_SESSION["log"] = $_SESSION["log"]."\n- Cadastrou-se com cookies";
         $_SESSION["chap1"] = $resultado3[0]["chave_1cap"];
         $_SESSION["chap2"] = $resultado3[0]["chave_2cap"];
-        $_SESSION["chap3"] = $resultado3[0]["chave_3cap"];
 
         setcookie("id", $resultado2[0], time() + 2628000, "/");
         // echo $_COOKIE["id"];
@@ -32,7 +31,6 @@ if (empty($resultado2)) {
         $_SESSION["log"] = $_SESSION["log"]."\n- Cadastrou-se com sessão";
         $_SESSION["chap1"] = $resultado3[0]["chave_1cap"];
         $_SESSION["chap2"] = $resultado3[0]["chave_2cap"];
-        $_SESSION["chap3"] = $resultado3[0]["chave_3cap"];
 
         $_SESSION["id"] = $resultado2[0];
     }

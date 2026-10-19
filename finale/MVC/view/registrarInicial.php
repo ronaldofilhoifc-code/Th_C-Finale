@@ -80,16 +80,19 @@ $_SESSION["ultimaPagina"] = "loginInicial.php";
                   <div class="input-holder">
                     <input type="text" class="inputBasico" name="nome_usuario" placeholder="Crie seu nome de Entusiasta:">
                   </div>
-                  <div class="label-holder">
-                    Senha:
+                  <div class="label-holder" id="alecrimDourado">
+                    <p>MBTI:</p><p>Senha:</p>
                   </div>
+                  
                   <div class="input-holder">
-                    <input type="password" class="inputBasico inputSenha" name="senha" id="inputSenha" placeholder="Crie sua senha:">
+                    <input type="text" class="inputBasico inputSenha" name="chave_3cap" id="inputMbti" placeholder="(Opcional) Insira seu MBTI:">
                     <div class="see-holder" id="botaoVer">
 
                       <img src="../../assets/imagens/ver-icon.png" class="ver-icon" id="ver-imagem">
 
                     </div>
+                    <input type="password" class="inputBasico inputSenha" name="senha" id="inputSenha" placeholder="Crie sua senha:">
+                    
                   </div>
                   
                 </div>

@@ -21,7 +21,6 @@ $_SESSION["errouLog"] = 1;
 $novoUser = $_POST;
 $novoUser["chave_1cap"] = true;
 $novoUser["chave_2cap"] = false;
-$novoUser["chave_3cap"] = false;
 
 print_r($novoUser);
 
@@ -38,7 +37,7 @@ if (strlen($novoUser["nome_usuario"]) >= 2 && !empty($novoUser["nome_usuario"]) 
         $_SESSION["errouLog"] = 0;
         $_SESSION["mensagem"] = "Já existe um usuário com esse nome!";
         $_SESSION["log"] = $_SESSION["log"] . "\n- Tentou criar um Entusiasta com um nome que já existe, " . $novoUser["nome_usuario"];
-        header("Location: ../view/registrarInicial.php"); 
+        // header("Location: ../view/registrarInicial.php"); 
         
         echo "nome já existe";
         }
@@ -50,7 +49,7 @@ if (strlen($novoUser["nome_usuario"]) >= 2 && !empty($novoUser["nome_usuario"]) 
     $_SESSION["errouLog"] = 0;
     $_SESSION["mensagem"] = "Não se pode criar com campos vazios!";
     $_SESSION["log"] = $_SESSION["log"] . "\n- Tentou criar um Entusiasta e deixou campos vazios";
-    header("Location: ../view/registrarInicial.php");
+    // header("Location: ../view/registrarInicial.php");
 
     echo "campos vazios";
 
@@ -59,7 +58,7 @@ if (strlen($novoUser["nome_usuario"]) >= 2 && !empty($novoUser["nome_usuario"]) 
     $_SESSION["mensagem"] = "Crie um nome com 2 caracteres ou mais!";
     $_SESSION["log"] = $_SESSION["log"] . "\n- Tentou criar um Entusiasta com nome " . $novoUser["nome_usuario"] .
         ", mas falhou. (< 2 caracteres)";
-    header("Location: ../view/registrarInicial.php");
+    // header("Location: ../view/registrarInicial.php");
 
     echo "nome com <2 chars";
 }

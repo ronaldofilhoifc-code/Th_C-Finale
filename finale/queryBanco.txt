@@ -8,7 +8,7 @@ create table entusiasta (
     senha varchar(50),
     chave_1cap boolean default true,
     chave_2cap boolean default false,
-    chave_3cap boolean default false
+    chave_3cap varchar(50) -- esse aqui é o mbti do entusiasta
 
 );
 
@@ -31,12 +31,10 @@ create table associativa (
     data_conquista date,
     maestria varchar(50),
     inventario int, -- numero de armas de um tipo especifico que um Entusiasta carrega
-    
     primary key(id_associativa, id_entusiasta, id_arma),
-    
     foreign key (id_entusiasta) references entusiasta(id_entusiasta),
     foreign key (id_arma) references arma(id_arma)
 
 );
 
-insert into entusiasta(nome_usuario, senha, chave_1cap, chave_2cap, chave_3cap) values ("admin", "admin", true, true, true);
+insert into entusiasta(nome_usuario, senha, chave_1cap, chave_2cap, chave_3cap) values ("admin", "admin", true, true, "intp");

@@ -1,36 +1,132 @@
-*{
+* {
     margin: 0px;
 }
-body{
+
+body {
     height: 100vh;
-}
-.container-fluid{
-    width: 100%;
-    height: 90%;
-    display: flex;
-    flex-direction: row;
-}
-.parede{
-    height: 100%;
-    width: 33.333333%;
-
-    display: flex;
-   justify-content: center;
-   align-items: center;
-
-
-
-}
-.porta{
-    width: 90%;
-    height: 60%;
-    background-image: url(../imagens/porta.webp);
+    background-image: url(../../MVC/view/capitulo1/backgrounds/fundoLab.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
-
+    background-position: center 30%;
 }
-.header_holder{
-    height: 10%;
+
+:root {
+    --border: 2px solid #0f3041;
+}
+
+.senhor {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header_holder {
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.coisa-holder {
+    width: 175px !important;
+    display: flex;
+}
+.objeto-holder {
+    width: 70%;
+    height: 100%;
     display: flex;
     justify-content: center;
-   align-items: center;
+    align-items: center;
+}
+.decor-holder {
+    width: 30%;
+    height: 100%;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parede {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.porta {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+}
+
+.porta-flex {
+    width: 30%;
+    height: 90vh;
+
+    padding: 0;
+}
+.door-kun {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 29px;
+}
+.door {
+    height: 70%;
+}
+.nametag-holder {
+    width: 300px;
+    height: 50px;
+    background-color: #ACC9E9;
+    display: flex;
+    border-radius: 25px;
+    border: var(--border);
+}
+.cantos {
+    width: 20%;
+    height: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.meioA {
+    width: 60%;
+    height: 100%;
+    /* background-color: darkgreen; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+.knowsball {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ACC9E9;
+    border: var(--border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#bola1 {
+    width: 10px;
+    height: 10px;
+}
+@media screen and (max-width: 800px) {
+
+    .porta-flex {
+        height: 30vh;
+        width: 100%;
+    }
+    .porta {
+        height: 95%;
+    }
+
+
 }

@@ -85,8 +85,8 @@ $_SESSION["ultimaPagina"] = "registrarInicial.php";
                     Senha:
                   </div>
                   <div class="input-holder">
-                    <input type="password" class="inputBasico inputSenha" name="senha" id="inputSenha" placeholder="Insira sua senha:">
-                    <div class="see-holder" id="botaoVer">
+                    <input type="password" class="inputBasico inputSenha loginMaldit" name="senha" id="inputSenha loginMaldit" placeholder="Insira sua senha:">
+                    <div class="see-holder aaa" id="botaoVer">
 
                       <img src="../../assets/imagens/ver-icon.png" class="ver-icon" id="ver-imagem">
 

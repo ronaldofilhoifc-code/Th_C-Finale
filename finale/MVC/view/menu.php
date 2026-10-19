@@ -82,41 +82,11 @@ if (isset($_COOKIE["id"])) {
                         <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1"
                             id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                             <div class="offcanvas-header">
-                                <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Menu do Entusiasta</h5>
+                                <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Menu dos CRUDS.</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
                                     aria-label="Close"></button>
                             </div>
-                            <!-- <div class="offcanvas-body">
-                                <div class="update-holder">
-                                    <form action="../view/atualizarInicial.php" class="wrapper" method="post">
-                                        <input name="id_entusiasta" type="hidden" value="<?php
-
-                                        if (isset($_SESSION["id"])) {
-                                            echo "" . $_SESSION["id"];
-                                        } else if (isset($_COOKIE["id"])) {
-                                            echo "" . $_COOKIE["id"];
-                                        }
-
-                                        ?>">
-
-                                        <button type="submit">Atualizar suas credenciais</button>
-                                    </form>
-                                    <form action="../controller/deleteEntusiasta.php" method="post">
-                                        <input type="hidden" value="<?php echo $_SESSION['nomeUsuario'] ?>" name="nome">
-                                        <input type="hidden" value="<?php if (isset($_COOKIE["id"])) {
-                                            echo $_COOKIE["id"];
-                                        } else if (isset($_SESSION["id"])) {
-                                            echo $_SESSION["id"];
-                                        } ?>" name="id">
-                                        <button type="submit">Deletar sua conta</button>
-                                    </form>
-                                    <form action="../controller/logoff.php" class="wrapper" method="post">
-
-                                        <input type="hidden" value="<?php echo $_SESSION['nomeUsuario'] ?>" name="nome">
-                                        <button type="submit">Logoff</button>
-                                    </form>
-                                </div>
-                            </div> -->
+                            
                             <?php 
                             include("incluiveis/offcanvas.php");
                             ?>
@@ -150,7 +120,7 @@ if (isset($_COOKIE["id"])) {
                     <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1"
                             id="offcanvasScrollingB" aria-labelledby="offcanvasScrollingLabel">
                             <div class="offcanvas-header">
-                                <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Menu do Entusiasta Manco</h5>
+                                <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Menu dos CRUDS.</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
                                     aria-label="Close"></button>
                             </div>
@@ -169,10 +139,10 @@ if (isset($_COOKIE["id"])) {
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4 est-70 centralizar">
+            <div class="col-md-6 est-70 centralizar">
                 <div class="chapter-container">
                     <div class="chapter-extremidade">
-                        Capítulo 1
+                        Parte 1
                     </div>
                     <div class="chapter-conteudo">
 
@@ -204,10 +174,10 @@ if (isset($_COOKIE["id"])) {
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 est-70 centralizar">
+            <div class="col-md-6 est-70 centralizar">
                 <div class="chapter-container">
                     <div class="chapter-extremidade">
-                        Capítulo 2
+                        Parte 2
                     </div>
                     <div class="chapter-conteudo">
                         <div class="chapter-info">
@@ -231,33 +201,7 @@ if (isset($_COOKIE["id"])) {
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 est-70 centralizar">
-                <div class="chapter-container">
-                    <div class="chapter-extremidade">
-                        Capítulo 3
-                    </div>
-                    <div class="chapter-conteudo">
-                        <div class="chapter-info">
-
-                        </div>
-                        <div class="chapter-block" id="chap3-holder">
-                            <input id="chap3" type="hidden" value="<?php echo $_SESSION["chap3"] ?>">
-                        </div>
-                    </div>
-                    <div class="chapter-extremidade">
-                        <form action="../controller/redirectCapitulo.php" method="post"
-                            class="wrapper centraliza-botao">
-                            <input type="hidden" value="3" name="elchavodelocho">
-                            <input type="hidden" value="<?php if (isset($_COOKIE["id"])) {
-                                echo $_COOKIE["id"];
-                            } else if (isset($_SESSION["id"])) {
-                                echo $_SESSION["id"];
-                            } ?>" name="id">
-                            <button type="submit" id="chap3-btn" class="btn-menu">Assistir</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+            
         </div>
         <div class="row">
             <div class="col-md-12 est-10 centralizar">

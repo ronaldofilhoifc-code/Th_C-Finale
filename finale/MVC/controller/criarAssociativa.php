@@ -1,20 +1,23 @@
 <?php
-include_once("../model/Entity.class.php");
+session_start();
+require_once("../model/Entity.class.php");
+
 $entity = new Entity();
 $valores = $_POST;
 
-print_r($valores);
+try {
+    if ((!empty($valores["id_entusiasta"]) && !empty($valores["id_arma"]) && !empty($valores["data_conquista"]) && !empty($valores["maestria"]) && array_key_exists("inventario", $valores))) {
+        $entity->insert("associativa", $valores);
+        $_SESSION["log"] = ($_SESSION["log"] ?? "") . "\n- Criou uma associação arma <-> entusiasta";
+        header("Location: ../view/criar_associativa.php");
+        exit;
+    }
 
-
- if (($valores["id_entusiasta"] && $valores["id_arma"] && $valores["data_conquista"] && $valores["maestria"]&& $valores["inventario"])) {
-    $entity->insert("associativa", $valores);
-    $_SESSION["log"] = $_SESSION["log"] . "\n- Criou uma associação arma <-> entusiasta";
-}else{
-     header("Location: ../view/capitulo2/criar_associativa.php");
-     $_SESSION["log"] = $_SESSION["log"] . "\n- Falhou em criar uma associação arma <-> entusiasta";
+    throw new InvalidArgumentException("Dados da associação incompletos.");
+} catch (Throwable $e) {
+    $_SESSION["log"] = ($_SESSION["log"] ?? "") . "\n- Falhou em criar uma associação arma <-> entusiasta. " . $e->getMessage();
+    $mensagem = str_replace("\n", " ", $e->getMessage());
+    $mensagem = str_replace("'", "\\'", $mensagem);
+    echo "<script>alert('" . $mensagem . "'); window.location.href='../view/criar_associativa.php';</script>";
+    exit;
 }
-
-
-
-
- header("Location: ../view/criar_associativa.php");

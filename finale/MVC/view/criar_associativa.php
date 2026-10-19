@@ -143,10 +143,11 @@ $listaEntusiastas = $Entity->list('entusiasta');
                         <select id="id_arma" name="id_arma">
                             <option value="" disabled selected>id:porte:raridade</option>
                             <?php foreach ($listaArmas as $linha) { ?>
-
-                                <option value="<?php echo $linha["id_arma"] ?>">
-                                    <?php echo $linha["id_arma"] . ":" . $linha["porte"] . ":" . $linha["raridade"] ?>
-                                </option>
+                                <?php if ((int) $linha["quantidade"] > 0) { ?>
+                                    <option value="<?php echo $linha["id_arma"] ?>" data-quantidade="<?php echo (int) $linha["quantidade"]; ?>">
+                                        <?php echo $linha["id_arma"] . ":" . $linha["porte"] . ":" . $linha["raridade"] ?>
+                                    </option>
+                                <?php } ?>
                             <?php } ?>
                         </select>
                         <div class="label-holder-esp"><label>Data da Conquista:</label></div>
@@ -154,7 +155,7 @@ $listaEntusiastas = $Entity->list('entusiasta');
                         <div class="label-holder-esp"><label>Maestria:</label></div>
                         <input type="text" name="maestria" required>
                         <div class="label-holder-esp"><label>Inventario:</label></div>
-                        <input type="number" name="inventario" required>
+                        <input id="inventario" type="number" name="inventario" min="1" max="1" required>
                         <button class="btn btn-danger" type="submit">Criar</button>
 
 
@@ -176,6 +177,50 @@ $listaEntusiastas = $Entity->list('entusiasta');
     </div>
 
     <script src="../../assets/js/bomboclat.js"></script>
+    <script>
+        const armaSelect = document.getElementById('id_arma');
+        const inventarioInput = document.getElementById('inventario');
+        const formAssociativa = document.querySelector('form');
+
+        function atualizarLimiteInventario() {
+            const optionSelecionada = armaSelect.options[armaSelect.selectedIndex];
+            const maximo = optionSelecionada && optionSelecionada.dataset.quantidade ? Number(optionSelecionada.dataset.quantidade) : 1;
+
+            inventarioInput.max = maximo;
+            inventarioInput.min = 1;
+
+            if (Number(inventarioInput.value) > maximo) {
+                inventarioInput.value = maximo;
+            }
+            if (Number(inventarioInput.value) < 1) {
+                inventarioInput.value = 1;
+            }
+        }
+
+        armaSelect.addEventListener('change', atualizarLimiteInventario);
+        inventarioInput.addEventListener('input', () => {
+            const maximo = Number(inventarioInput.max) || 1;
+            if (Number(inventarioInput.value) > maximo) {
+                inventarioInput.value = maximo;
+            }
+            if (Number(inventarioInput.value) < 1) {
+                inventarioInput.value = 1;
+            }
+        });
+
+        formAssociativa.addEventListener('submit', (event) => {
+            const maximo = Number(inventarioInput.max) || 0;
+            const valor = Number(inventarioInput.value) || 0;
+
+            if (valor <= 0 || valor > maximo) {
+                event.preventDefault();
+                alert('Você não tem essa quantidade disponível para esta arma.');
+                return;
+            }
+        });
+
+        atualizarLimiteInventario();
+    </script>
 
 </body>
 

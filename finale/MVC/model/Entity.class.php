@@ -105,8 +105,56 @@ class Entity extends Conexao
     //INSERT
     public function insert($table, $data)
     {
-
         $pdo = parent::getInstance();
+
+        if ($table === "associativa") {
+            $idArma = $data["id_arma"] ?? null;
+            $quantidadeAssociativa = isset($data["inventario"]) ? (int) $data["inventario"] : 0;
+
+            if ($idArma === null || !is_numeric($idArma) || $quantidadeAssociativa <= 0) {
+                throw new InvalidArgumentException("Quantidade da associação inválida.");
+            }
+
+            $stmt = $pdo->prepare("SELECT quantidade FROM arma WHERE id_arma = :id_arma LIMIT 1");
+            $stmt->execute([":id_arma" => $idArma]);
+            $arma = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if (!$arma || (int) $arma["quantidade"] < $quantidadeAssociativa) {
+                throw new RuntimeException("Não há quantidade suficiente desta arma no estoque.");
+            }
+
+            $pdo->beginTransaction();
+
+            try {
+                $fields = implode(", ", array_keys($data));
+                $values = ":" . implode(", :", array_keys($data));
+                $sql = "INSERT INTO $table($fields) VALUES ($values)";
+                $statement = $pdo->prepare($sql);
+
+                foreach ($data as $key => $value) {
+                    $statement->bindValue(":$key", $value, PDO::PARAM_STR);
+                }
+
+                $statement->execute();
+
+                $updateArma = $pdo->prepare("UPDATE arma SET quantidade = quantidade - :quantidade WHERE id_arma = :id_arma AND quantidade >= :quantidade");
+                $updateArma->execute([
+                    ":quantidade" => $quantidadeAssociativa,
+                    ":id_arma" => $idArma,
+                ]);
+
+                if ($updateArma->rowCount() !== 1) {
+                    throw new RuntimeException("Não foi possível atualizar a quantidade da arma.");
+                }
+
+                $pdo->commit();
+                return true;
+            } catch (Throwable $e) {
+                $pdo->rollBack();
+                throw $e;
+            }
+        }
+
         $fields = implode(", ", array_keys($data));
         $values = ":" . implode(", :", array_keys($data));
 
@@ -118,8 +166,9 @@ class Entity extends Conexao
         }
 
         $statement->execute();
-    }
 
+        return true;
+    }
 
     public function searchIdLivro($id)
     {
@@ -148,10 +197,58 @@ class Entity extends Conexao
     public function delete($table, $id, $idLivro) // tabela, "id_livro", id
     {
         $pdo = parent::getInstance();
+
+        if ($table === "entusiasta") {
+            $usuarioLogado = $_SESSION["id"] ?? $_COOKIE["id"] ?? null;
+            if ($usuarioLogado === null || !$this->checkAdm($usuarioLogado)) {
+                throw new RuntimeException("Acesso negado: apenas administradores podem deletar entusiastas.");
+            }
+
+            $verificaAdmin = $pdo->prepare("SELECT medidorEspecial FROM entusiasta WHERE id_entusiasta = :id LIMIT 1");
+            $verificaAdmin->execute([":id" => $idLivro]);
+            $alvo = $verificaAdmin->fetch(PDO::FETCH_ASSOC);
+
+            if ($alvo && (int) $alvo["medidorEspecial"] === 1) {
+                throw new RuntimeException("Administradores não podem ser deletados.");
+            }
+        }
+
+        if ($table === "associativa") {
+            $pdo->beginTransaction();
+
+            try {
+                $selectArma = $pdo->prepare("SELECT id_arma, inventario FROM associativa WHERE id_associativa = :id LIMIT 1");
+                $selectArma->execute([":id" => $idLivro]);
+                $associativa = $selectArma->fetch(PDO::FETCH_ASSOC);
+
+                if ($associativa && isset($associativa["id_arma"])) {
+                    $quantidadeAssociativa = isset($associativa["inventario"]) ? (int) $associativa["inventario"] : 0;
+                    $updateArma = $pdo->prepare("UPDATE arma SET quantidade = quantidade + :quantidade WHERE id_arma = :id_arma");
+                    $updateArma->execute([
+                        ":quantidade" => max(0, $quantidadeAssociativa),
+                        ":id_arma" => $associativa["id_arma"],
+                    ]);
+                }
+
+                $sql = "DELETE FROM $table WHERE $id = :id";
+                $statement = $pdo->prepare($sql);
+                $statement->bindValue(":id", $idLivro);
+                $statement->execute();
+
+                $pdo->commit();
+                return true;
+            } catch (Throwable $e) {
+                $pdo->rollBack();
+                throw $e;
+            }
+        }
+
         $sql = "DELETE FROM $table WHERE $id = :id";
         $statement = $pdo->prepare($sql);
         $statement->bindValue(":id", $idLivro);
         $statement->execute();
+
+        return true;
     }
 
     public function getInfo($table, $id, $idname)
@@ -171,6 +268,14 @@ class Entity extends Conexao
     public function update($table, $data, $id, $idname)
     {
         $pdo = parent::getInstance();
+
+        if ($table === "entusiasta") {
+            $usuarioLogado = $_SESSION["id"] ?? $_COOKIE["id"] ?? null;
+            if ($usuarioLogado === null || !$this->checkAdm($usuarioLogado)) {
+                throw new RuntimeException("Acesso negado: apenas administradores podem atualizar entusiastas.");
+            }
+        }
+
         $new_values = "";
         foreach ($data as $key => $value) {
             $new_values .= "$key=:$key, ";
@@ -188,35 +293,34 @@ class Entity extends Conexao
     public function promocao($userAlvo, $userLogado, $cargo)
     {
         $pdo = parent::getInstance();
+        $userAlvo = (int) $userAlvo;
+        $userLogado = (int) $userLogado;
 
-        if ($cargo == 1) { // se o rebaixado for um adm, ele é imediatamente cagado :D
+        if ($userLogado === 0 || !$this->checkAdm($userLogado)) {
+            throw new RuntimeException("Acesso negado: apenas administradores podem alterar permissões.");
+        }
 
-            // COMEÇO DO PROCESSO DE REBAIXAMENTO
+        if ($userLogado === $userAlvo) {
+            return 2;
+        }
 
-            if ($userLogado !== $userAlvo) { // um adm não pode se rebaixar
+        if ($cargo == 1) {
+            $sql = "UPDATE entusiasta SET medidorEspecial = 0 WHERE id_entusiasta = :id AND medidorEspecial = 1";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([":id" => $userAlvo]);
 
-                $sql = "UPDATE login SET medidorEspecial = 0 WHERE usuario = '$userAlvo'";
-                $stmt = $pdo->prepare($sql);
-                $stmt->execute();
-
-                return 1;
-            } else {
-
-                return 2;
-            }
-
-            // FIM DO PROCESSO DE REBAIXAMENTO
-
+            return $stmt->rowCount() === 1 ? 1 : 3;
         }
 
         if ($cargo == 0) {
-
-            $sql = "UPDATE login SET medidorEspecial = 1 WHERE usuario = '$userAlvo'";
+            $sql = "UPDATE entusiasta SET medidorEspecial = 1 WHERE id_entusiasta = :id AND medidorEspecial = 0";
             $stmt = $pdo->prepare($sql);
-            $stmt->execute();
+            $stmt->execute([":id" => $userAlvo]);
 
-            return 0;
+            return $stmt->rowCount() === 1 ? 0 : 4;
         }
+
+        throw new InvalidArgumentException("Cargo inválido.");
     }
 
     public function updateEmprestimo($id_emprestimo, $id_usuario, $data_emprestimo, $data_devolucao)
@@ -277,19 +381,18 @@ class Entity extends Conexao
     public function checkAdm($usuario)
     {
         $pdo = parent::getInstance();
-        $sql = "SELECT medidorEspecial FROM login WHERE usuario = '$usuario' and medidorEspecial=1";
 
-        $statement = $pdo->query($sql);
-        $statement->execute();
-
-
-        if ($statement->rowCount() >= 1) {
-            return true; //1
+        if (is_numeric($usuario)) {
+            $sql = "SELECT medidorEspecial FROM entusiasta WHERE id_entusiasta = :usuario AND medidorEspecial = 1 LIMIT 1";
+            $statement = $pdo->prepare($sql);
+            $statement->execute([":usuario" => $usuario]);
+        } else {
+            $sql = "SELECT medidorEspecial FROM entusiasta WHERE nome_usuario = :usuario AND medidorEspecial = 1 LIMIT 1";
+            $statement = $pdo->prepare($sql);
+            $statement->execute([":usuario" => $usuario]);
         }
-        return false; //nada
 
-
-
+        return $statement->fetchColumn() == 1;
     }
     public function checkCapituloID($capitulo, $id)
     {

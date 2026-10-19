@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 require_once("../model/Entity.class.php");
 $Entity = new Entity();
@@ -13,6 +13,8 @@ if (isset($_COOKIE["id"])) {
     $_SESSION["nomeUsuario"] = $panorama[0];
 }
 $lista = $Entity->list('entusiasta');
+$usuarioAtual = $_SESSION["id"] ?? $_COOKIE["id"] ?? null;
+$isAdmin = $usuarioAtual !== null && $Entity->checkAdm($usuarioAtual);
 ?>
 
 <!DOCTYPE html>
@@ -22,14 +24,10 @@ $lista = $Entity->list('entusiasta');
     <title>Gerenciar Entusiastas</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Inserção do Bootstrap versão 4 -->
     <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
-
-    <!-- Fim insercão Bootstrap Versão 4-->
-    <!-- css do site-->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/header.css">
     <link rel="stylesheet" href="../../assets/css/bolaPerfil.css">
@@ -38,108 +36,59 @@ $lista = $Entity->list('entusiasta');
 </head>
 
 <body>
-
-
-
     <div class="container-fluid now">
         <div class="row">
             <div class="col-md-12 est-10 header">
-
-
                 <div class="team-holder">
-                    <img src="../../assets/imagens/Real_Florence.png"
-                        title="~ahn, você não tinha uma imagem melhor minha?" class="team-img">
-                    <img id="bigtwist3" src="../../assets/imagens/pepe.png"
-                        title="POGGERS ENTUSIASTA, VAMOS ACABAR COM ISSO" class="team-img">
-                    <img src="../../assets/imagens/hart.png" title="Enfim, o final. Daqui só um de nós passa, Def."
-                        class="team-img" id="bigtwist1">
+                    <img src="../../assets/imagens/Real_Florence.png" title="~ahn, você não tinha uma imagem melhor minha?" class="team-img">
+                    <img id="bigtwist3" src="../../assets/imagens/pepe.png" title="POGGERS ENTUSIASTA, VAMOS ACABAR COM ISSO" class="team-img">
+                    <img src="../../assets/imagens/hart.png" title="Enfim, o final. Daqui só um de nós passa, Def." class="team-img" id="bigtwist1">
                 </div>
                 <div class="team-holder">
-                    <div class="eletric">
-                        Th_C
-                    </div>
-                    <img src="../../assets/imagens/Real_Philismeu.png"
-                        title="Como se diz mesmo? Ah, sim. Olá, Entusiasta." class="team-img">
-                    <div class="eletric">
-                        THE FINALE
-                    </div>
+                    <div class="eletric">Th_C</div>
+                    <img src="../../assets/imagens/Real_Philismeu.png" title="Como se diz mesmo? Ah, sim. Olá, Entusiasta." class="team-img">
+                    <div class="eletric">THE FINALE</div>
                 </div>
                 <div class="team-holder">
-                    <img id="bigtwist2" src="../../assets/imagens/def.png"
-                        title="prosit por chegar tão longe, hart_. Vamos acabar com essa Scheiße." class="team-img">
-                    <img src="../../assets/imagens/Real_Fritz.png"
-                        title="M- Me- Mestre, eu não sei como isso vai funcionar..." class="team-img">
+                    <img id="bigtwist2" src="../../assets/imagens/def.png" title="prosit por chegar tão longe, hart_. Vamos acabar com essa Scheiße." class="team-img">
+                    <img src="../../assets/imagens/Real_Fritz.png" title="M- Me- Mestre, eu não sei como isso vai funcionar..." class="team-img">
                     <div class="adicionavel" id="alvo">
-                        <div id="botaoPC" class="btn btn-primary bola-perfil" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><?php
+                        <div id="botaoPC" class="btn btn-primary bola-perfil" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><?php echo $Entity->iniciaisBolaPerfil($_SESSION["nomeUsuario"]); ?></div>
 
-                            echo $Entity->iniciaisBolaPerfil($_SESSION["nomeUsuario"]);
-
-
-
-                            ?></div>
-
-                        <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1"
-                            id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                        <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                             <div class="offcanvas-header">
                                 <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Menu dos CRUDS.</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                    aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             </div>
 
-                            <?php
-                            include("incluiveis/offcanvas.php");
-                            ?>
+                            <?php include("incluiveis/offcanvas.php"); ?>
                         </div>
-
-
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
-
 
     <div class="container-fluid segredo" id="segredo">
         <div class="row">
             <div class="col-md-12 est-10 oi">
+                <div id="botaoMINI" class="btn btn-primary bola-perfil" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrollingB" aria-controls="offcanvasScrolling"><?php echo $Entity->iniciaisBolaPerfil($_SESSION["nomeUsuario"]); ?></div>
 
-                <div id="botaoMINI" class="btn btn-primary bola-perfil" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasScrollingB" aria-controls="offcanvasScrolling"><?php
-
-                    echo $Entity->iniciaisBolaPerfil($_SESSION["nomeUsuario"]);
-
-
-
-                    ?></div>
-
-
-
-                <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1"
-                    id="offcanvasScrollingB" aria-labelledby="offcanvasScrollingLabel">
+                <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="offcanvasScrollingB" aria-labelledby="offcanvasScrollingLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Menu dos CRUDS.</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
 
-                    <?php
-                    include("incluiveis/offcanvas.php");
-                    ?>
-
+                    <?php include("incluiveis/offcanvas.php"); ?>
                 </div>
-
             </div>
         </div>
     </div>
 
-
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 min-est-80 centralizar">
-
                 <table id="tabelao">
                     <thead>
                         <th>Id</th>
@@ -148,15 +97,13 @@ $lista = $Entity->list('entusiasta');
                         <th>Chave Parte 1</th>
                         <th>Chave Parte 2</th>
                         <th>MBTI</th>
-                        <th>Ações</th>
+                        <?php if ($isAdmin): ?>
+                            <th>Ações</th>
+                        <?php endif; ?>
                     </thead>
 
                     <tbody>
-                        <?php
-
-
-                        foreach ($lista as $linha) {
-                            ?>
+                        <?php foreach ($lista as $linha): ?>
                             <tr>
                                 <td><?php echo htmlspecialchars($linha['id_entusiasta']); ?></td>
                                 <td><?php echo htmlspecialchars($linha['nome_usuario']); ?></td>
@@ -164,51 +111,48 @@ $lista = $Entity->list('entusiasta');
                                 <td><?php echo htmlspecialchars($linha['chave_1cap']); ?></td>
                                 <td><?php echo htmlspecialchars($linha['chave_2cap']); ?></td>
                                 <td><?php echo htmlspecialchars($linha['chave_3cap']); ?></td>
-                                <td class="tinashe">
-                                    <div class="split50-brainrot">
-                                        <form action="../controller/delete_entusiasta.php" class="wrapper centralizar"
-                                            method="post">
-                                            <input name="id_entusiasta" type="hidden"
-                                                value="<?php echo htmlspecialchars($linha['id_entusiasta']); ?>">
-                                            <input name="nome_usuario" type="hidden" value="
-                      <?php
 
-                      if (isset($_COOKIE["id"])) {
-                          echo $_COOKIE["id"];
-                      } else if (isset($_SESSION["id"])) {
-                          echo $_SESSION["id"];
-                      }
+                                <?php if ($isAdmin): ?>
+                                    <td class="tinashe">
+                                        <div class="split50-brainrot">
+                                            <?php if ((int) $linha['medidorEspecial'] !== 1): ?>
+                                                <form action="../controller/delete_entusiasta.php" class="wrapper centralizar" method="post">
+                                                    <input name="id_entusiasta" type="hidden" value="<?php echo htmlspecialchars($linha['id_entusiasta']); ?>">
+                                                    <input name="nome_usuario" type="hidden" value="<?php echo htmlspecialchars($usuarioAtual); ?>">
+                                                    <button class="btn btn-danger btn-tabela" type="submit">Deletar</button>
+                                                </form>
+                                            <?php endif; ?>
+                                        </div>
 
-                      ?>">
-                                            <button class="btn btn-danger btn-tabela" type="submit">Deletar</button>
-                                        </form>
-                                    </div>
-                                    <div class="split50-brainrot">
-                                        <form action="../view/update_entusiasta.php" class="wrapper centralizar"
-                                            method="post">
-                                            <input name="id_entusiasta" type="hidden" value="<?php echo htmlspecialchars($linha['id_entusiasta']); ?>">
-                                            <input name="nome_usuario" type="hidden" value="<?php echo htmlspecialchars($linha['nome_usuario']); ?>">
-                                            <input name="senha" type="hidden" value="<?php echo htmlspecialchars($linha['senha']); ?>">
-                                            <input name="chave_1cap" type="hidden" value="<?php echo htmlspecialchars($linha['chave_1cap']); ?>">
-                                            <input name="chave_2cap" type="hidden" value="<?php echo htmlspecialchars($linha['chave_2cap']); ?>">
-                                            <input name="chave_3cap" type="hidden" value="<?php echo htmlspecialchars($linha['chave_3cap']); ?>">
-                                            <button class="btn btn-success btn-tabela" type="submit">Atualizar</button>
-                                        </form>
-                                    </div>
-                                </td>
+                                        <div class="split50-brainrot">
+                                            <form action="../view/update_entusiasta.php" class="wrapper centralizar" method="post">
+                                                <input name="id_entusiasta" type="hidden" value="<?php echo htmlspecialchars($linha['id_entusiasta']); ?>">
+                                                <input name="nome_usuario" type="hidden" value="<?php echo htmlspecialchars($linha['nome_usuario']); ?>">
+                                                <input name="senha" type="hidden" value="<?php echo htmlspecialchars($linha['senha']); ?>">
+                                                <input name="chave_1cap" type="hidden" value="<?php echo htmlspecialchars($linha['chave_1cap']); ?>">
+                                                <input name="chave_2cap" type="hidden" value="<?php echo htmlspecialchars($linha['chave_2cap']); ?>">
+                                                <input name="chave_3cap" type="hidden" value="<?php echo htmlspecialchars($linha['chave_3cap']); ?>">
+                                                <button class="btn btn-success btn-tabela" type="submit">Atualizar</button>
+                                            </form>
+                                        </div>
+
+                                        <div class="split50-brainrot">
+                                            <form action="../controller/promover_entusiasta.php" class="wrapper centralizar" method="post">
+                                                <input name="id_entusiasta" type="hidden" value="<?php echo htmlspecialchars($linha['id_entusiasta']); ?>">
+                                                <input name="acao" type="hidden" value="<?php echo (int) $linha['medidorEspecial'] === 1 ? 'rebaixar' : 'promover'; ?>">
+                                                <button class="btn btn-<?php echo (int) $linha['medidorEspecial'] === 1 ? 'warning' : 'primary'; ?> btn-tabela" type="submit">
+                                                    <?php echo (int) $linha['medidorEspecial'] === 1 ? 'Rebaixar' : 'Promover'; ?>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                <?php endif; ?>
                             </tr>
-                        <?php } ?>
-
-
+                        <?php endforeach; ?>
                     </tbody>
-
                 </table>
-
             </div>
-
-
         </div>
-
     </div>
 
     <div class="container-fluid">
@@ -220,14 +164,7 @@ $lista = $Entity->list('entusiasta');
         </div>
     </div>
 
-
-
     <script src="../../assets/js/bomboclat.js"></script>
-
-
-
-
-
 </body>
 
 </html>

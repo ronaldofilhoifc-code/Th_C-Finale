@@ -8,7 +8,8 @@ create table entusiasta (
     senha varchar(50),
     chave_1cap boolean default true,
     chave_2cap boolean default false,
-    chave_3cap varchar(50) -- esse aqui é o mbti do entusiasta
+    chave_3cap varchar(50), -- esse aqui é o mbti do entusiasta
+    medidorEspecial boolean default false
 
 );
 
@@ -37,4 +38,4 @@ create table associativa (
 
 );
 
-insert into entusiasta(nome_usuario, senha, chave_1cap, chave_2cap, chave_3cap) values ("admin", "admin", true, true, "intp");
+insert into entusiasta(nome_usuario, senha, chave_1cap, chave_2cap, chave_3cap,medidorEspecial) values ("admin", "admin", true, true, "intp",true);

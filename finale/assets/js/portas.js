@@ -7,6 +7,7 @@ const babaquice = document.getElementById("babaquice");
 
 const item = document.getElementById("item");
 const itemName = document.getElementById("item-name");
+const imgCheck = document.getElementById("imgCheck");
 
 let camada = 1;
 
@@ -74,7 +75,7 @@ ternaria.insert([2, 2, 1], 2, -2);
 
 //caminho certo -> direita-direita-centro-esquerda
 
-ternaria.megaCheck(portas, camada, caminhoAtual, titulo, itemName, item);
+ternaria.megaCheck(portas, camada, caminhoAtual, titulo, itemName, item, imgCheck);
 // megaCheck() = função que pega o forEach acima e coloca na classe para funcar a camada 5 para redirecionar
 // o user para o diálogo final senhor, gusta, que código hein
 

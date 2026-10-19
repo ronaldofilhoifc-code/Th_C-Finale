@@ -25,12 +25,8 @@ try {
     $Entity->delete("entusiasta", "id_entusiasta", $id);
     header("Location: ../view/tabela_entusiasta.php");
     exit;
-} catch (PDOException $e) {
-    if ($e->getCode() == 23000) {
-        $_SESSION["log"] = ($_SESSION["log"] ?? "") . "\n- Falhou em deletar um Entusiasta. Ele está associado a uma arma.";
-    } else {
-        $_SESSION["log"] = ($_SESSION["log"] ?? "") . "\n- Falhou em deletar um Entusiasta. Erro: " . $e->getMessage();
-    }
+} catch (Throwable $e) {
+    $_SESSION["log"] = ($_SESSION["log"] ?? "") . "\n- Falhou em deletar um Entusiasta. Erro: " . $e->getMessage();
     header("Location: ../view/tabela_entusiasta.php");
     exit;
 }

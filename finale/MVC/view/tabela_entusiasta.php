@@ -186,8 +186,12 @@ $lista = $Entity->list('entusiasta');
                                     <div class="split50-brainrot">
                                         <form action="../view/update_entusiasta.php" class="wrapper centralizar"
                                             method="post">
-                                            <input name="id_entusiasta" type="hidden"
-                                                value="<?php echo htmlspecialchars($linha['id_entusiasta']); ?>">
+                                            <input name="id_entusiasta" type="hidden" value="<?php echo htmlspecialchars($linha['id_entusiasta']); ?>">
+                                            <input name="nome_usuario" type="hidden" value="<?php echo htmlspecialchars($linha['nome_usuario']); ?>">
+                                            <input name="senha" type="hidden" value="<?php echo htmlspecialchars($linha['senha']); ?>">
+                                            <input name="chave_1cap" type="hidden" value="<?php echo htmlspecialchars($linha['chave_1cap']); ?>">
+                                            <input name="chave_2cap" type="hidden" value="<?php echo htmlspecialchars($linha['chave_2cap']); ?>">
+                                            <input name="chave_3cap" type="hidden" value="<?php echo htmlspecialchars($linha['chave_3cap']); ?>">
                                             <button class="btn btn-success btn-tabela" type="submit">Atualizar</button>
                                         </form>
                                     </div>

@@ -221,6 +221,16 @@ $lista = $Entity->list('associativa');
                     <form action="../view/update_associativa.php" class="wrapper centralizar" method="post">
                       <input name="id_associativa" type="hidden"
                         value="<?php echo htmlspecialchars($linha['id_associativa']); ?>">
+                      <input name="id_entusiasta" type="hidden"
+                        value="<?php echo htmlspecialchars($linha['id_entusiasta']); ?>">
+                      <input name="id_arma" type="hidden"
+                        value="<?php echo htmlspecialchars($linha['id_arma']); ?>">
+                      <input name="data_conquista" type="hidden"
+                        value="<?php echo htmlspecialchars($linha['data_conquista']); ?>">
+                      <input name="maestria" type="hidden"
+                        value="<?php echo htmlspecialchars($linha['maestria']); ?>">
+                      <input name="inventario" type="hidden"
+                        value="<?php echo htmlspecialchars($linha['inventario']); ?>">
                       <button class="btn btn-success btn-tabela" type="submit">Atualizar</button>
                     </form>
                   </div>

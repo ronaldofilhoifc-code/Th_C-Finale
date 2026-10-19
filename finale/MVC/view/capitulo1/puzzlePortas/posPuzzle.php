@@ -109,7 +109,7 @@ session_start();
 
               <div class="dialogo" id="dialogo">
                 <div class="image-zone">
-                  <img src="../../../assets/imagens/Real_Def_N_Har_invert.png" class="bunda" id="image-zone"
+                  <img src="#" class="bunda" id="image-zone"
                     draggable="false">
                 </div>
 

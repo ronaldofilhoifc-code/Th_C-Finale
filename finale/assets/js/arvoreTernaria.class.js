@@ -1,24 +1,30 @@
-import Node from './nodo.class.js';
+import Node from "./nodo.class.js";
 
 class TernaryTree {
-
   #voltas;
   #bola1;
   #bola2;
-
+  #mapeamentoCamadas;
 
   constructor(bola1, bola2) {
     this.root = null;
     this.voltas = 0;
     this.bola1 = document.getElementById(bola1);
     this.bola2 = document.getElementById(bola2);
+
+    this.mapeamentoCamadas = {
+      c1: document.getElementById("camadaEpica1"),
+      c2: document.getElementById("camadaEpica2"),
+      c3: document.getElementById("camadaEpica3"),
+      c4: document.getElementById("camadaEpica4"),
+      c5: document.getElementById("camadaEpica5"),
+    };
   }
-
-
 
   updateBall(oQueAconteceu) {
     this.bola2.innerText = this.voltas;
-    this.bola1.src = "../../../../assets/imagens/porta" + oQueAconteceu + ".png";
+    this.bola1.src =
+      "../../../../assets/imagens/porta" + oQueAconteceu + ".png";
   }
 
   insert(caminhoAtePai, direcaoNoPai, acao) {
@@ -39,94 +45,66 @@ class TernaryTree {
       else if (direcao === 2) currentNode = currentNode.right;
 
       if (!currentNode) {
-        console.error(`Erro: O caminho intermediário ${caminhoAtePai.slice(0, i + 1)} não existe na árvore.`);
+        console.error(
+          `Erro: O caminho intermediário ${caminhoAtePai.slice(0, i + 1)} não existe na árvore.`,
+        );
         return;
       }
     }
 
     if (direcaoNoPai === 0) {
-      if (currentNode.left) console.warn("Aviso: Sobreescrevendo nó esquerdo existente.");
+      if (currentNode.left)
+        console.warn("Aviso: Sobreescrevendo nó esquerdo existente.");
       currentNode.left = novoNo;
     } else if (direcaoNoPai === 1) {
-      if (currentNode.middle) console.warn("Aviso: Sobreescrevendo nó do meio existente.");
+      if (currentNode.middle)
+        console.warn("Aviso: Sobreescrevendo nó do meio existente.");
       currentNode.middle = novoNo;
     } else if (direcaoNoPai === 2) {
-      if (currentNode.right) console.warn("Aviso: Sobreescrevendo nó direito existente.");
+      if (currentNode.right)
+        console.warn("Aviso: Sobreescrevendo nó direito existente.");
       currentNode.right = novoNo;
     }
   }
 
-  clique(lado, caminho) {
-    const novoCaminho = [...caminho, lado];
+  atualizarImagemCheck(camada, imgCheck) {
+    const chave = "c" + camada;
+    const valor = this.mapeamentoCamadas[chave]?.value;
+    const itemColetado = valor === true || String(valor).toLowerCase() === "true";
 
-    if (!this.root) {
-      return false;
-    }
-
-    let currentNode = this.root;
-
-    for (const direcao of novoCaminho) {
-      const proximoNode = direcao === 0 ? currentNode.left : direcao === 1 ? currentNode.middle : currentNode.right;
-
-      if (!proximoNode) {
-        console.error(`Erro: O caminho ${novoCaminho} não existe na árvore.`);
-        return [1, []];
-      }
-
-      currentNode = proximoNode;
-    }
-
-    let caminhoFinal = [...novoCaminho];
-    this.updateBall("Avancou");
-
-    if (currentNode.acao < 0) {
-
-      // se o cara volta, ele entra aqui
-      this.voltas++;
-      this.updateBall("Voltou");
-
-      const retrocessos = Math.abs(currentNode.acao) + 1;//abs -> módulo
-
-      for (let i = 0; i < retrocessos && caminhoFinal.length > 0; i++) {
-        caminhoFinal.pop();
-      }
-    }
-    if (currentNode.acao == 100) {
-      // se chega na camada 5, entra nesse if
-
-
-    }
-
-    return [caminhoFinal.length + 1, caminhoFinal];
+    imgCheck.src = itemColetado
+      ? "../../../../assets/imagens/checkado.png"
+      : "../../../../assets/imagens/nao-checkado.png";
   }
 
-  megaCheck(vetorDePortas, camadaAtual, caminhoAtual, titulo, itemName, item) {
+  megaCheck(
+    vetorDePortas,
+    camadaAtual,
+    caminhoAtual,
+    titulo,
+    itemName,
+    item,
+    imgCheck,
+  ) {
     itemName.innerText = "Tinta Suvinil";
-
-    const mapeamentoCamadas = {
-      "c1": document.getElementById("camadaEpica1"),
-      "c2": document.getElementById("camadaEpica2"),
-      "c3": document.getElementById("camadaEpica3"),
-      "c4": document.getElementById("camadaEpica4"),
-      "c5": document.getElementById("camadaEpica5")
-    };
 
     let coisas = [false, false, false, false, false];
 
-    mapeamentoCamadas["c1"].value = coisas[0];
-    mapeamentoCamadas["c2"].value = coisas[1];
-    mapeamentoCamadas["c3"].value = coisas[2];
-    mapeamentoCamadas["c4"].value = coisas[3];
-    mapeamentoCamadas["c5"].value = coisas[4];
+    this.mapeamentoCamadas["c1"].value = String(coisas[0]);
+    this.mapeamentoCamadas["c2"].value = String(coisas[1]);
+    this.mapeamentoCamadas["c3"].value = String(coisas[2]);
+    this.mapeamentoCamadas["c4"].value = String(coisas[3]);
+    this.mapeamentoCamadas["c5"].value = String(coisas[4]);
 
-    vetorDePortas.forEach(porta => {
-      porta.addEventListener('click', (event) => {
+    vetorDePortas.forEach((porta) => {
+      porta.addEventListener("click", (event) => {
+        imgCheck.src = "../../../../assets/imagens/nao-checkado.png";
 
         if (camadaAtual != 5) {
           const index = Array.from(vetorDePortas).indexOf(event.currentTarget);
           const lado = index === 1 ? 1 : index === 2 ? 2 : 0;
 
-          const retorno = this.clique(lado, caminhoAtual);
+          const retorno = this.clique(lado, caminhoAtual, camadaAtual);
 
           if (retorno) {
             caminhoAtual = retorno[1];
@@ -134,6 +112,7 @@ class TernaryTree {
           }
 
           titulo.innerText = "Você está na Camada " + camadaAtual + ".";
+          this.atualizarImagemCheck(camadaAtual, imgCheck);
         } else {
           porta.type = "submit";
           window.location.href = "posPuzzle.php";
@@ -159,20 +138,61 @@ class TernaryTree {
 
     item.addEventListener("click", () => {
       let chaveInput = "c" + camadaAtual;
-      
-      if (mapeamentoCamadas[chaveInput]) {
-        mapeamentoCamadas[chaveInput].value = true;
+
+      if (this.mapeamentoCamadas[chaveInput]) {
+        this.mapeamentoCamadas[chaveInput].value = "true";
       }
+
+      this.atualizarImagemCheck(camadaAtual, imgCheck);
     });
   }
 
+  clique(lado, caminho, camadaAtual) {
+    const novoCaminho = [...caminho, lado];
 
+    if (!this.root) {
+      return false;
+    }
 
+    let currentNode = this.root;
 
+    for (const direcao of novoCaminho) {
+      const proximoNode =
+        direcao === 0
+          ? currentNode.left
+          : direcao === 1
+            ? currentNode.middle
+            : currentNode.right;
 
+      if (!proximoNode) {
+        console.error(`Erro: O caminho ${novoCaminho} não existe na árvore.`);
+        return [1, []];
+      }
+
+      currentNode = proximoNode;
+    }
+
+    let caminhoFinal = [...novoCaminho];
+    this.updateBall("Avancou");
+
+    if (currentNode.acao < 0) {
+      this.voltas++;
+      this.updateBall("Voltou");
+
+      const retrocessos = Math.abs(currentNode.acao) + 1; //abs -> módulo
+
+      for (let i = 0; i < retrocessos && caminhoFinal.length > 0; i++) {
+        caminhoFinal.pop();
+      }
+
+    }
+
+    if (currentNode.acao == 100) {
+      // se chega na camada 5, entra nesse if
+    }
+
+    return [caminhoFinal.length + 1, caminhoFinal];
+  }
 }
-
-
-
 
 export default TernaryTree;

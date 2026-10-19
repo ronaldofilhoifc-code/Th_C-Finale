@@ -37,7 +37,7 @@
 
                     </div>
                     <div class="decor-holder">
-
+                        <img src="../../../../assets/imagens/nao-checkado.png" class="imagem-minuscula" id="imgCheck">
                     </div>
                 </div>
             </div>

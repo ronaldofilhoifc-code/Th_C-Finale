@@ -71,11 +71,11 @@ $lista = $Entity->list('arma');
             <div id="botaoPC" class="btn btn-primary bola-perfil" type="button" data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><?php
 
-              echo $Entity->iniciaisBolaPerfil($_SESSION["nomeUsuario"]);
+                                                                                      echo $Entity->iniciaisBolaPerfil($_SESSION["nomeUsuario"]);
 
 
 
-              ?></div>
+                                                                                      ?></div>
 
             <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1"
               id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
@@ -106,11 +106,11 @@ $lista = $Entity->list('arma');
         <div id="botaoMINI" class="btn btn-primary bola-perfil" type="button" data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasScrollingB" aria-controls="offcanvasScrolling"><?php
 
-          echo $Entity->iniciaisBolaPerfil($_SESSION["nomeUsuario"]);
+                                                                                    echo $Entity->iniciaisBolaPerfil($_SESSION["nomeUsuario"]);
 
 
 
-          ?></div>
+                                                                                    ?></div>
 
 
 
@@ -151,7 +151,7 @@ $lista = $Entity->list('arma');
             <?php
 
             foreach ($lista as $linha) {
-              ?>
+            ?>
               <tr>
                 <td><?php echo htmlspecialchars($linha['id_arma']); ?></td>
                 <td><?php echo htmlspecialchars($linha['porte']); ?></td>
@@ -167,8 +167,13 @@ $lista = $Entity->list('arma');
                     </form>
                   </div>
                   <div class="split50-brainrot">
-                    <form action="../view/update_arma.php" class="wrapper centralizar" method="post">
+                    <form action="../view/update_arma.php" class="wrapper centralizar" method="POST">
                       <input name="id_arma" type="hidden" value="<?php echo htmlspecialchars($linha['id_arma']); ?>">
+                      <input name="porte" type="hidden" value="<?php echo htmlspecialchars($linha['porte']); ?>">
+                      <input name="raridade" type="hidden" value="<?php echo htmlspecialchars($linha['raridade']); ?>">
+                      <input name="potencial" type="hidden" value="<?php echo htmlspecialchars($linha['potencial']); ?>">
+                      <input name="quantidade" type="hidden" value="<?php echo htmlspecialchars($linha['quantidade']); ?>">
+                      <input name="condicao" type="hidden" value="<?php echo htmlspecialchars($linha['condicao']); ?>">
                       <button class="btn btn-success btn-tabela" type="submit">Atualizar</button>
                     </form>
                   </div>
@@ -191,7 +196,7 @@ $lista = $Entity->list('arma');
     <div class="row">
       <div class="col-md-12 est-10 header footer super-buttons">
         <button class="btn btn-info btn-super" onclick="window.location.href = 'menu.php'">Voltar ao Menu</button>
-                <button class="btn btn-info btn-super" onclick="window.location.href = 'criar_armas.php'">Criar nova Arma</button>
+        <button class="btn btn-info btn-super" onclick="window.location.href = 'criar_armas.php'">Criar nova Arma</button>
       </div>
     </div>
   </div>

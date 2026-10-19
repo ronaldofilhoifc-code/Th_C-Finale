@@ -13,11 +13,11 @@ O que precisa ser feito:
 
 - Capitulo 2: Diálogos e Cenas, Criar associativa, finais
 
-- tabela_entusiasta.php: update e tratamento de exceção (remover entusiasta associado)
+- tabela_entusiasta.php: update e tratamento de exceção (remover entusiasta associado) V
 
-- gerenciar_armas.php: update e tratamento de exceção (remover arma associada)
+- gerenciar_armas.php: update e tratamento de exceção (remover arma associada) V
 
-- tabela_associativa.php: update, delete e possíveis tratamentos de exceção
+- tabela_associativa.php: update, delete e possíveis tratamentos de exceção V
 
 Planilha para escrever dialogos:
 

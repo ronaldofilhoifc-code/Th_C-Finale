@@ -39,8 +39,6 @@ $lista = $Entity->list('arma');
 
 <body>
 
-
-
   <div class="container-fluid now">
     <div class="row">
       <div class="col-md-12 est-10 header">
@@ -133,8 +131,6 @@ $lista = $Entity->list('arma');
     </div>
   </div>
 
-
-
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12 min-est-80 centralizar">
@@ -151,8 +147,8 @@ $lista = $Entity->list('arma');
           </thead>
 
           <tbody>
-            <?php
 
+            <?php
 
             foreach ($lista as $linha) {
               ?>
@@ -187,7 +183,6 @@ $lista = $Entity->list('arma');
 
       </div>
 
-
     </div>
 
   </div>
@@ -201,13 +196,7 @@ $lista = $Entity->list('arma');
     </div>
   </div>
 
-
-
   <script src="../../assets/js/bomboclat.js"></script>
-
-
-
-
 
 </body>
 

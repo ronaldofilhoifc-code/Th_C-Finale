@@ -17,4 +17,4 @@ print_r($valores);
 
 
 
- header("Location: ../view/capitulo2/criar_associativa.php");
+ header("Location: ../view/criar_associativa.php");

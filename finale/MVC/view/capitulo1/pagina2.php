@@ -33,7 +33,7 @@
           <div class="row">
             <div class="offcanvas-popper-holder est-70 col-md-12" id="ryuji">
 
-              <div class="modao">
+              <div class="modao" id="apagar">
                 <div class="char-holder bloco-duplo" id="duplo-1">
                   <div class="char-img-holder imagem-esquerda"><img id="img-duplo1" class="wrapper" src="#"></div>
                 </div>
@@ -74,7 +74,7 @@
 
 
 
-              <div class="mini-image-holder">
+              <div class="mini-image-holder" id="apaga-mini">
 
                 <div class="oquinze">
 

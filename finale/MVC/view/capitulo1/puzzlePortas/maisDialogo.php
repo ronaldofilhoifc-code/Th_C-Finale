@@ -1,3 +1,20 @@
+<?php
+session_start();
+require_once("../../../model/Entity.class.php");
+$Entity = new Entity();
+
+$_SESSION["ultimaPagina"] = "menu.php";
+
+if (isset($_COOKIE["id"])) {
+  $panorama = $Entity->getUsernameById($_COOKIE["id"]);
+  $_SESSION["nomeUsuario"] = $panorama[0];
+} else if (isset($_SESSION["id"])) {
+  $panorama = $Entity->getUsernameById($_SESSION["id"]);
+  $_SESSION["nomeUsuario"] = $panorama[0];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-Br">
 
@@ -33,7 +50,7 @@
           <div class="row">
             <div class="offcanvas-popper-holder est-70 col-md-12" id="ryuji">
 
-              <div class="modao">
+              <div class="modao" id="apagar">
                 <div class="char-holder bloco-duplo" id="duplo-1">
                   <div class="char-img-holder imagem-esquerda"><img id="img-duplo1" class="wrapper" src="#"></div>
                 </div>
@@ -74,7 +91,7 @@
 
 
 
-              <div class="mini-image-holder">
+              <div class="mini-image-holder" id="apaga-mini">
 
                 <div class="oquinze">
 
@@ -134,21 +151,36 @@
 
                 <div class="image-zone inverter-borda">
                   <div class="icons-balls">
-                    <div class="icon-holder" id="slot1"><img src="../../../../assets/imagens/setaFrutiger.png"
-                        class="controllers" draggable="false"></div>
-                    <div class="icon-holder" id="slot2"><img src="../../../../assets/imagens/menuFrutiger.png"
-                        class="controllers" draggable="false"></div>
-                    <div class="icon-holder" id="slot3"><img id="imgslot3" src="../../../../assets/imagens/skipFrutiger.png"
-                        class="controllers" draggable="false"></div>
+                    <form action="promoteChap2.php" class="wrapper" method="post">
+                      <input type="hidden" value="<?php if (isset($_COOKIE["id"])) {
+                        $cred = $_COOKIE["id"];
+
+                        echo $cred;
+                      } else if (isset($_SESSION["id"])) {
+                        $cred = $_SESSION["id"];
+
+                        echo $cred;
+                      } ?>" name="id">
+                      <button type="button" class="icon-holder" id="slot1"><img
+                          src="../../../../assets/imagens/setaFrutiger.png" class="controllers"
+                          draggable="false"></button>
+                      <button type="button" class="icon-holder" id="slot2"><img
+                          src="../../../../assets/imagens/menuFrutiger.png" class="controllers"
+                          draggable="false"></button>
+                      <button type="button" class="icon-holder" id="slot3"><img id="imgslot3"
+                          src="../../../../assets/imagens/skipFrutiger.png" class="controllers" draggable="button">
                   </div>
+                  </form>
+
                 </div>
               </div>
+            </div>
 
-            </div> <!--Fim da caixa de diálogo-->
-          </div>
+          </div> <!--Fim da caixa de diálogo-->
         </div>
       </div>
     </div>
+  </div>
   </div>
 
   <script src="../../../../assets/js/programarLightNovelCap1Final.js" type="module"></script>

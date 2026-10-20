@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-Br">
+<html lang="pt-br">
+
 <head>
-  <title>Capitulo 2</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Inserção do Bootstrap versão 4 -->
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="bootstrap/js/bootstrap.min.js"></script>
-  <!-- Fim insercão Bootstrap Versão 4-->
-  <!-- css do site-->
-  <link rel="stylesheet" href="../assets/css/style.css">
+
+    <meta charset="utf-8">
+    <link rel="icon" href="../../../assets/imagens/reset.png">
+    <link href="../../../assets/css/paginaEstatica.css" rel="stylesheet">
+    <link href="../../../assets/css/paginaLimbo.css" rel="stylesheet">
+    <title>O Limbo... denovo.</title>
+
 </head>
+
 <body>
 
+    <div class="blocodetexto est-90" id="blocotexto">
+        ...
+    </div>
+    <div class="blocodetexto est-10 limbo">
+        <div class="seta-holder">
+            <img src="../../../assets/imagens/limboSkip.png" class="wrapper" id="aa" draggable="false">
+        </div>
+        <div class="seta-holder">
+            <img src="../../../assets/imagens/limboSeta.png" class="wrapper" id="limboSeta" draggable="false">
+        </div>
+    </div>
+
+    <script src="../../../assets/js/programarLimbo2.js"></script>
+
 </body>
+
 </html>

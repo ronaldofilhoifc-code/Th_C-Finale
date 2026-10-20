@@ -10,8 +10,7 @@ const dialogos = [
 
 // sprites da caixa de diálogo
 
-let sprFlorenceIndiferente = "../../../../assets/imagens/sprFlorenceIndiferente.png";
-
+let sprFlorence = "../../../../assets/imagens/sprFlorenceIndiferente.png";
 let sprTransparente = "../../../../assets/imagens/imagem_transparente.png";
 let sprIgor = "../../../../assets/imagens/sprIgor.png";
 let sprPepe = "../../../../assets/imagens/el.png";
@@ -19,32 +18,18 @@ let sprPepeA = "../../../../assets/imagens/elA.png";
 let sprHartebiA = "../../../../assets/imagens/Real_hartebi.png";
 let sprHartebi = "../../../../assets/imagens/Real_hartebiA.png";
 let sprPhilismeu = "../../../../assets/imagens/sprPhilismeu.png";
-
-
-// sprites de exibição em cena (as jaquetas aparecem tanto em caixa de diálogo quanto em cena)
-
-let hartJaqueta = "../../../../assets/imagens/hart.png";
-let pepeJaqueta = "../../../../assets/imagens/pepe.png";
-let florenceBolaRoxa = "../../../../assets/imagens/Real_Florence.png";
-let bundleHartPepe = "../../../../assets/imagens/bundleHartPepe.png";
-
-
 var sprClodovil = "../../../../assets/imagens/sprClodovil.png";
 var sprEntusiasta = "../../../../assets/imagens/entusiasta.png";
 var sprEntusiastaA = "../../../../assets/imagens/entusiastaA.png";
 
-var clodovilIncredulo = "../../../../assets/imagens/ClodovilIncredulo.png";
-var clodovilIncreduloA = "../../../../assets/imagens/ClodovilIncreduloA.png";
-var clodovilBugado = "../../../../assets/imagens/ClodovilBugado.png";
-var clodovilPensando = "../../../../assets/imagens/ClodovilPensando.png";
-var clodovilJulgando = "../../../../assets/imagens/ClodovilJulgando.png";
-var clodovilPirulito = "../../../../assets/imagens/ClodovilPirulito.png";
-var clodovilCurioso = "../../../../assets/imagens/ClodovilCurioso.png";
-var clodovilJulgandoA = "../../../../assets/imagens/ClodovilJulgandoA.png";
-var clodovilOrelha = "../../../../assets/imagens/clodovilOrelha.png";
+
+// sprites de exibição em cena (as jaquetas aparecem tanto em caixa de diálogo quanto em cena)
+
+let florenceBolaRoxa = "../../../../assets/imagens/Real_Florence.png";
+
 let philismeuAuraA = "../../../../assets/imagens/philismeuAuraA.jpg";
 let philismeuPuto = "../../../../assets/imagens/philismeuPuto.png";
-let philismeuCordial = "../../../../assets/imagens/philismeuPuto.png";
+let philismeuCordial = "../../../../assets/imagens/philismeuCordial.png";
 
 // condicoesCena = edita as caixas para alterar entre cenas com um personagem / 2 personagens
 

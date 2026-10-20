@@ -43,6 +43,8 @@
         this.next();
     }
 
+
+
     #vincularEventosPopup() {
         //agrupa os event listeners dos botões do log
 
@@ -55,7 +57,7 @@
         const slot2 = document.getElementById("slot2");
         if (slot2 && !slot2.dataset.dialogoBound) {
             slot2.dataset.dialogoBound = "true";
-            slot2.addEventListener("click", () => this.log());
+            slot2.addEventListener("click", () => this.log(1));
         }
 
 
@@ -65,10 +67,31 @@
         const popupa = document.getElementById("popup");
         const nomepersona5 = document.getElementById("nomepersona5");
         const dialogo = document.getElementById("dialogo");
+        const apagaMini = document.getElementById("apaga-mini");
 
         if (popupa) popupa.style.display = "none";
         if (nomepersona5) nomepersona5.style.display = "flex";
         if (dialogo) dialogo.style.display = "flex";
+        if (apagar) apagar.style.display = "flex";
+
+        if (window.innerWidth >= 800) {
+            if (apagaMini) apagaMini.style.display = "none";
+        } else {
+            if (apagaMini) apagaMini.style.display = "flex";
+        }
+    }
+
+    resize() {
+        const apagaMini = document.getElementById("apaga-mini");
+        window.addEventListener("resize", function () {
+
+            if (window.innerWidth >= 800) {
+                apagaMini.style.display = "none";
+            } else {
+                apagaMini.style.display = "flex";
+            }
+
+        });
     }
 
     next() {
@@ -101,13 +124,16 @@
         return true;
     }
 
-    log() {
+    log(chapNumber) {
 
         const popupa = document.getElementById("popup");
         const popupBody = document.getElementById("popup-body");
         const popupTitulo = document.getElementById("popup-titulo");
         const nomepersona5 = document.getElementById("nomepersona5");
         const dialogo = document.getElementById("dialogo");
+        const apagar = document.getElementById("apagar");
+        const apagaMini = document.getElementById("apaga-mini");
+
 
         if (!popupa || !popupBody || !popupTitulo) {
             return false;
@@ -116,23 +142,25 @@
         popupa.style.display = "block";
         if (nomepersona5) nomepersona5.style.display = "none";
         if (dialogo) dialogo.style.display = "none";
+        if (apagar) apagar.style.display = "none";
+        if (apagaMini) apagaMini.style.display = "none";
 
-               popupTitulo.innerHTML = "<p class='fonteTituloCap1'>LOG DE DIÁLOGO: Capítulo 1</p>";
 
-        // Limpa o conteúdo antigo para não acumular toda vez que abrir
+        popupTitulo.innerHTML = "<p class='fonteTituloCap1'>LOG DE DIÁLOGO: Capítulo " + chapNumber + "</p>";
+
         popupBody.innerHTML = "";
 
-        // Define até onde o diálogo atual avançou
+
         const indiceLimite = this.posicaoAtual + 1;
         const qtd_log = 20;
 
-        // Calcula de forma segura onde o log deve começar (mostra no máximo as últimas 20 falas)
+
         let indiceInicio = indiceLimite - qtd_log;
         if (indiceInicio < 0) {
             indiceInicio = 0;
         }
 
-        // Loop ÚNICO: Já cria a estrutura com os dados corretos dentro dela
+
         for (let i = indiceInicio; i < indiceLimite && i < this.#dialogo.length; i++) {
             const falaAtual = this.#dialogo[i];
             const numeroPagina = "★   " + String(i + 1).padStart(2, '0');
@@ -157,7 +185,7 @@
 
         window.scrollTo({
             top: popupBody.scrollHeight,
-            behavior: 'smooth' 
+            behavior: 'smooth'
         });
 
         return true;

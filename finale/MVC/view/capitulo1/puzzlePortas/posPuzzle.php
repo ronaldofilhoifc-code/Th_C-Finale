@@ -40,7 +40,7 @@ session_start();
 
               <input type="hidden" value="<?php echo $_SESSION["collected"]; ?>" id="sucessofm">
 
-              <div class="modao">
+              <div class="modao" id="apagar">
                 <div class="char-holder bloco-duplo" id="duplo-1">
                   <div class="char-img-holder imagem-esquerda"><img id="img-duplo1" class="wrapper" src="#"></div>
                 </div>
@@ -81,7 +81,7 @@ session_start();
 
 
 
-              <div class="mini-image-holder">
+              <div class="mini-image-holder" id="apaga-mini">
 
                 <div class="oquinze">
 

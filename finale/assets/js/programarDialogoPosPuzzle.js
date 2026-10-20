@@ -198,11 +198,12 @@ slot3.addEventListener("click", () => {
         // alert("Fim do Good Ending");
         window.location.href = "criar_arma_estilizada.php";
     } else if (sucessofm.value != 5) {
-        alert("Fim do Bad Ending");
-        // window.location.href = "portas.php";
+        // alert("Fim do Bad Ending");
+        window.location.href = "portas.php";
 
     };
 
 });
 
-dialogoz.baguncinhaNaCena(condicoesCena[icena]["solo"], condicoesCena[icena]["personagem1"], condicoesCena[icena]["personagem2"], condicoesCena[icena]["trocar"], condicoesCena[icena]["fundoE"],)
+dialogoz.baguncinhaNaCena(condicoesCena[icena]["solo"], condicoesCena[icena]["personagem1"], condicoesCena[icena]["personagem2"], condicoesCena[icena]["trocar"], condicoesCena[icena]["fundoE"],);
+dialogoz.resize();

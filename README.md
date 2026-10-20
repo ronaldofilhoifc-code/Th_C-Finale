@@ -9,9 +9,7 @@ LEMBRETES:
 
 O que precisa ser feito:
 
-- Capitulo 1: Cena final
-
-- Capitulo 2: Diálogos e Cenas, Criar associativa, finais
+- Capitulo 2: Limbo, Diálogos e Cenas, Criar associativa, finais
 
 Planilha para escrever dialogos:
 

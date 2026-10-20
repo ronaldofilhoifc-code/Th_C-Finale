@@ -1723,5 +1723,6 @@ if (slot3) {
 
 
 dialogox.baguncinhaNaCena(condicoesCena[icena]["solo"], condicoesCena[icena]["personagem1"], condicoesCena[icena]["personagem2"], condicoesCena[icena]["trocar"], condicoesCena[icena]["fundoE"],);
+dialogox.resize();
 
 console.log(condicoesCena.length + " " + pessoas.length + " " + frases.length + " " + caminhos.length);

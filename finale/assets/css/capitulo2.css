@@ -1,0 +1,382 @@
+body {
+    background-image: url(../../MVC/view/capitulo2/backgrounds/cap2.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+:root {
+    --corFundoDialogo: rgb(22, 51, 70);
+    --corTransparenteDialogo: rgba(214, 143, 66, 0.81);
+    --tamanhoCaixa: 100%;
+    --borderName: 2px solid #47d6c3;
+}
+
+.dialogo-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dialogo {
+    width: var(--tamanhoCaixa);
+    height: 75%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+
+    border-radius: 0px 0px 500px 500px;
+}
+
+.nomepersona5 {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.real-nomepersona5 {
+    width: var(--tamanhoCaixa);
+    height: 100%;
+    background-color: var(--corFundoDialogo);
+    padding-left: 70px;
+    padding-right: 50px;
+    border-radius: 500px 500px 0px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.ondevaio-nomepersona5 {
+    width: 200px;
+    height: 85%;
+    background-color: rgb(244, 220, 255);
+    display: flex;
+    border-radius: 25px 25px 25px 25px;
+    border: var(--borderName);
+
+}
+
+.ball-holder {
+    width: 30%;
+    height: 100%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tag-ball {
+    border-radius: 50%;
+    width: 2.5vh;
+    height: 2.5vh;
+    background-color: var(--corFundoDialogo);
+    border: 2px solid #47d6c3;
+}
+
+.name-holder {
+    width: 70%;
+    height: 100%;
+    /* background-color: brown; */
+    display: flex;
+    align-items: center;
+}
+
+.image-zone {
+    width: 15%;
+    height: 100%;
+    border-radius: 0px 0px 0px 500px;
+    background-color: var(--corFundoDialogo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.inverter-borda {
+    border-radius: 0px 0px 500px 0px;
+    background-image: none;
+    display: flex;
+    justify-content: start;
+}
+
+.bunda {
+    width: 130px;
+    height: 130px;
+    margin-left: 45px;
+    margin-bottom: 15px;
+}
+
+
+
+.icons-balls {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+.controllers {
+    width: 30px;
+    height: 30px;
+}
+
+.mini-image-holder {
+    width: 90%;
+    min-height: 50px;
+    display: none;
+}
+
+.mini-image-holder-holder {
+    width: 120px;
+    height: 120px;
+}
+
+.icon-holder {
+    height: 29%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 18%;
+    border: none;
+    background-color: transparent;
+}
+
+#name-zone {
+    display: flex;
+    align-items: center;
+}
+
+.oquinze {
+    width: 15%;
+    height: 100%;
+    background-color: var(--corFundoDialogo);
+}
+
+
+
+.absolute-textzone {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    background-color: var(--corTransparenteDialogo);
+}
+
+#text-zone {
+    z-index: 2;
+}
+
+#block-zone {
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.split50-block {
+    width: 100%;
+    height: 50%;
+    background-color: transparent;
+
+}
+
+#splitcima {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+#splitbaixo {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.bloco {
+    width: 20px;
+    height: 20px;
+    background-color: var(--corFundoDialogo);
+
+}
+
+.texttext-zone {
+    width: 100%;
+    height: 100%;
+    /* background-color: var(--corTransparenteDialogo); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid var(--corFundoDialogo);
+    position: absolute;
+
+}
+
+.texttext-zone * {
+    z-index: 99;
+}
+
+.b1 {
+    border-radius: 0px 0px 15px 0px;
+}
+
+.b2 {
+    border-radius: 0px 0px 0px 15px;
+}
+
+.b3 {
+    border-radius: 0px 15px 0px 0px;
+
+}
+
+.b4 {
+    border-radius: 15px 0px 0px 0px;
+}
+
+.absolute-70 {
+    position: relative;
+    width: 70%;
+    height: 100%;
+
+}
+
+.mini-image-holder-holder * {
+    z-index: 99;
+}
+
+.secret {
+    display: none;
+}
+
+.vogue {
+    background-image: url(../../MVC/view/capitulo1/backgrounds/estoqueClodovil.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+
+
+
+@media screen and (max-width: 800px) {
+
+    .secret {
+        display: block;
+    }
+
+    #text-zone {
+        border-top: none;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        z-index: 2;
+        position: absolute;
+    }
+
+    .absolute-textzone {
+        width: 70%;
+        z-index: 3;
+        background-color: transparent;
+    }
+
+    #block-zone {
+        display: none;
+    }
+
+    #text-zone2 {
+        border-bottom: none;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .relative-wrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 4;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .b3,
+    .b4 {
+        align-self: end;
+    }
+
+    .mini-image-holder {
+        width: var(--tamanhoCaixa);
+        min-height: 170px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+    }
+
+    .bloco {
+        width: 30px;
+        height: 30px;
+    }
+
+    .texttext-zone {
+        width: 70%;
+        height: 100%;
+        background-color: var(--corTransparenteDialogo);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 10px solid var(--corFundoDialogo);
+        position: static;
+
+    }
+
+
+
+
+
+
+
+    .icon-holder {
+        height: 33.33333333%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+
+    #ryuji {
+        display: flex;
+        align-items: center;
+        height: 50vh;
+    }
+
+    .dialogo-holder {
+        height: 45vh;
+    }
+
+    .dialogo {
+        height: 45%;
+    }
+
+    .bunda {
+        display: none;
+    }
+
+    .char-img-holder {
+        width: 110px;
+        height: 110px;
+        /* background-color: aqua; */
+    }
+}

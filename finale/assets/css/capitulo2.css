@@ -8,9 +8,9 @@ body {
 
 :root {
     --corFundoDialogo: rgb(22, 51, 70);
-    --corTransparenteDialogo: rgba(214, 143, 66, 0.81);
+    --corTransparenteDialogo: rgba(214, 143, 66, 0.812);
     --tamanhoCaixa: 100%;
-    --borderName: 2px solid #47d6c3;
+    --borderName: 2px solid #d64747;
 }
 
 .dialogo-holder {
@@ -52,7 +52,7 @@ body {
 .ondevaio-nomepersona5 {
     width: 200px;
     height: 85%;
-    background-color: rgb(244, 220, 255);
+    background-color: #d68f42;
     display: flex;
     border-radius: 25px 25px 25px 25px;
     border: var(--borderName);
@@ -73,7 +73,7 @@ body {
     width: 2.5vh;
     height: 2.5vh;
     background-color: var(--corFundoDialogo);
-    border: 2px solid #47d6c3;
+    border: 2px solid #d64747;
 }
 
 .name-holder {

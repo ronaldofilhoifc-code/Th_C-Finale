@@ -11,6 +11,7 @@ const dialogos = [
 // sprites da caixa de diálogo
 
 let sprFlorence = "../../../../assets/imagens/sprFlorenceIndiferente.png";
+let sprFlorenceIndiferente = "../../../../assets/imagens/sprFlorenceIndiferente.png";
 let sprTransparente = "../../../../assets/imagens/imagem_transparente.png";
 let sprIgor = "../../../../assets/imagens/sprIgor.png";
 let sprPepe = "../../../../assets/imagens/el.png";
@@ -21,6 +22,16 @@ let sprPhilismeu = "../../../../assets/imagens/sprPhilismeu.png";
 var sprClodovil = "../../../../assets/imagens/sprClodovil.png";
 var sprEntusiasta = "../../../../assets/imagens/entusiasta.png";
 var sprEntusiastaA = "../../../../assets/imagens/entusiastaA.png";
+var clodovilCurioso = "../../../../assets/imagens/ClodovilCurioso.png";
+var clodovilIncreduloA = "../../../../assets/imagens/ClodovilIncreduloA.png";
+var clodovilPensando = "../../../../assets/imagens/ClodovilPensando.png";
+var pepeJaqueta = "../../../../assets/imagens/pepe.png";
+var clodovilJulgando = "../../../../assets/imagens/ClodovilJulgando.png";
+var clodovilBugado = "../../../../assets/imagens/ClodovilBugado.png";
+var clodovilIncredulo = "../../../../assets/imagens/ClodovilIncredulo.png";
+var hartJaqueta = "../../../../assets/imagens/hart.png";
+var clodovilOrelha = "../../../../assets/imagens/ClodovilOrelha.png";
+
 
 
 // sprites de exibição em cena (as jaquetas aparecem tanto em caixa de diálogo quanto em cena)
@@ -282,7 +293,7 @@ for (let i = 0; i < pessoas.length; i++) {
     };
 }
 
-const dialogoa = new Dialogo(dialogos, "name-zone", "text-zone", "image-responsive-holder", "image-zone");
+const dialogoa = new Dialogo(dialogos, "name-zone", "text-zone", "image-responsive-holder", "image-zone", 1);
 
 if (slot1) {
     slot1.addEventListener("click", () => {

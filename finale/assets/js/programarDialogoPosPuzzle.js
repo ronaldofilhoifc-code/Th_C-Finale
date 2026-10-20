@@ -166,7 +166,7 @@ for (let i = 0; i < pessoas.length; i++) {
     };
 }
 
-const dialogoz = new Dialogo(dialogos, "name-zone", "text-zone", "image-responsive-holder", "image-zone");
+const dialogoz = new Dialogo(dialogos, "name-zone", "text-zone", "image-responsive-holder", "image-zone", 1);
 
 // certo = 8
 // errado = 9

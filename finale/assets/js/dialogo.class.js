@@ -5,12 +5,30 @@
     #idTexto;
     #idImg;
     #idImgResponsiva;
+    #capitulo;
 
     #intervaloTexto = null;
     #velocidadeDigitacao = 30;
 
+    #obterBaseAssets() {
+        const pathname = window.location.pathname.replace(/\/+$/, "");
+        const partes = pathname.split("/").filter(Boolean);
+        const indiceFinale = partes.lastIndexOf("finale");
 
-    constructor(listaDialogos, idNome, idTexto, idImgResponsiva, idImg) {
+        if (indiceFinale > -1) {
+            const raizProjeto = `/${partes.slice(0, indiceFinale + 1).join("/")}`;
+            return `${window.location.origin}${raizProjeto}`;
+        }
+
+        return `${window.location.origin}`;
+    }
+
+    #obterUrlAsset(caminhoRelativo) {
+        return `${this.#obterBaseAssets()}/assets/${caminhoRelativo.replace(/^\/+/, "")}`;
+    }
+
+
+    constructor(listaDialogos, idNome, idTexto, idImgResponsiva, idImg, capitulo) {
         const htmlbasico = `
             <div class="container-fluid paginapopup" id="popup" style="display: none;">
                 <div class="row">
@@ -18,7 +36,7 @@
                         <div class="est-10 close-holder">
                             <div class="popup-titulo" id="popup-titulo"></div>
                             <div class="x-holder" id="close">
-                                <img src="../../../assets/imagens/oXdaquestao.png">
+                                <img src="${this.#obterUrlAsset("imagens/oXdaquestao.png")}">
                             </div>
                         </div>
                         <div class="min-est-90 popup-stuff" id="popup-body"></div>
@@ -38,6 +56,7 @@
         this.idTexto = idTexto;
         this.idImg = idImg;
         this.idImgResponsiva = idImgResponsiva;
+        this.#capitulo = capitulo;
 
         this.#vincularEventosPopup();
         this.next();
@@ -124,7 +143,7 @@
         return true;
     }
 
-    log(chapNumber) {
+    log() {
 
         const popupa = document.getElementById("popup");
         const popupBody = document.getElementById("popup-body");
@@ -146,7 +165,7 @@
         if (apagaMini) apagaMini.style.display = "none";
 
 
-        popupTitulo.innerHTML = "<p class='fonteTituloCap1'>LOG DE DIÁLOGO: Capítulo " + chapNumber + "</p>";
+        popupTitulo.innerHTML = "<p class='fonteTituloCap1'>LOG DE DIÁLOGO: Capítulo " + this.#capitulo + "</p>";
 
         popupBody.innerHTML = "";
 

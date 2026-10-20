@@ -1652,7 +1652,7 @@ for (let i = 0; i < pessoas.length; i++) {
     };
 }
 
-const dialogox = new Dialogo(dialogos, "name-zone", "text-zone", "image-responsive-holder", "image-zone");
+const dialogox = new Dialogo(dialogos, "name-zone", "text-zone", "image-responsive-holder", "image-zone", 1);
 
 if (slot1) {
     slot1.addEventListener("click", () => {

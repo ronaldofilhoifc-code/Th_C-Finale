@@ -4,6 +4,8 @@ include_once("../model/Entity.class.php");
 
 $Entity = new Entity();
 $lista = $Entity->list('associativa');
+$usuarioAtual = $_SESSION["id"] ?? $_COOKIE["id"] ?? null;
+$isAdmin = $usuarioAtual !== null && $Entity->checkAdm($usuarioAtual);
 ?>
 
 <!DOCTYPE html>
@@ -183,7 +185,9 @@ $lista = $Entity->list('associativa');
             <th>Maestria</th>
             <th>Inventário</th>
             <th>Nome do Usuário</th>
+            <?php if($isAdmin){ ?>
             <th>Ações</th>
+            <?php } ?>
           </thead>
 
           <!-- <td><?php echo htmlspecialchars($linha['id_associativa']); ?></td> 
@@ -207,9 +211,11 @@ $lista = $Entity->list('associativa');
                 <td><?php echo htmlspecialchars($Entity->formatData($linha['data_conquista'])); ?></td>
                 <td><?php echo htmlspecialchars($linha['maestria']); ?></td>
                 <td><?php echo htmlspecialchars($linha['inventario']); ?></td>
-                <td><?php echo htmlspecialchars($linha['nome_usuario']); ?></td>
+                <td><?php echo htmlspecialchars($linha['nome_usuario']); ?></td> 
+                <?php if($isAdmin){ ?>
                 <td class="tinashe">
                   <div class="split50-brainrot">
+                   
                     <form action="../controller/delete_associativa.php" class="wrapper centralizar" method="post">
                       <input name="id_associativa" type="hidden"
                         value="<?php echo htmlspecialchars($linha['id_associativa']); ?>">
@@ -233,8 +239,10 @@ $lista = $Entity->list('associativa');
                         value="<?php echo htmlspecialchars($linha['inventario']); ?>">
                       <button class="btn btn-success btn-tabela" type="submit">Atualizar</button>
                     </form>
-                  </div>
+                   
+                  </div> 
                 </td>
+                <?php }?>
               </tr>
             <?php } ?>
 

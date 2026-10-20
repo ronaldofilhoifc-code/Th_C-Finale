@@ -12,7 +12,11 @@ if (isset($_COOKIE["id"])) {
   $panorama = $Entity->getUsernameById($_SESSION["id"]);
   $_SESSION["nomeUsuario"] = $panorama[0];
 }
+
 $lista = $Entity->list('arma');
+$usuarioAtual = $_SESSION["id"] ?? $_COOKIE["id"] ?? null;
+$isAdmin = $usuarioAtual !== null && $Entity->checkAdm($usuarioAtual);
+
 ?>
 
 <!DOCTYPE html>
@@ -143,7 +147,9 @@ $lista = $Entity->list('arma');
             <th>Potencial</th>
             <th>Quantidade</th>
             <th>Condicão</th>
+            <?php if($isAdmin){ ?>
             <th>Ações</th>
+            <?php } ?>
           </thead>
 
           <tbody>
@@ -159,6 +165,7 @@ $lista = $Entity->list('arma');
                 <td><?php echo htmlspecialchars($linha['potencial']); ?></td>
                 <td><?php echo htmlspecialchars($linha['quantidade']); ?></td>
                 <td><?php echo htmlspecialchars($linha['condicao']); ?></td>
+                <?php if($isAdmin){ ?>
                 <td class="tinashe">
                   <div class="split50-brainrot">
                     <form action="../controller/delete_arma.php" class="wrapper centralizar" method="post">
@@ -178,6 +185,7 @@ $lista = $Entity->list('arma');
                     </form>
                   </div>
                 </td>
+                <?php }?>
               </tr>
             <?php } ?>
 

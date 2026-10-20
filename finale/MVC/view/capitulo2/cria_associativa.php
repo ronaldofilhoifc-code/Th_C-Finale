@@ -5,6 +5,8 @@ include_once("../../model/Entity.class.php");
 $Entity = new Entity();
 $listaArma = $Entity->list('arma');
 $listaEntusiastas = $Entity->list('entusiasta');
+$usuarioAtual = $_SESSION["id"] ?? $_COOKIE["id"] ?? null;
+$isAdmin = $usuarioAtual !== null && $Entity->checkAdm($usuarioAtual);
 ?>
 
 <!DOCTYPE html>

@@ -90,9 +90,9 @@ const condicoesCena = [
     { solo: false, personagem1: philismeuCordial, personagem2: sprFritz, trocar: true },
     { solo: false, personagem1: philismeuCordial, personagem2: sprFritz, trocar: true },
     { solo: false, personagem1: sprFritz, personagem2: sprDef, trocar: true },
-    { solo: false, personagem1: sprDef, personagem2: philismeuCordial, trocar: true },
-    { solo: false, personagem1: sprDef, personagem2: philismeuCordial, trocar: true },
-    { solo: false, personagem1: sprDef, personagem2: philismeuPuto, trocar: true },
+    { solo: false, personagem1: sprDefA, personagem2: philismeuCordial, trocar: true },
+    { solo: false, personagem1: sprDefA, personagem2: philismeuCordial, trocar: true },
+    { solo: false, personagem1: sprDefA, personagem2: philismeuPuto, trocar: true },
     { solo: true, personagem1: sprPepe, personagem2: philismeuPuto, trocar: true },
     { solo: false, personagem1: sprPepe, personagem2: florenceBolaRoxa, trocar: true },
     { solo: true, personagem1: florenceBolaRoxa, personagem2: florenceBolaRoxa, trocar: true },
@@ -111,6 +111,24 @@ const condicoesCena = [
     { solo: false, personagem1: florenceBolaRoxa, personagem2: philismeuAura, trocar: true },
     { solo: false, personagem1: florenceBolaRoxa, personagem2: philismeuCordial, trocar: true },
     { solo: false, personagem1: florenceBolaRoxa, personagem2: philismeuCordial, trocar: true },
+
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: philismeuCordial, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: philismeuCordial, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: philismeuCordial, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: sprHartebi, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: sprHartebi, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: sprPepeA, trocar: true },
+    { solo: false, personagem1: sprPepe, personagem2: sprHartebi, trocar: true },
+    { solo: true, personagem1: philismeuPuto, personagem2: sprHartebi, trocar: true },
+    { solo: true, personagem1: philismeuPuto, personagem2: sprHartebi, trocar: true },
+    { solo: true, personagem1: philismeuPuto, personagem2: sprHartebi, trocar: true },
+    { solo: true, personagem1: philismeuCordial, personagem2: sprHartebi, trocar: true },
+    { solo: true, personagem1: philismeuPuto, personagem2: sprHartebi, trocar: true },
+    { solo: true, personagem1: philismeuPuto, personagem2: sprHartebi, trocar: true },
+    { solo: true, personagem1: florenceBolaRoxa, personagem2: sprHartebi, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: sprHartebi, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: sprHartebi, trocar: true },
+    { solo: false, personagem1: florenceBolaRoxa, personagem2: sprHartebi, trocar: true },
 
 ];
 
@@ -165,6 +183,24 @@ const pessoas = [
     "Philismeu",
     "Florence",
 
+    "Florence",
+    "Florence",
+    "Florence",
+    "hartebi_",
+    "Florence",
+    "Pepe the Frog",
+    "hartebi_",
+    "Philismeu",
+    "Philismeu",
+    "Philismeu",
+    "Philismeu",
+    "Philismeu",
+    "Philismeu",
+    "Florence",
+    "hartebi_",
+    "Florence",
+    "hartebi_",
+
 ];
 
 const caminhos = [
@@ -202,12 +238,12 @@ const caminhos = [
     sprFlorence,
     sprFritz,
     sprFlorence,
-    sprDef,
+    sprDefA,
     sprFlorence,
     sprFlorence,
     sprFlorence,
-    sprDef,
-    sprDef,
+    sprDefA,
+    sprDefA,
     sprFlorence,
     sprFlorence,
     sprPhilismeu,
@@ -215,6 +251,24 @@ const caminhos = [
     sprPhilismeu,
     sprPhilismeu,
     sprFlorence,
+
+    sprFlorence,
+    sprFlorence,
+    sprFlorence,
+    sprHartebiA,
+    sprFlorence,
+    sprPepe,
+    sprHartebiA,
+    sprPhilismeu,
+    sprPhilismeu,
+    sprPhilismeu,
+    sprPhilismeu,
+    sprPhilismeu,
+    sprPhilismeu,
+    sprFlorence,
+    sprHartebiA,
+    sprFlorence,
+    sprHartebiA,
 
 ];
 
@@ -267,6 +321,23 @@ const frases = [
     "> O meu nome é Philismeu, a Quarta Pérola da Desharmonia",
     "~...",
 
+    "~hahaha...",
+    "~HAHAHAHAHAHAHA...",
+    "~quem você pensa que é, quem você pensa que eu sou!",
+    "Florence, tem algo errado?",
+    "~esse cara me falou que é uma 'Quarta Pérola'!",
+    "POGGERS ESSA É A COISA MAIS ABSURDA QUE EU JÁ OUVI!",
+    "Sem dúvida nenhuma Pepe! Philismeu, você é um comediante?",
+    "> ...",
+    "> Para aquele chamado de hartebi_.",
+    "> E para todos os Webmasters da Rede.",
+    "> Eu não tenho um osso do ódio no meu corpo.",
+    "> Mas o que vocês fizeram foi inadmissível.",
+    "> Será olho por olho, rock por rock.",
+    "~hartebi_.",
+    "Sim, Florence!",
+    "~peça para o Entusiasta pegar em sua arma. Não sabemos o que essas trastes podem fazer.",
+    "Bom...",
 ];
 
 let icena = 0; // indice em qual cena está
@@ -294,7 +365,7 @@ if (slot1) {
             }
             dialogob.baguncinhaNaCena(condicoesCena[icena]["solo"], condicoesCena[icena]["personagem1"], condicoesCena[icena]["personagem2"], condicoesCena[icena]["trocar"], condicoesCena[icena]["fundoE"],);
         } else {
-            window.location.href = "./puzzlePortas/c1.php";
+            window.location.href = "cria_associativa.php";
         }
 
     });
@@ -314,7 +385,7 @@ if (slot3) {
 
         if (oSkip === -1) {
 
-            window.location.href = "./puzzlePortas/c1.php";
+            window.location.href = "cria_associativa.php";
 
             return;
         }

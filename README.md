@@ -1,15 +1,14 @@
-# ÚLTIMA MUDANÇA - Commit 17/10 (anotem coisas no readme)
+# ÚLTIMA MUDANÇA - Commit 20/10 (para fins de avaliação, projeto finalizado)
 
 LEMBRETES:
 
 - caso fazer algo com sessões, fazer o unset() específico das sessões novas no logoff.php
 (ela não faz o logoff automaticamente devido ao log)
 
-- fazer testes regularmente para pegar erros e colocá-los nesse texto
 
 O que precisa ser feito:
 
-- Capitulo 2: Limbo, Diálogos e Cenas, Criar associativa, finais
+- Capitulo 2: terminar diálogos
 
 Planilha para escrever dialogos:
 

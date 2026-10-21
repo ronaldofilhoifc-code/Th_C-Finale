@@ -39,7 +39,15 @@ if (isset($_COOKIE["id"])) {
 
 <body>
 
-
+    <input type="hidden" id="desistencia" name="desistencia" value="<?php 
+    
+    if(isset($_SESSION["desistencia"])) {
+        echo $_SESSION["desistencia"];
+    } else {
+        echo "a";
+    }
+    
+    ?>">
 
     <div class="container-fluid now">
         <div class="row">
@@ -226,6 +234,15 @@ if (isset($_COOKIE["id"])) {
     <script src="../../assets/js/relatorio.js"></script>
     <script src="../../assets/js/chapBlocker.js"></script>
     <script src="../../assets/js/bomboclat.js"></script>
+    <script>
+
+    let desistencia = document.getElementById("desistencia");
+
+    if (desistencia.value != "a") {
+        alert(desistencia.value);
+    }
+
+    </script>
 
 
 

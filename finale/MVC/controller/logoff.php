@@ -13,6 +13,7 @@ unset($_SESSION["devolveID"]);
 unset($_SESSION["chap1"]);
 unset($_SESSION["chap2"]);
 unset($_SESSION["collected"]);
+unset($_SESSION["desistencia"]);
 
 setcookie("id", "", time() - 2628000, "/");
 

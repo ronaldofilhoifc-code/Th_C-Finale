@@ -42,7 +42,7 @@ $isAdmin = $usuarioAtual !== null && $Entity->checkAdm($usuarioAtual);
 
     <div class="container-fluid now">
         <div class="row">
-            <div class="col-md-12 est-10 header estilo_cria_um">
+            <div class="col-md-12 est-10 header estilo_cria_um euvou">
 
 
 
@@ -58,21 +58,21 @@ $isAdmin = $usuarioAtual !== null && $Entity->checkAdm($usuarioAtual);
             <div class="col-md-12 mini-fala-tutorial est-15">
                 <div class="mini-fala-holder">
                     <div class="mini-foto-holder">
-                        <img src="../../../assets/imagens/ClodovilIncreduloA.png" alt="" class="caricato bruma-leve">
+                        <img src="../../../assets/imagens/Real_hartebi.png" alt="" class="caricato bruma-leve aa">
                     </div>
                     <div class="mini-texto-holder">
-                        <div class="caricato frazer">
-                            <div class="wrapper texto-real">
-                                <p>★ Pegue arma, divo!</p>
+                        <div class="caricato frazer jj">
+                            <div class="wrapper texto-real tt">
+                                <p>Pegue uma arma, Entusiasta!</p>
                             </div>
                             <div class="wrapper overlay-muito-merda">
                                 <div class="split-mm">
-                                    <div class="botuquinha" id="bt1"></div>
-                                    <div class="botuquinha" id="bt2"></div>
+                                    <div class="botuquinha aa" id="bt1"></div>
+                                    <div class="botuquinha aa" id="bt2"></div>
                                 </div>
                                 <div class="split-mm" id="push-down">
-                                    <div class="botuquinha" id="bt3"></div>
-                                    <div class="botuquinha" id="bt4"></div>
+                                    <div class="botuquinha aa" id="bt3"></div>
+                                    <div class="botuquinha aa" id="bt4"></div>
                                 </div>
                             </div>
                         </div>
@@ -129,7 +129,7 @@ $isAdmin = $usuarioAtual !== null && $Entity->checkAdm($usuarioAtual);
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 est-10 footer" id="cria-dois">
+            <div class="col-md-12 est-10 footer mematar">
 
             </div>
         </div>

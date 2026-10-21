@@ -235,6 +235,12 @@ p {
 #cria-dois {
     background-image: linear-gradient(transparent, #D2EAEC) !important;
 }
+.euvou {
+    background-image: linear-gradient(rgb(214, 143, 66), transparent )!important;
+}
+.mematar {
+     background-image: linear-gradient(transparent, rgb(214, 143, 66) )!important;
+}
 .mini-fala-tutorial {
     display: flex;
     justify-content: center;
@@ -688,4 +694,14 @@ td, th {
 }
 .casamento {
     background-image: url(../../MVC/view/capitulo1/backgrounds/escritorioMor.jpg);
+}
+.aa {
+    background-color: #163346;
+    border-color: #163346;
+}
+.jj {
+   border-color: #163346; 
+}
+.tt {
+    background-color:rgba(214, 143, 66, 0.812);
 }

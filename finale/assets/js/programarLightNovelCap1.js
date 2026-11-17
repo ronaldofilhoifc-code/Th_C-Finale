@@ -472,7 +472,7 @@ const pessoas = [
     "Pepe the Purse",
     "jacketbi_",
     "Florence",
-    "D.I.E", // departamento de inteligência de estilo
+    "D.I.E",
     "Florence",
     "jacketbi_",
     "jacketbi_",
@@ -497,7 +497,6 @@ const pessoas = [
     "Pepe the Purse",
     "Florence",
     "Pepe the Purse",
-
     "Florence",
     "Florence",
     "jacketbi_",
@@ -513,7 +512,6 @@ const pessoas = [
     "Florence",
     "jacketbi_",
     "jacketbi_",
-
     "Pepe the Purse",
     "Florence",
     "jacketbi_",
@@ -531,7 +529,6 @@ const pessoas = [
     "Florence",
     "Florence",
     "Florence",
-
     "",
     "Pepe the Purse",
     "Arlindo Grund",
@@ -543,17 +540,14 @@ const pessoas = [
     "Arlindo Grund",
     "Arlindo Grund",
     "Arlindo Grund",
-
     "Pepe the Purse",
     "jacketbi_",
     "Pepe the Purse",
-
     "Florence",
     "Florence",
     "Florence",
     "Arlindo Grund",
     "Arlindo Grund",
-
     "Arlindo Grund",
     "Arlindo Grund",
     "Arlindo Grund",
@@ -602,14 +596,12 @@ const pessoas = [
     "Florence",
     "Arlindo Grund",
     "Arlindo Grund",
-
     "Arlindo Grund",
     "Pepe the Purse",
     "jacketbi_",
     "Florence",
     "Florence",
     "Pepe e hart_",
-
     "Arlindo Grund",
     "Pessoa no Telefone",
     "Pessoa no Telefone",
@@ -676,7 +668,6 @@ const pessoas = [
     "Florence",
     "Arlindo Grund",
     "Arlindo Grund",
-
     "",
     "Florence",
     "Florence",
@@ -757,7 +748,6 @@ const pessoas = [
     "Florence",
     "jacketbi_",
     "Florence",
-
     "",
     "???",
     "Produção",
@@ -858,7 +848,6 @@ const pessoas = [
     "Clodovil",
     "Clodovil",
     "Clodovil",
-
 ];
 
 const caminhos = [
@@ -1283,7 +1272,6 @@ const frases = [
     "POGGERS, é...",
     "~é... vamos lá?",
     "Poggers, direcionando-nos para 'Prédios Brega'...",
-
     "~tá, cavalheiros...",
     "~qual desses prédios sem qualidade é o da D.I.E?",
     "Eu vou saber?!",
@@ -1299,7 +1287,6 @@ const frases = [
     "~que seja, Pepe...",
     "Que seja mesmo, vocês dois. ",
     "Vamos para esse prédio logo. ",
-
     "POGGERS, aquele prédio ali é o da D.I.E?",
     "~exatamente, sapinho! Estiloso, né?",
     "Florence, por que estamos sobrevoando o prédio?",
@@ -1362,7 +1349,6 @@ const frases = [
     "...É O MEU DIA DE SORTE!",
     "MIL PERDÕES POR TE TRATAR TÃO MAL, MINHA SENHORA!",
     "~sem problemas, divo.",
-
     "~inclusive, não precisa me chamar de senhora, Florence tá ótimo...",
     "~eu não suporto honoríficos.",
     "claro, claro... Então, senhora Florence...",
